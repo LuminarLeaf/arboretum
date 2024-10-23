@@ -1,8 +1,7 @@
-{pkgs, ...}: let
+{...}: let
   aliases = {
     c = "clear";
     less = "less -RF";
-    # ddiso = "dd bs=4M if=$1 of=$2 status=progress oflag=sync";
     du = "du -had1";
     df = "df -h";
     free = "free -h";
@@ -34,7 +33,7 @@ in {
         "zsh-users/zsh-syntax-highlighting"
         "zsh-users/zsh-completions"
         "zsh-users/zsh-autosuggestions"
-        # "aloxaf/fzf-tab"
+        "aloxaf/fzf-tab"
 
         "getantidote/use-omz"
         "ohmyzsh/ohmyzsh path:plugins/git kind:defer"
@@ -44,17 +43,6 @@ in {
         "ohmyzsh/ohmyzsh path:plugins/sudo kind:defer"
       ];
     };
-    plugins = [
-      {
-        name = "fzf-tab";
-        src = pkgs.fetchFromGitHub {
-          owner = "aloxaf";
-          repo = "fzf-tab";
-          rev = "b6e1b22458a131f835c6fe65bdb88eb45093d2d2";
-          sha256 = "sha256-4A7zpaO1rNPvS0rrmmxg56rJGpZHnw/g+x5FJd0EshI=";
-        };
-      }
-    ];
     history = {
       ignoreAllDups = true;
       ignoreDups = true;
@@ -72,8 +60,13 @@ in {
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
       zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
       zstyle ':completion:*' menu no
-      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+      # zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color always $realpath'
+      # zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color always $realpath'
+
+      # HACK: This breaks fzf-tab in tmux for some reason, remove if you want to use tmux AND fzf-tab
+      zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
       check() {
         if command -v $1 &> /dev/null; then return 0; else return 1; fi
@@ -113,6 +106,10 @@ in {
         fi
         mkdir -p $1 && cd $1
       }
+
+      # ddiso() {
+      #   dd bs=4M if=$1 of=$2 status=progress oflag=sync"
+      # }
     '';
 
     initExtraFirst = ''
