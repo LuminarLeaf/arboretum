@@ -83,7 +83,6 @@
       git
       # cryptsetup
       inputs.alejandra.defaultPackage.${system}
-      chromium
       brave
       neovim
       nil

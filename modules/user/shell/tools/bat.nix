@@ -15,9 +15,9 @@
       MANROFFOPT = "-c";
       PAGER = "bat";
     };
-    initExtraFirst = ''
+    initExtra = ''
       bh() {
-        "$@" --help 2>&1 | $BAT_BIN -pl help
+        "$@" --help 2>&1 | bat -pl help
       }
     '';
   };

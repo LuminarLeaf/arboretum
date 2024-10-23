@@ -63,8 +63,7 @@ in {
       zstyle ':completion:*' menu no
       zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
       zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-    '';
-    initExtraFirst = ''
+
       check() {
         if command -v $1 &> /dev/null; then return 0; else return 1; fi
       }
@@ -103,6 +102,10 @@ in {
         fi
         mkdir -p $1 && cd $1
       }
+    '';
+
+    initExtraFirst = ''
+      . /etc/zinputrc
     '';
   };
 }
