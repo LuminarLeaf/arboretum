@@ -3,7 +3,7 @@
   FZF_DEFAULT_COMMAND = "fd --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
   FZF_ALT_C_COMMAND = "fd --type d --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
   defaultOptions = [
-    "--layout=reverse"
+    # "--layout=reverse"
     "--border"
     "--prompt='❱ '"
   ];

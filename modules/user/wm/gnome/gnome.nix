@@ -6,13 +6,10 @@
   programs = {
     gnome-shell = {
       enable = true;
-      # theme = {
-      #   name = "Marble-purple-dark";
-      #   package = pkgs-unstable.marble-shell-theme.override {
-      #     colors = ["all"];
-      #     additionalInstallationTweaks = ["--filled"];
-      #   };
-      # };
+      theme = {
+        name = "Marble-purple-dark";
+        package = pkgs-unstable.marble-shell-theme.override {additionalInstallationTweaks = ["--filled"];};
+      };
       extensions = [
         {package = pkgs.gnomeExtensions.clipboard-indicator;}
         {package = pkgs.gnomeExtensions.dash-to-dock;}
@@ -20,6 +17,7 @@
         {package = pkgs.gnomeExtensions.blur-my-shell;}
         {package = pkgs-unstable.gnomeExtensions.window-is-ready-remover;}
         {package = pkgs-unstable.gnomeExtensions.pip-on-top;}
+	{package = pkgs-unstable.gnomeExtensions.rounded-window-corners-reborn;}
       ];
     };
   };
@@ -27,6 +25,15 @@
     gnome.gnome-tweaks
     qogir-icon-theme
     whitesur-icon-theme
+    # rose-pine-gtk-theme
+    # omni-gtk-theme
+    # kanagawa-gtk-theme
+    # colloid-gtk-theme
+    # fluent-gtk-theme
+    # nightfox-gtk-theme
+    # whitesur-gtk-theme
+    # tokyonight-gtk-theme
+    # graphite-gtk-theme
 
     # TODO: find which gsettings to have by default
     gnome.dconf-editor

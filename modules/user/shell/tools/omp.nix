@@ -64,7 +64,7 @@
               style = "plain";
               foreground = "p:git";
               template = "{{ .Var.sepld }}{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ .Var.sepr }}";
-              properties.display_mode = "context";
+              properties.fetch_status = true;
             }
           ];
         }

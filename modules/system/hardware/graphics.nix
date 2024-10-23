@@ -11,7 +11,9 @@
       # libvdpau-va-gl
       # mesa
       # egl-wayland
-      intel-media-driver
+      intel-media-driver # intel vaapi
+      # vpl-gpu-rt         # intel qsv # currently only on unstable
+      intel-media-sdk # qsv
     ];
   };
 }
