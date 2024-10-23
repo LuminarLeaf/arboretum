@@ -1,4 +1,4 @@
-{...}: let
+{pkgs, ...}: let
   aliases = {
     c = "clear";
     less = "less -RF";
@@ -34,7 +34,7 @@ in {
         "zsh-users/zsh-syntax-highlighting"
         "zsh-users/zsh-completions"
         "zsh-users/zsh-autosuggestions"
-        "aloxaf/fzf-tab"
+        # "aloxaf/fzf-tab"
 
         "getantidote/use-omz"
         "ohmyzsh/ohmyzsh path:plugins/git kind:defer"
@@ -44,6 +44,17 @@ in {
         "ohmyzsh/ohmyzsh path:plugins/sudo kind:defer"
       ];
     };
+    plugins = [
+      {
+        name = "fzf-tab";
+        src = pkgs.fetchFromGitHub {
+          owner = "aloxaf";
+          repo = "fzf-tab";
+          rev = "b6e1b22458a131f835c6fe65bdb88eb45093d2d2";
+          sha256 = "sha256-4A7zpaO1rNPvS0rrmmxg56rJGpZHnw/g+x5FJd0EshI=";
+        };
+      }
+    ];
     history = {
       ignoreAllDups = true;
       ignoreDups = true;
