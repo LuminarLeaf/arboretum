@@ -25,8 +25,8 @@
     gnome-tour
     gnome-connections
     epiphany
-    gnome.geary
-    gnome.gnome-maps
+    geary
+    gnome-maps
   ];
 
   # TODO: dconf settings

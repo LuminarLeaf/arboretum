@@ -1,10 +1,8 @@
 {pkgs, ...}: {
   # Enable hardware acceleration
-  # hardware.graphics # on unstable
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       # nvidia-vaapi-driver
       # vaapiVdpau
@@ -12,8 +10,7 @@
       # mesa
       # egl-wayland
       intel-media-driver # intel vaapi
-      # vpl-gpu-rt         # intel qsv # currently only on unstable
-      intel-media-sdk # qsv
+      vpl-gpu-rt # intel qsv
     ];
   };
 }
