@@ -1,5 +1,9 @@
-{...}: {
+{pkgs, ...}: {
   services.power-profiles-daemon.enable = false;
+
+  environment.systemPackages = [
+    pkgs.powertop
+  ];
 
   powerManagement = {
     enable = true;

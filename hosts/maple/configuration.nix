@@ -41,6 +41,8 @@
 
   nix.settings.trusted-users = ["@wheel"];
 
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+
   # Bootloader
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
@@ -82,16 +84,18 @@
       curl
       git
       # cryptsetup
-      inputs.alejandra.defaultPackage.${system}
       brave
       neovim
-      nil
+      nixd
     ])
     ++ (with pkgs-unstable; [
       mpv
       kitty
       firefox
-    ]);
+    ])
+    ++ [
+      inputs.alejandra.defaultPackage.${pkgs.system}
+    ];
 
   environment.shells = with pkgs; [bash zsh fish];
   users.defaultUserShell = pkgs.zsh;
