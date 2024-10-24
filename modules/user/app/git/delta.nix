@@ -46,9 +46,9 @@
           line-numbers-zero-style = "#45475a";
 
           plus-style = "brightgreen black";
-          plus-emph-style = "#1e1e2e green";
+          plus-emph-style = "black green";
           minus-style = "brightred black";
-          minus-emph-style = "#1e1e2e red";
+          minus-emph-style = "black red";
           zero-style = "syntax";
           whitespace-error-style = "black bold";
 

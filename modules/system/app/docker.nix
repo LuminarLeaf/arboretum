@@ -31,14 +31,9 @@ assert lib.asserts.assertOneOf "storageDriver" storageDriver [
       storageDriver = storageDriver;
     };
 
-    environment.systemPackages = lib.mkIf (!config.custom.docker.powerSave) [
-      pkgs.docker
-      pkgs.docker-compose
-    ];
-
     # Nvidia Container Toolkit based on wether Nvidia gpu is enabled or not
     hardware.nvidia-container-toolkit.enable =
-      config.hardware.nvidia.modesetting.enable
+      !config.custom.hardware.nvidia.disableNvidia
       && !config.custom.docker.powerSave;
   };
 }

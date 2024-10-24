@@ -112,7 +112,6 @@
   #   ];
   # };
 
-  # custom.hardware.nvidia.disableNvidia = true;
   custom.hardware.nvidia.enablePrime = true;
 
   specialisation = {
