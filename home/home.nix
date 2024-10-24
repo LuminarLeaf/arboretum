@@ -1,6 +1,6 @@
 {
   pkgs,
-  pkgs-unstable,
+  pkgs-stable,
   userSettings,
   ...
 }: {
@@ -30,20 +30,17 @@
     allowUnfree = true;
   };
 
-  home.packages =
-    (with pkgs; [
-      obsidian
-      obs-studio
-      # zsh
-    ])
-    ++ (with pkgs-unstable; [
-      vscode
-      (discord.override {
-        withVencord = true;
-      })
-      mpv
-      firefox
-    ]);
+  home.packages = with pkgs; [
+    obsidian
+    obs-studio
+    # zsh
+    vscode
+    (discord.override {
+      withVencord = true;
+    })
+    mpv
+    firefox
+  ];
 
   # programs.obs-studio.catppuccin.enable = true;
 

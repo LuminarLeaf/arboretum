@@ -1,12 +1,11 @@
 {
+  pkgs-stable,
   pkgs,
-  pkgs-unstable,
   lib,
   ...
 }: {
   programs.tmux = {
     enable = true;
-    package = pkgs-unstable.tmux;
     terminal = "tmux-256color";
     mouse = true;
     prefix = "C-Space";
@@ -64,7 +63,7 @@
   };
   # programs.tmux = {
   #   enable = true;
-  #   package = pkgs-unstable.tmux;
+  #   package = pkgs.tmux;
   #   extraConfig = ''
   #     # Enable mouse support
   #     set -g mouse on

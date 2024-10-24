@@ -1,23 +1,19 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
+{pkgs, ...}: {
   programs = {
     gnome-shell = {
       enable = true;
       theme = {
         name = "Marble-purple-dark";
-        package = pkgs-unstable.marble-shell-theme.override {additionalInstallationTweaks = ["--filled"];};
+        package = pkgs.marble-shell-theme.override {additionalInstallationTweaks = ["--filled"];};
       };
       extensions = [
         {package = pkgs.gnomeExtensions.clipboard-indicator;}
         {package = pkgs.gnomeExtensions.dash-to-dock;}
         {package = pkgs.gnomeExtensions.appindicator;}
         {package = pkgs.gnomeExtensions.blur-my-shell;}
-        {package = pkgs-unstable.gnomeExtensions.window-is-ready-remover;}
-        {package = pkgs-unstable.gnomeExtensions.pip-on-top;}
-	{package = pkgs-unstable.gnomeExtensions.rounded-window-corners-reborn;}
+        {package = pkgs.gnomeExtensions.window-is-ready-remover;}
+        {package = pkgs.gnomeExtensions.pip-on-top;}
+        {package = pkgs.gnomeExtensions.rounded-window-corners-reborn;}
       ];
     };
   };

@@ -2,13 +2,15 @@
   description = "Leaf's Collection of Trees";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    # nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     catppuccin.url = "github:catppuccin/nix";
@@ -25,7 +27,7 @@
       inherit system;
       config.allowUnfree = true;
     };
-    pkgs-unstable = import inputs.nixpkgs-unstable {
+    pkgs-stable = import inputs.nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };
@@ -38,7 +40,7 @@
       maple = lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit pkgs pkgs-unstable;
+          inherit pkgs pkgs-stable;
           inherit userSettings;
           inherit inputs;
         };
@@ -57,7 +59,7 @@
           inputs.catppuccin.homeManagerModules.catppuccin
         ];
         extraSpecialArgs = {
-          inherit pkgs-unstable;
+          inherit pkgs-stable;
           inherit userSettings;
           inherit inputs;
         };

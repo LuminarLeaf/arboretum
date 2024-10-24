@@ -2,7 +2,7 @@
   config,
   lib,
   pkgs,
-  pkgs-unstable,
+  pkgs-stable,
   inputs,
   userSettings,
   ...
@@ -87,8 +87,6 @@
       brave
       neovim
       nixd
-    ])
-    ++ (with pkgs-unstable; [
       mpv
       kitty
       firefox
@@ -104,7 +102,6 @@
 
   programs.neovim = {
     enable = true;
-    # package = pkgs-unstable.neovim;
     defaultEditor = true;
   };
 
@@ -119,8 +116,8 @@
   #   ];
   # };
 
-  custom.hardware.nvidia.disableNvidia = true;
-  # custom.hardware.nvidia.enablePrime = true;
+  # custom.hardware.nvidia.disableNvidia = true;
+  custom.hardware.nvidia.enablePrime = true;
 
   specialisation = {
     on-the-go.configuration = {

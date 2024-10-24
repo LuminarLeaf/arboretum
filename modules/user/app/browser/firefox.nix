@@ -1,5 +1,5 @@
-{pkgs-unstable, ...}: {
-  home.packages = [pkgs-unstable.firefox];
+{pkgs, ...}: {
+  home.packages = [pkgs.firefox];
 
   xdg.mimeApps.defaultApplications = {
     "text/html" = "firefox.desktop";
@@ -10,6 +10,6 @@
   };
 
   home.sessionVariables = {
-    DEFAULT_BROWSER = "${pkgs-unstable.firefox}/bin/firefox";
+    DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
   };
 }

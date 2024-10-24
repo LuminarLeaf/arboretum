@@ -25,7 +25,6 @@ in {
     defaultKeymap = "emacs";
     antidote = {
       enable = true;
-      # package = pkgs-unstable.antidote;
       useFriendlyNames = true;
       plugins = [
         "catppuccin/zsh-syntax-highlighting path:themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"

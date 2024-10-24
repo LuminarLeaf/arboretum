@@ -1,9 +1,9 @@
-{pkgs-unstable, ...}: {
-  home.packages = [pkgs-unstable.yazi];
+{pkgs, ...}: {
+  home.packages = [pkgs.yazi];
 
   programs.yazi = {
     enable = true;
-    package = pkgs-unstable.yazi;
+    package = pkgs.yazi;
     settings.manager = {
       show_hidden = true;
       show_symlink = false;
