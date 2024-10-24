@@ -18,7 +18,7 @@
     };
   };
   home.packages = with pkgs; [
-    gnome.gnome-tweaks
+    gnome-tweaks
     qogir-icon-theme
     whitesur-icon-theme
     # rose-pine-gtk-theme
@@ -32,7 +32,7 @@
     # graphite-gtk-theme
 
     # TODO: find which gsettings to have by default
-    gnome.dconf-editor
+    dconf-editor
   ];
 
   xdg.mimeApps.defaultApplications = {

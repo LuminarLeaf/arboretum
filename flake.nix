@@ -31,13 +31,11 @@
       inherit system;
       config.allowUnfree = true;
     };
-
-    lib = inputs.nixpkgs.lib;
   in {
     formatter.${system} = inputs.alejandra.defaultPackage.${system};
 
     nixosConfigurations = {
-      maple = lib.nixosSystem {
+      maple = inputs.nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit pkgs pkgs-stable;

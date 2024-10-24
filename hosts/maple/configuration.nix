@@ -99,10 +99,7 @@
   programs.zsh.enable = true;
   system.userActivationScripts.zshrc = "touch .zshrc"; # disables the zsh initial "popup"
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
+  programs.neovim.enable = true;
 
   fonts.fontDir.enable = true;
 
