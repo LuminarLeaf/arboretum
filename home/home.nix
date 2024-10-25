@@ -15,12 +15,10 @@
     ../modules/user/app/git/git.nix
 
     ../modules/user/shell/zsh.nix
+    ../modules/user/shell/neovim/nvim.nix
     ../modules/user/shell/cli-tools.nix
 
     ../modules/user/wm/gnome/gnome.nix
-
-    # TODO:
-    # ../modules/user/shell/nvim/nvim.nix
   ];
 
   programs.home-manager.enable = true;

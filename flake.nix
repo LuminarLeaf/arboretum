@@ -18,11 +18,6 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
-
-    nvchad4nix = {
-      url = "github:nix-community/nix4nvchad";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {self, ...} @ inputs: let

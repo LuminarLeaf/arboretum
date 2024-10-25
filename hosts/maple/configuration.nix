@@ -89,6 +89,7 @@
       mpv
       kitty
       firefox
+      ffmpeg-full
     ])
     ++ [
       inputs.alejandra.defaultPackage.${pkgs.system}
