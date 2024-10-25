@@ -15,7 +15,6 @@
     dockerfile-language-server-nodejs
     docker-compose-language-service
     vscode-langservers-extracted # html css json eslint
-    rust-analyzer # rust lsp
     bacon # rust lint
     sqls # sql mysql
     pyright # python lsp
