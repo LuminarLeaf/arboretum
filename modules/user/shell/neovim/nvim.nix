@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     neovim
     neovim-remote
+    neovide
     nixd
     marksman
     lua-language-server
@@ -17,13 +18,13 @@
     nodePackages.prettier
   ];
 
-  programs.neovide = {
-    enable = true;
-    settings = {};
-  };
-
   home.file.".config/nvim" = {
     source = ./.;
     recursive = true;
+  };
+
+  programs.zsh.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "neovide";
   };
 }

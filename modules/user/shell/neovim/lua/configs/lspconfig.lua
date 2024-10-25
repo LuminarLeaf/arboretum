@@ -18,3 +18,20 @@ for _, lsp in ipairs(servers) do
     capabilities = nvlsp.capabilities,
   }
 end
+
+lspconfig.nixd.setup({
+  cmd = { "nixd" },
+  settings = {
+    nixd = {
+      formatting = { command = { "alejandra" }, },
+      options = {
+        nixos = {
+          expr = "(builtins.getFlake \"/home/leaf/arboretum\").nixosConfigurations.maple.options",
+        },
+        home_manager = {
+          expr = "(builtins.getFlake \"/home/leaf/arboretum\").homeConfigurations.leaf.options",
+        },
+      },
+    },
+  },
+})
