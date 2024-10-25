@@ -12,7 +12,7 @@
         y = 5;
       };
       dynamic_padding = true;
-      opacity = 0.75;
+      opacity = 0.9;
       blur = true;
       title = "Alacritty";
       resize_increments = true;
