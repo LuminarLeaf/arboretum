@@ -5,9 +5,19 @@ local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
 
 local servers = {
-  "html", "cssls", "ts_ls", "biome",
-  "marksman", "dockerls", "docker_compose_language_service", "jsonls",
-  "bashls", "yamlls", "sqls"
+  "html",
+  "cssls",
+  "biome",
+  "ts_ls",
+  "lua_ls",
+  "marksman",
+  "dockerls",
+  "docker_compose_language_service",
+  "jsonls",
+  "bashls",
+  "yamlls",
+  "sqls",
+  "pyright"
 }
 
 -- lsps with default config
@@ -21,6 +31,10 @@ end
 
 lspconfig.nixd.setup({
   cmd = { "nixd" },
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  filetypes = { "nix" },
   settings = {
     nixd = {
       formatting = { command = { "alejandra" }, },

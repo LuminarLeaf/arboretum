@@ -14,6 +14,13 @@
     rar
     unar
     p7zip
+
+    # dev
+    gcc
+    go
+    rustup
+    nodejs
+    python3
   ];
 
   programs.btop = {

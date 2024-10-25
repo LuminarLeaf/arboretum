@@ -6,9 +6,8 @@ local M = {}
 
 M = {
   base46 = {
-    theme = "chadracula",
-    transparency = true,
-    theme_toggle = { "chadracula", "catppuccin" },
+    theme = "catppuccin",
+    transparency = false,
     hl_override = {
     	Comment = { italic = true },
     	["@comment"] = { italic = true },

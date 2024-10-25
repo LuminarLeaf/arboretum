@@ -1,22 +1,36 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    # base packages
     neovim
     neovim-remote
     neovide
+
     nixd
-    marksman
+    marksman # md
+    vale # md lint
     lua-language-server
-    stylua
     bash-language-server
     yaml-language-server
-    biome
     typescript-language-server
     dockerfile-language-server-nodejs
     docker-compose-language-service
-    vscode-langservers-extracted
-    sqls
-    nodePackages.prettier
+    vscode-langservers-extracted # html css json eslint
+    rust-analyzer # rust lsp
+    bacon # rust lint
+    sqls # sql mysql
+    pyright # python lsp
+    black # python formatter
+    isort # python formatter
+    mypy # python lint
+    biome # ts js
+    stylua
+    # nodePackages.prettier # js ts json css html
+    prettierd # ↑
+    eslint_d # js
+    gopls # go lsp
   ];
+
+  # TODO: nvim-dap
 
   home.file.".config/nvim" = {
     source = ./.;
