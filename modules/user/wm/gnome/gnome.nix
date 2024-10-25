@@ -13,14 +13,12 @@
         {package = pkgs.gnomeExtensions.blur-my-shell;}
         {package = pkgs.gnomeExtensions.window-is-ready-remover;}
         {package = pkgs.gnomeExtensions.pip-on-top;}
-        {package = pkgs.gnomeExtensions.rounded-window-corners-reborn;}
       ];
     };
   };
   home.packages = with pkgs; [
     gnome-tweaks
     qogir-icon-theme
-    whitesur-icon-theme
     # rose-pine-gtk-theme
     # omni-gtk-theme
     # kanagawa-gtk-theme
@@ -36,6 +34,8 @@
   ];
 
   xdg.mimeApps.defaultApplications = {
+    "text/plain" = "org.gnome.TextEditor.desktop";
+
     "image/png" = "org.gnome.Loupe.desktop";
     "image/jpeg" = "org.gnome.Loupe.desktop";
     "image/gif" = "org.gnome.Loupe.desktop";
