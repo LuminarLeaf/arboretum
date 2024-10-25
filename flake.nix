@@ -7,13 +7,22 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs";
+    alejandra = {
+      url = "github:kamadorueda/alejandra/3.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     catppuccin.url = "github:catppuccin/nix";
+
+    nvchad4nix = {
+      url = "github:nix-community/nix4nvchad";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, ...} @ inputs: let
