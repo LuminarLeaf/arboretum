@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre",
+    event = "VeryLazy",
     cmd = { "ConformInfo" },
     config = function()
       require "configs.conform"
@@ -20,6 +20,15 @@ return {
     config = function()
       require "configs.lspconfig"
     end,
+  },
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+
+    opts = {
+      suppressed_dirs = { "~/", "~/Downloads" },
+      bypass_save_filetypes = { "alpha", "dashboard", "NVDash" },
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter",

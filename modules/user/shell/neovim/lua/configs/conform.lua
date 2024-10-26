@@ -13,6 +13,8 @@ local options = {
     python = { "isort", "black" },
     go = { "goimports", "gofmt" },
     rust = { "rustfmt", lsp_format = "fallback" },
+    c = { "clang_format" },
+    cpp = { "clang_format" },
     nix = { "alejandra" },
   },
 
