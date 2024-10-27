@@ -30,7 +30,6 @@
   home.packages = with pkgs; [
     obsidian
     obs-studio
-    # zsh
     vscode
     (discord.override {
       withVencord = true;
@@ -39,7 +38,7 @@
     firefox
   ];
 
-  # programs.obs-studio.catppuccin.enable = true;
+  programs.obs-studio.catppuccin.enable = true;
 
   xdg.enable = true;
   xdg.userDirs = {

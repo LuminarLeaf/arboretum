@@ -27,7 +27,7 @@
     prettierd # ↑
     eslint_d # js
     gopls # go lsp
-    clang-tools
+    clang-tools # clangd
   ];
 
   # TODO: nvim-dap

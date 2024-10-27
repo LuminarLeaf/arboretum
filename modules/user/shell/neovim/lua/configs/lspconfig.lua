@@ -18,6 +18,8 @@ local servers = {
   "sqls",
   "pyright",
   "clangd",
+  "gopls",
+  "rust-analyzer",
 }
 
 -- lsps with default config
@@ -38,6 +40,9 @@ lspconfig.lua_ls.setup {
       telemetry = { enable = false },
     },
   },
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
 }
 
 lspconfig.nixd.setup {
