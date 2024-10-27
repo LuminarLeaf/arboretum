@@ -19,7 +19,7 @@ local servers = {
   "pyright",
   "clangd",
   "gopls",
-  "rust-analyzer",
+  "rust_analyzer",
 }
 
 -- lsps with default config
