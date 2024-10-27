@@ -19,6 +19,7 @@
   environment.systemPackages = with pkgs; [
     gnome-tweaks
     wl-clipboard
+    blackbox-terminal
   ];
 
   environment.gnome.excludePackages = with pkgs; [
@@ -27,6 +28,12 @@
     epiphany
     geary
     gnome-maps
+  ];
+
+  xdg.terminal-exec.settings.GNOME = [
+    "com.raggesilver.BlackBox.desktop"
+    "org.gnome.Console.desktop"
+    "org.gnome.Terminal.desktop"
   ];
 
   # TODO: dconf settings
