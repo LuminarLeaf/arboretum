@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 -- neovide settings
 if vim.g.neovide then
   -- vim.o.guifont = "JetBrainsMonoNL_Nerd_Font,Noto_Color_Emoji:h11"
-  vim.g.neovide_scale_factor = 1.0
+  vim.g.neovide_scale_factor = 0.9
   vim.g.neovide_floating_blur_amount_x = 5.0
   vim.g.neovide_floating_blur_amount_y = 5.0
   vim.g.neovide_floating_shadow = true
