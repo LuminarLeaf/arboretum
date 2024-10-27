@@ -4,7 +4,7 @@
   ];
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
-    live_config_reload = true;
+    general.live_config_reload = true;
     # env.TERM = "xterm-256color";
     window = {
       padding = {

@@ -13,8 +13,8 @@
     settings = {
       background_opacity = "0.9";
       background_blur = 1;
-      remember_window_size = true;
-      initial_window_width = "120c";
+      # remember_window_size = true;
+      initial_window_width = "130c";
       initial_window_height = "30c";
       enable_audio_bell = false;
       hide_window_decorations = "titlebar-only";
