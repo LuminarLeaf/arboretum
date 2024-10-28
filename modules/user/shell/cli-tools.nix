@@ -10,11 +10,6 @@
     jq
     yq
 
-    # archiving
-    rar
-    unar
-    p7zip
-
     # dev
     gcc
     go

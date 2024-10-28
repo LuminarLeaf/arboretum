@@ -26,9 +26,9 @@
       inherit pkgs lib config userSettings;
     })
     ../../modules/system/app/mullvad.nix
+    ../../modules/system/app/flatpak.nix
 
     # TODO: WIP
-    # ../../modules/system/app/flatpak.nix
     # ../../modules/system/app/steam.nix
     # ../../modules/system/app/waydroid.nix
 
@@ -79,17 +79,29 @@
 
   environment.systemPackages =
     (with pkgs; [
-      wget
       curl
-      git
-      # cryptsetup
-      brave
-      neovim
-      nixd
-      mpv
-      kitty
-      firefox
+      dnsutils
+      duf
       ffmpeg-full
+      git
+      hwinfo
+      nixd
+      pv
+      rsync
+      tldr
+      wget
+
+      rar
+      unar
+      p7zip
+      unzip
+      xz
+      # cryptsetup
+      kitty
+      mpv
+
+      brave
+      firefox
     ])
     ++ [
       inputs.alejandra.defaultPackage.${pkgs.system}

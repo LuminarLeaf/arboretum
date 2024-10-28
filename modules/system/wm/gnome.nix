@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./dbus.nix
     ./fonts.nix
@@ -16,11 +20,16 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    gnome-tweaks
-    wl-clipboard
-    blackbox-terminal
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      gnome-tweaks
+      wl-clipboard
+    ])
+    ++ (
+      if (config.services.flatpak.enable)
+      then [pkgs.gnome-software]
+      else []
+    );
 
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
@@ -31,7 +40,6 @@
   ];
 
   xdg.terminal-exec.settings.GNOME = [
-    "com.raggesilver.BlackBox.desktop"
     "org.gnome.Console.desktop"
     "org.gnome.Terminal.desktop"
   ];
