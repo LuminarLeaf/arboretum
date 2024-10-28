@@ -1,11 +1,6 @@
-{
-  pkgs,
-  userSettings,
-  ...
-}: {
+{userSettings, ...}: {
   imports = [./delta.nix];
 
-  home.packages = [pkgs.git pkgs.gh pkgs.gh-dash];
   programs = {
     git = {
       enable = true;

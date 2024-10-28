@@ -1,9 +1,6 @@
-{pkgs, ...}: {
-  home.packages = [pkgs.yazi];
-
+{...}: {
   programs.yazi = {
     enable = true;
-    package = pkgs.yazi;
     settings.manager = {
       show_hidden = true;
       show_symlink = false;

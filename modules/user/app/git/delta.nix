@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -13,7 +12,6 @@
   };
 
   config = lib.mkIf config.custom.gitDelta {
-    home.packages = [pkgs.delta];
     programs.git.delta = {
       enable = true;
       options = {
