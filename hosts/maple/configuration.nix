@@ -124,8 +124,8 @@
   #     pkgs.xdg-desktop-portal-gtk
   #   ];
   # };
-  xdg.terminal-exec.enable = true;
-  xdg.terminal-exec.settings.default = ["kitty.desktop"];
+  # xdg.terminal-exec.enable = true;
+  # xdg.terminal-exec.settings.default = ["kitty.desktop"];
 
   custom.hardware.nvidia.enablePrime = true;
 
