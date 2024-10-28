@@ -46,18 +46,26 @@
               style = "plain";
               foreground = "p:py";
               template = "{{ .Var.sepld }} {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ end }}{{ .Var.sepr }}";
-              properties = {
-                display_mode = "context";
-                fetch_virtual_env = true;
-                display_default = true;
-              };
+              properties.display_mode = "context";
             }
             {
               type = "node";
               style = "plain";
               foreground = "p:node";
               template = "{{ .Var.sepld }}󰎙 {{if .Error}}{{ .Error }} {{ else }}{{ .Major }}{{ end }}{{ .Var.sepr }}";
-              properties.display_mode = "context";
+            }
+            {
+              type = "go";
+              style = "plain";
+              foreground = "p:go";
+              template = "{{ .Var.sepld }}󰟓 {{if .Error}}{{ .Error }} {{ else }}{{ .Full }}{{ end }}{{ .Var.sepr }}";
+              properties.parse_mod_file = true;
+            }
+            {
+              type = "rust";
+              style = "plain";
+              foreground = "p:rust";
+              template = "{{ .Var.sepld }} {{if .Error}}{{ .Error }} {{ else }}{{ .Full }}{{ end }}{{ .Var.sepr }}";
             }
             {
               type = "git";
@@ -70,23 +78,16 @@
         }
         {
           type = "prompt";
-          alignment = "right";
-          overflow = "hide";
+          alignment = "left";
+          newline = true;
           segments = [
             {
               type = "executiontime";
               style = "plain";
               foreground = "p:text";
-              template = "{{ .Var.sepl }}{{ .FormattedMs }}{{ .Var.sepr }}";
+              template = " {{ .FormattedMs }} ";
               properties.threshold = 500;
             }
-          ];
-        }
-        {
-          type = "prompt";
-          alignment = "left";
-          newline = true;
-          segments = [
             {
               type = "text";
               style = "plain";
@@ -100,25 +101,26 @@
         }
       ];
       transient_prompt = {
-        foreground_templates = [
-          "{{ if gt .Code 0 }}p:error{{ end }}"
-          "p:text"
-        ];
-        template = "❱ ";
+        foreground_templates = ["{{ if gt .Code 0 }}p:error{{ end }}"];
+        foreground = "p:text";
+        template = "{{ .PWD }} ❱ ";
       };
       secondary_prompt = {
         foreground = "p:text";
-        template = "❱❱";
+        template = "❱❱ ";
       };
       palette = {
         text = "lightBlue";
         error = "lightRed";
         root = "red";
         separator = "green";
-        py = "lightYellow";
-        node = "lightGreen";
         git = "lightWhite";
         os = "lightMagenta";
+        nix = "cyan";
+        py = "lightYellow";
+        node = "lightGreen";
+        go = "lightBlue";
+        rust = "lightRed";
       };
     };
   };
