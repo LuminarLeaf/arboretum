@@ -13,6 +13,4 @@ map("i", "jk", "<ESC>")
 -- map("n", "<C-k>", "<CMD> TmuxNavigateUp<CR>",    {desc = "tmux window up"})
 -- map("n", "<C-l>", "<CMD> TmuxNavigateRight<CR>", {desc = "tmux window right"})
 
-map("t", "<ESC><ESC>", "<C-\\><C-n>", { desc = "Exit term mode" })
-
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
