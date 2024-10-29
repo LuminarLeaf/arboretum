@@ -34,6 +34,14 @@
               foreground = "p:os";
               template = "{{ .Var.sepl }}{{ .UserName }}{{ .Icon }} {{ .HostName }}{{ .Var.sepr }}";
             }
+            # nix3 incompatible as it doesn't create the IN_NIX_SHELL env var
+            {
+              type = "nix-shell";
+              style = "plain";
+              foreground = "p:nix";
+              template = "{{ if ne .Type \"unknown\" }}{{ .Var.sepld }}nix-shell{{ .Var.sepr }}{{ end }}";
+              # template = "{{ .Var.sepld }} via {{ .Type }} {{ .Var.sepr }}";
+            }
             {
               type = "path";
               style = "plain";
