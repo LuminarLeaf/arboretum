@@ -6,8 +6,7 @@
       fonts = [
         "FiraCode"
         "Hack"
-        "SourceCodePro"
-        "Meslo"
+        "Monaspace"
         "JetBrainsMono"
       ];
     })
