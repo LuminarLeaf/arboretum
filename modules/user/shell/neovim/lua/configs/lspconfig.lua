@@ -8,7 +8,6 @@ local servers = {
   "cssls",
   "biome",
   "ts_ls",
-  -- "lua_ls",
   "marksman",
   "dockerls",
   "docker_compose_language_service",
@@ -30,20 +29,6 @@ for _, lsp in ipairs(servers) do
     capabilities = nvlsp.capabilities,
   }
 end
-
-lspconfig.lua_ls.setup {
-  settings = {
-    Lua = {
-      runtime = { version = "LuaJIT" },
-      diagonostics = { globals = { "vim", "require" } },
-      workspace = { library = vim.api.nvim_get_runtime_file("", true) },
-      telemetry = { enable = false },
-    },
-  },
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-}
 
 lspconfig.nixd.setup {
   cmd = { "nixd" },
