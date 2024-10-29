@@ -4,7 +4,6 @@
   ];
 
   home.packages = with pkgs; [
-    btop
     ripgrep
 
     jq
@@ -20,6 +19,7 @@
 
   programs.btop = {
     enable = true;
+    package = pkgs.btop.override {cudaSupport = true;};
     catppuccin.enable = true;
   };
   programs.zsh.shellAliases."btop" = "btop --utf-force";
