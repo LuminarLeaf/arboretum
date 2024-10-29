@@ -32,7 +32,15 @@ end
 
 lspconfig.nixd.setup {
   cmd = { "nixd" },
-  on_attach = nvlsp.on_attach,
+  on_attach = function(client, bufnr)
+    -- load defaults
+    nvlsp.on_attach(client, bufnr)
+
+    -- enable inlay hints
+    if client.server_capabilities.inlayHintProvider then
+      vim.lsp.inlay_hint.enable(true)
+    end
+  end,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
   filetypes = { "nix" },
