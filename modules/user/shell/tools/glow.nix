@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  home.packages = [ pkgs.glow ];
+  home.packages = [pkgs.glow];
 
-  home.file.".config/glow/glow.yml".text = ''
+  xdg.configFile."glow/glow.yml".text = ''
     style: "auto"
     mouse: true
     pager: true

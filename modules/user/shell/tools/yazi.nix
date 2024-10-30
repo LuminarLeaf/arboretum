@@ -8,7 +8,7 @@
     catppuccin.enable = true;
   };
 
-  home.file.".config/yazi/init.lua".text = ''
+  xdg.configFile."yazi/init.lua".text = ''
     function Status:name()
       local h = self._tab.current.hovered
       if not h then
