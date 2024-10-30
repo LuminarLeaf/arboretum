@@ -29,7 +29,7 @@
     ../../modules/system/app/flatpak.nix
 
     # TODO: WIP
-    # ../../modules/system/app/steam.nix
+    ../../modules/system/app/gaming.nix
     # ../../modules/system/app/waydroid.nix
 
     ../../modules/system/security/firewall.nix
