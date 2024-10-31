@@ -5,15 +5,24 @@
 
   home.packages = with pkgs; [
     ripgrep
-
     jq
     yq
+    killall
+
+    yt-dlp
+    imagemagick
+    nvtop-nvidia
+
+    neofetch
+    onefetch
+    microfetch
 
     # dev
-    gcc
+    clang
     go
     rustup
     nodejs
+    bun
     python3
   ];
 

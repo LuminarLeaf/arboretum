@@ -31,6 +31,7 @@
     obsidian
     obs-studio
     vscode
+    localsend
     (discord.override {
       withVencord = true;
     })
