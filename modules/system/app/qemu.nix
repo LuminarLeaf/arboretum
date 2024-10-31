@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     qemu
+    quickemu
 
     # run qemu with uefi
     (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
@@ -9,6 +10,10 @@
         "$@"
     '')
   ];
+
+  virtualisation.libvirtd.qemu = {
+    runAsRoot = false;
+  };
 
   programs.virt-manager.enable = true;
 }

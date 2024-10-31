@@ -19,6 +19,7 @@
       # extraLibraries = pkgs: [];
       # extraPkgs = pkgs: [];
     })
+    wine
   ];
 
   environment.sessionVariables = {

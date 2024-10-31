@@ -28,6 +28,8 @@
 
       START_CHARGE_THRESH_BAT0 = 55;
       STOP_CHARGE_THRESH_BAT0 = 60;
+
+      DEVICES_TO_DISABLE_ON_BAT_NOT_IN_USE = "bluetooth";
     };
   };
 }
