@@ -14,6 +14,11 @@
   environment.systemPackages = with pkgs; [
     mangohud
     protonup
+
+    (lutris.override {
+      # extraLibraries = pkgs: [];
+      # extraPkgs = pkgs: [];
+    })
   ];
 
   environment.sessionVariables = {

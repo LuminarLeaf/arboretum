@@ -1,4 +1,4 @@
-{...}: {
+{userSettings, ...}: {
   virtualisation.libvirtd = {
     allowedBridges = [
       "nm-bridge"
@@ -6,4 +6,6 @@
     ];
     enable = true;
   };
+
+  users.users.${userSettings.username}.extraGroups = ["libvirtd"];
 }

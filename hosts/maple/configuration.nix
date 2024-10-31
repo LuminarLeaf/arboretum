@@ -30,6 +30,7 @@
 
     # TODO: WIP
     ../../modules/system/app/gaming.nix
+    ../../modules/system/app/qemu.nix
     # ../../modules/system/app/waydroid.nix
 
     ../../modules/system/security/firewall.nix

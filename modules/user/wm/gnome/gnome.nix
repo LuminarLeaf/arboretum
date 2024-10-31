@@ -26,6 +26,15 @@ in {
     ];
   };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.qogir-icon-theme.override {
+      colorVariants = ["dark"];
+      themeVariants = ["default"];
+    };
+    name = "Qogir-dark";
+  };
+
   gtk = {
     cursorTheme.name = "Qogir-dark";
     iconTheme.name = "Reversal-purple-dark";
@@ -35,10 +44,10 @@ in {
   home.packages = with pkgs; [
     gnome-tweaks
     # TODO: somehow patch reversal's foder icons into whitesur along with qogir's cursors in a curstom derivation
-    (qogir-icon-theme.override {
-      colorVariants = ["dark"];
-      themeVariants = ["default"];
-    })
+    # (qogir-icon-theme.override {
+    #   colorVariants = ["dark"];
+    #   themeVariants = ["default"];
+    # })
     (reversal-icon-theme.override {colorVariants = ["-purple"];})
     gtk-theme
 
