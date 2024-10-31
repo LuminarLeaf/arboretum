@@ -11,7 +11,6 @@
 
     yt-dlp
     imagemagick
-    nvtop-nvidia
 
     neofetch
     onefetch
