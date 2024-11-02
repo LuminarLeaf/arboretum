@@ -19,8 +19,13 @@
 
       cursor_shape = "beam";
       tab_bar_edge = "bottom";
-      tab_bar_style = "powerline";
-      tab_powerline_style = "slanted";
+      # tab_bar_style = "powerline";
+      # tab_powerline_style = "slanted";
+      tab_bar_style = "slant";
+      tab_title_max_length = 30;
+      tab_title_template = " {index} {title[title.rfind('/')+1:]}";
+      active_tab_title_template = "  {index} {title[title.rfind('/')+1:]}";
+      active_tab_font_style = "normal";
       wayland_enable_ime = "no";
     };
     catppuccin.enable = true;

@@ -10,9 +10,8 @@
 
   programs.zsh = {
     shellAliases.cat = "bat --style header,snip,changes,numbers";
-    localVariables = {
+    sessionVariables = {
       MANPAGER = "sh -c 'col -bx | bat -l man -p'";
-      MANROFFOPT = "-c";
       PAGER = "bat";
     };
     initExtra = ''

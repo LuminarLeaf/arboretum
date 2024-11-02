@@ -43,6 +43,8 @@ in {
 
   home.packages = with pkgs; [
     gnome-tweaks
+    exaile
+    deadbeef-with-plugins
     # TODO: somehow patch reversal's foder icons into whitesur along with qogir's cursors in a curstom derivation
     # (qogir-icon-theme.override {
     #   colorVariants = ["dark"];

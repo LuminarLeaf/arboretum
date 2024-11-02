@@ -24,6 +24,11 @@
     (with pkgs; [
       gnome-tweaks
       wl-clipboard
+      rhythmbox
+      blackbox-terminal
+      (writeShellScriptBin "xdg-terminal-exec" ''
+        exec "${lib.getExe blackbox-terminal}" -c "$@"
+      '')
     ])
     ++ (
       if (config.services.flatpak.enable)
@@ -37,9 +42,11 @@
     epiphany
     geary
     gnome-maps
+    gnome-music
   ];
 
   # xdg.terminal-exec.settings.GNOME = [
+  #   "com.raggesilver.BlackBox.desktop"
   #   "org.gnome.Console.desktop"
   #   "org.gnome.Terminal.desktop"
   # ];

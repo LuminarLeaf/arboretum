@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     ripgrep
     jq
-    yq
+    yq-go
     killall
 
     yt-dlp
