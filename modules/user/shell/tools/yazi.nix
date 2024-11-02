@@ -1,4 +1,6 @@
-{...}: {
+{pkgs, ...}: {
+  home.packages = [pkgs.ueberzugpp];
+
   programs.yazi = {
     enable = true;
     settings.manager = {
