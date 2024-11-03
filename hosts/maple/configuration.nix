@@ -80,6 +80,7 @@
 
   environment.systemPackages =
     (with pkgs; [
+      age
       curl
       dnsutils
       duf
@@ -90,6 +91,7 @@
       pv
       rsync
       tldr
+      tmux
       wget
 
       rar
