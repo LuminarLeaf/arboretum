@@ -17,7 +17,7 @@
     microfetch
 
     # dev
-    clang
+    gcc
     go
     rustup
     nodejs

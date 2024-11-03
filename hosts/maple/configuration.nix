@@ -85,6 +85,7 @@
       dnsutils
       duf
       ffmpeg-full
+      file
       git
       hwinfo
       nixd
