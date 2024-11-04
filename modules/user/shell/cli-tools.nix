@@ -8,6 +8,7 @@
     jq
     yq-go
     killall
+    sd
 
     yt-dlp
     imagemagick

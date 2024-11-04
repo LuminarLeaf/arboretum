@@ -34,9 +34,11 @@
     localsend
     (discord.override {
       withVencord = true;
+      withOpenASAR = true;
     })
     mpv
     firefox
+    motrix
   ];
 
   programs.obs-studio.catppuccin.enable = true;
