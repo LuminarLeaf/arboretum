@@ -6,6 +6,14 @@
 }: {
   programs.steam = {
     enable = true;
+    package = pkgs.steam.override {
+      extraEnv = {
+        MANGOHUD = true;
+        OBS_VKCAPTURE = true;
+      };
+      extraLibraries = pkgs: [pkgs.xorg.libxcb];
+      # extraPkgs = with pkgs; [ xorg.libXcursor xorg.libXi xorg.libXinerama xorg.libXScrnSaver libpng libpulseaudio libvorbis stdenv.cc.cc.lib libkrb5 keyutils gamemode ];
+    };
     gamescopeSession.enable = true;
   };
 
