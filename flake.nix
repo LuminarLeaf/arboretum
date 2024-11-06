@@ -18,6 +18,10 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, ...} @ inputs: let
@@ -59,6 +63,7 @@
         modules = [
           ./home/home.nix
           inputs.catppuccin.homeManagerModules.catppuccin
+          inputs.spicetify-nix.homeManagerModules.default
         ];
         extraSpecialArgs = {
           inherit pkgs-stable;
