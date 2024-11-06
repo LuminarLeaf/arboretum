@@ -28,13 +28,13 @@
     ../../modules/system/app/mullvad.nix
     ../../modules/system/app/flatpak.nix
 
+    ../../modules/system/security/firewall.nix
+    ../../modules/system/security/gpg.nix
+
     # TODO: WIP
     ../../modules/system/app/gaming.nix
     ../../modules/system/app/qemu.nix
-    # ../../modules/system/app/waydroid.nix
-
-    ../../modules/system/security/firewall.nix
-    ../../modules/system/security/gpg.nix
+    ../../modules/system/app/waydroid.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
