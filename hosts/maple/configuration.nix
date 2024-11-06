@@ -27,14 +27,13 @@
     })
     ../../modules/system/app/mullvad.nix
     ../../modules/system/app/flatpak.nix
+    ../../modules/system/app/virtualization.nix
 
     ../../modules/system/security/firewall.nix
     ../../modules/system/security/gpg.nix
 
     # TODO: WIP
     ../../modules/system/app/gaming.nix
-    ../../modules/system/app/qemu.nix
-    ../../modules/system/app/waydroid.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -138,6 +137,9 @@
     on-the-go.configuration = {
       custom.hardware.nvidia.disableNvidia = true;
       custom.docker.powerSave = true;
+      custom.qemu = false;
+      custom.virt-manager = false;
+      custom.waydroid = false;
 
       # suspend to RAM(deep)
       boot.kernelParams = ["mem_sleep_default=deep"];
