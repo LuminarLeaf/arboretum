@@ -17,7 +17,6 @@
     enabledCustomApps = with spicePkgs.apps; [
       betterLibrary
       lyricsPlus
-      marketplace
       newReleases
     ];
     theme = spicePkgs.themes.catppuccin;
