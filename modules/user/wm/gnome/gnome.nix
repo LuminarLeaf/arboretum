@@ -1,11 +1,14 @@
-{pkgs, ...}: let
-  gtk-theme = pkgs.tokyonight-gtk-theme.override {
+{
+  pkgs,
+  config,
+  userSettings,
+  ...
+}: let
+  gtk-theme-package = pkgs.tokyonight-gtk-theme.override {
     colorVariants = ["dark"];
     sizeVariants = ["standard"];
     themeVariants = ["purple"];
   };
-  gtk-theme-name = "Tokyonight-Purple-Dark";
-  gtk4dir = "${gtk-theme}/share/themes/${gtk-theme-name}/gtk-4.0";
 in {
   programs.gnome-shell = {
     enable = true;
@@ -36,13 +39,20 @@ in {
   };
 
   gtk = {
-    cursorTheme.name = "Qogir-dark";
+    cursorTheme = {
+      name = "Qogir-dark";
+      size = 24;
+    };
     iconTheme.name = "Reversal-purple-dark";
-    theme.name = gtk-theme-name;
+    theme = {
+      name = "Tokyonight-Purple-Dark";
+      package = gtk-theme-package;
+    };
   };
 
   home.packages = with pkgs; [
     gnome-tweaks
+    celluloid
     exaile
     deadbeef-with-plugins
     # TODO: somehow patch reversal's foder icons into whitesur along with qogir's cursors in a curstom derivation
@@ -51,20 +61,27 @@ in {
     #   themeVariants = ["default"];
     # })
     (reversal-icon-theme.override {colorVariants = ["-purple"];})
-    gtk-theme
 
     # TODO: find which gsettings to have by default
     dconf-editor
   ];
 
-  home.sessionVariables = {
-    GTK_THEME = gtk-theme-name;
-  };
+  # home.sessionVariables = {
+  #   GTK_THEME = gtk-theme-name;
+  # };
 
   xdg.configFile = {
-    "gtk-4.0/assets".source = "${gtk4dir}/assets";
-    "gtk-4.0/gtk.css".source = "${gtk4dir}/gtk.css";
-    "gtk-4.0/gtk-dark.css".source = "${gtk4dir}/gtk-dark.css";
+    "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+    "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+    "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+  };
+  xdg.dataFile = {
+    "themes/${config.gtk.theme.name}".source = config.lib.file.mkOutOfStoreSymlink "${gtk-theme-package}/share/themes/${config.gtk.theme.name}";
+    "icons/${config.gtk.iconTheme.name}".source = config.lib.file.mkOutOfStoreSymlink "${pkgs.reversal-icon-theme.override {colorVariants = ["-purple"];}}/share/icons/${config.gtk.iconTheme.name}";
+    "flatpak/overrides/global".text = ''
+      [Context]
+        filesystems=/run/media/${userSettings.username};xdg-data/themes:ro;xdg-data/icons:ro;xdg-config/gtkrc:ro;xdg-config/gtkrc-2.0:ro;xdg-config/gtk-2.0:ro;xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro;xdg-run/.flatpak/com.xyz.armcord.ArmCord:create;xdg-run/discord-ipc-*;xdg-config/MangoHud:ro;/nix
+    '';
   };
 
   xdg.mimeApps.defaultApplications = {
@@ -74,5 +91,11 @@ in {
     "image/jpeg" = "org.gnome.Loupe.desktop";
     "image/gif" = "org.gnome.Loupe.desktop";
     "image/bmp" = "org.gnome.Loupe.desktop";
+    "image/webp" = "org.gnome.Loupe.desktop";
+
+    # "video/mp4" = "";
+    # "video/mpeg" = "";
+    # "video/x-matroska" = "";
+    # "video/webm" = "";
   };
 }

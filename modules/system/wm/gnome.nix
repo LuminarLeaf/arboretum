@@ -43,6 +43,7 @@
     geary
     gnome-maps
     gnome-music
+    totem
   ];
 
   # xdg.terminal-exec.settings.GNOME = [
