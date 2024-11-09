@@ -3,13 +3,7 @@
   config,
   userSettings,
   ...
-}: let
-  gtk-theme-package = pkgs.tokyonight-gtk-theme.override {
-    colorVariants = ["dark"];
-    sizeVariants = ["standard"];
-    themeVariants = ["purple"];
-  };
-in {
+}: {
   programs.gnome-shell = {
     enable = true;
     theme = {
@@ -43,10 +37,28 @@ in {
       name = "Qogir-dark";
       size = 24;
     };
-    iconTheme.name = "Reversal-purple-dark";
+    iconTheme = {
+      name = "Reversal-purple-dark";
+      package = pkgs.reversal-icon-theme.override {colorVariants = ["-purple"];};
+    };
     theme = {
       name = "Tokyonight-Purple-Dark";
-      package = gtk-theme-package;
+      package =
+        (pkgs.tokyonight-gtk-theme.override {
+          colorVariants = ["dark"];
+          sizeVariants = ["standard"];
+          themeVariants = ["purple"];
+        })
+        .overrideAttrs {
+          # TODO: remove when upstream is updated
+          version = "0-unstable-2024-11-06";
+          src = pkgs.fetchFromGitHub {
+            owner = "Fausto-Korpsvart";
+            repo = "Tokyonight-GTK-Theme";
+            rev = "4dc45d60bf35f50ebd9ee41f16ab63783f80dd64";
+            hash = "sha256-AKZA+WCcfxDeNrNrq3XYw+SFoWd1VV2T9+CwK2y6+jA=";
+          };
+        };
     };
   };
 
@@ -66,18 +78,14 @@ in {
     dconf-editor
   ];
 
-  # home.sessionVariables = {
-  #   GTK_THEME = gtk-theme-name;
-  # };
-
   xdg.configFile = {
     "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
     "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
     "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
   };
   xdg.dataFile = {
-    "themes/${config.gtk.theme.name}".source = config.lib.file.mkOutOfStoreSymlink "${gtk-theme-package}/share/themes/${config.gtk.theme.name}";
-    "icons/${config.gtk.iconTheme.name}".source = config.lib.file.mkOutOfStoreSymlink "${pkgs.reversal-icon-theme.override {colorVariants = ["-purple"];}}/share/icons/${config.gtk.iconTheme.name}";
+    "themes/${config.gtk.theme.name}".source = config.lib.file.mkOutOfStoreSymlink "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}";
+    "icons/${config.gtk.iconTheme.name}".source = config.lib.file.mkOutOfStoreSymlink "${config.gtk.iconTheme.package}/share/icons/${config.gtk.iconTheme.name}";
     "flatpak/overrides/global".text = ''
       [Context]
         filesystems=/run/media/${userSettings.username};xdg-data/themes:ro;xdg-data/icons:ro;xdg-config/gtkrc:ro;xdg-config/gtkrc-2.0:ro;xdg-config/gtk-2.0:ro;xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro;xdg-run/.flatpak/com.xyz.armcord.ArmCord:create;xdg-run/discord-ipc-*;xdg-config/MangoHud:ro;/nix
@@ -93,9 +101,9 @@ in {
     "image/bmp" = "org.gnome.Loupe.desktop";
     "image/webp" = "org.gnome.Loupe.desktop";
 
-    # "video/mp4" = "";
-    # "video/mpeg" = "";
-    # "video/x-matroska" = "";
-    # "video/webm" = "";
+    "video/mp4" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/mpeg" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/x-matroska" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/webm" = "io.github.celluloid_player.Celluloid.desktop";
   };
 }

@@ -48,7 +48,6 @@
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
-    desktop = null;
     publicShare = null;
   };
   xdg.mime.enable = true;
