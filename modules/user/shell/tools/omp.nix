@@ -53,7 +53,7 @@
               type = "python";
               style = "plain";
               foreground = "p:py";
-              template = "{{ .Var.sepld }} {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ end }}{{ .Var.sepr }}";
+              template = "{{ .Var.sepld }} {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}{{ .Var.sepr }}";
               properties.display_mode = "context";
             }
             {

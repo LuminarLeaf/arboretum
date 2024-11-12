@@ -43,22 +43,11 @@
     };
     theme = {
       name = "Tokyonight-Purple-Dark";
-      package =
-        (pkgs.tokyonight-gtk-theme.override {
-          colorVariants = ["dark"];
-          sizeVariants = ["standard"];
-          themeVariants = ["purple"];
-        })
-        .overrideAttrs {
-          # TODO: remove when upstream is updated
-          version = "0-unstable-2024-11-06";
-          src = pkgs.fetchFromGitHub {
-            owner = "Fausto-Korpsvart";
-            repo = "Tokyonight-GTK-Theme";
-            rev = "4dc45d60bf35f50ebd9ee41f16ab63783f80dd64";
-            hash = "sha256-AKZA+WCcfxDeNrNrq3XYw+SFoWd1VV2T9+CwK2y6+jA=";
-          };
-        };
+      package = pkgs.tokyonight-gtk-theme.override {
+        colorVariants = ["dark"];
+        sizeVariants = ["standard"];
+        themeVariants = ["purple"];
+      };
     };
   };
 
