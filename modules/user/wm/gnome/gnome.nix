@@ -25,18 +25,17 @@
 
   home.pointerCursor = {
     gtk.enable = true;
+    x11.enable = true;
     package = pkgs.qogir-icon-theme.override {
       colorVariants = ["dark"];
       themeVariants = ["default"];
     };
     name = "Qogir-dark";
+    size = 32;
   };
 
   gtk = {
-    cursorTheme = {
-      name = "Qogir-dark";
-      size = 24;
-    };
+    enable = true;
     iconTheme = {
       name = "Reversal-purple-dark";
       package = pkgs.reversal-icon-theme.override {colorVariants = ["-purple"];};
@@ -63,9 +62,20 @@
     # })
     (reversal-icon-theme.override {colorVariants = ["-purple"];})
 
-    # TODO: find which gsettings to have by default
     dconf-editor
   ];
+
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+      "org/gnome/desktop/sound" = {
+        allow-volume-above-100-percent = true;
+      };
+    };
+  };
 
   xdg.configFile = {
     "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
