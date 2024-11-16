@@ -12,7 +12,6 @@
         OBS_VKCAPTURE = true;
       };
       extraLibraries = pkgs: [pkgs.xorg.libxcb];
-      # extraPkgs = with pkgs; [ xorg.libXcursor xorg.libXi xorg.libXinerama xorg.libXScrnSaver libpng libpulseaudio libvorbis stdenv.cc.cc.lib libkrb5 keyutils gamemode ];
     };
     gamescopeSession.enable = true;
   };
@@ -23,10 +22,7 @@
     mangohud
     protonup
 
-    (lutris.override {
-      # extraLibraries = pkgs: [];
-      # extraPkgs = pkgs: [];
-    })
+    bottles
     wine
   ];
 
