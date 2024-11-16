@@ -62,6 +62,14 @@ return {
     cmd = "Glow",
     ft = "markdown",
   },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+    keys = { { "<leader>tt", "<cmd>TodoTelescope<cr>", desc = "Todo Telescope" } },
+    -- event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
+  },
   -- {
   --   "christoomey/vim-tmux-navigator",
   --   lazy = false,
