@@ -13,7 +13,7 @@
     yt-dlp
     imagemagick
 
-    neofetch
+    fastfetch
     onefetch
     microfetch
 
@@ -31,5 +31,5 @@
     package = pkgs.btop.override {cudaSupport = true;};
     catppuccin.enable = true;
   };
-  programs.zsh.shellAliases."btop" = "btop --utf-force";
+  # programs.zsh.shellAliases."btop" = "btop --utf-force";
 }

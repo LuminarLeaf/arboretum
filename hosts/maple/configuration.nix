@@ -67,6 +67,7 @@
     LC_PAPER = "en_IN";
     LC_TELEPHONE = "en_IN";
     LC_TIME = "en_IN";
+    LC_CTYPE = "en_US.UTF-8";
   };
 
   users.users.${userSettings.username} = {
