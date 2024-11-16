@@ -60,7 +60,7 @@
               type = "node";
               style = "plain";
               foreground = "p:node";
-              template = "{{ .Var.sepld }}󰎙 {{if .Error}}{{ .Error }} {{ else }}{{ .Major }}{{ end }}{{ .Var.sepr }}";
+              template = "{{ .Var.sepld }}󰎙 {{if .Error}}{{ .Error }} {{ else }}{{ .Full }}{{ end }}{{ .Var.sepr }}";
             }
             {
               type = "go";
