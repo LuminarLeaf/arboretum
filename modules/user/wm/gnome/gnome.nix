@@ -20,7 +20,6 @@
       {package = pkgs.gnomeExtensions.blur-my-shell;}
       {package = pkgs.gnomeExtensions.window-is-ready-remover;}
       {package = pkgs.gnomeExtensions.pip-on-top;}
-      {package = pkgs.gnomeExtensions.unite;}
     ];
   };
 

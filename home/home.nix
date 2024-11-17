@@ -40,6 +40,7 @@
     mpv
     firefox
     motrix
+    prismlauncher
   ];
 
   programs.obs-studio.catppuccin.enable = true;
