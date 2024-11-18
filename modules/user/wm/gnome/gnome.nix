@@ -4,6 +4,10 @@
   userSettings,
   ...
 }: {
+  imports = [
+    ../../app/xdg-mime.nix
+  ];
+
   programs.gnome-shell = {
     enable = true;
     theme = {
@@ -88,20 +92,5 @@
       [Context]
         filesystems=/run/media/${userSettings.username};xdg-data/themes:ro;xdg-data/icons:ro;xdg-config/gtkrc:ro;xdg-config/gtkrc-2.0:ro;xdg-config/gtk-2.0:ro;xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro;xdg-run/.flatpak/com.xyz.armcord.ArmCord:create;xdg-run/discord-ipc-*;xdg-config/MangoHud:ro;/nix
     '';
-  };
-
-  xdg.mimeApps.defaultApplications = {
-    "text/plain" = "org.gnome.TextEditor.desktop";
-
-    "image/png" = "org.gnome.Loupe.desktop";
-    "image/jpeg" = "org.gnome.Loupe.desktop";
-    "image/gif" = "org.gnome.Loupe.desktop";
-    "image/bmp" = "org.gnome.Loupe.desktop";
-    "image/webp" = "org.gnome.Loupe.desktop";
-
-    "video/mp4" = "io.github.celluloid_player.Celluloid.desktop";
-    "video/mpeg" = "io.github.celluloid_player.Celluloid.desktop";
-    "video/x-matroska" = "io.github.celluloid_player.Celluloid.desktop";
-    "video/webm" = "io.github.celluloid_player.Celluloid.desktop";
   };
 }
