@@ -22,6 +22,11 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    vuetorrent = {
+      url = "github:VueTorrent/VueTorrent/latest-release";
+      flake = false;
+    };
   };
 
   outputs = {self, ...} @ inputs: let

@@ -152,7 +152,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
-        "spicetify-nix": "spicetify-nix"
+        "spicetify-nix": "spicetify-nix",
+        "vuetorrent": "vuetorrent"
       }
     },
     "rust-analyzer-src": {
@@ -190,6 +191,23 @@
       "original": {
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
+        "type": "github"
+      }
+    },
+    "vuetorrent": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1731864107,
+        "narHash": "sha256-Z+N1RgcF67R6hWEfmfBls1+YLWkhEJQuOVqXXJCyptE=",
+        "owner": "VueTorrent",
+        "repo": "VueTorrent",
+        "rev": "42ba70aaa7bc50205871a577b97e31d03b56d1d9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "VueTorrent",
+        "ref": "latest-release",
+        "repo": "VueTorrent",
         "type": "github"
       }
     }

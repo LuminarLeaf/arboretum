@@ -28,6 +28,7 @@
     ../../modules/system/app/mullvad.nix
     ../../modules/system/app/flatpak.nix
     ../../modules/system/app/virtualization.nix
+    ../../modules/system/app/qbittorrent.nix
 
     ../../modules/system/security/firewall.nix
     ../../modules/system/security/gpg.nix
