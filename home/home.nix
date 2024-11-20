@@ -30,7 +30,6 @@
 
   home.packages = with pkgs; [
     obsidian
-    obs-studio
     vscode
     localsend
     vesktop
@@ -40,6 +39,7 @@
     prismlauncher
   ];
 
+  programs.obs-studio.enable = true;
   programs.obs-studio.catppuccin.enable = true;
 
   xdg.enable = true;
