@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  userSettings,
   ...
 }: {
   options = let
@@ -30,6 +31,10 @@
         );
     })
     (lib.mkIf config.custom.virt-manager {programs.virt-manager.enable = true;})
-    (lib.mkIf config.custom.waydroid {virtualisation.waydroid.enable = true;})
+    (lib.mkIf config.custom.waydroid {
+      virtualisation.waydroid.enable = true;
+      environment.systemPackages = [pkgs.androidenv.androidPkgs.platform-tools];
+      users.users.${userSettings.username} = {extraGroups = ["adbusers"];};
+    })
   ];
 }

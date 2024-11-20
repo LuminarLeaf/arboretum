@@ -7,7 +7,7 @@
   };
 
   programs.zsh.shellAliases = {
-    l = "eza -F";
+    l = "eza -F auto";
     ls = "eza";
     la = "eza -a";
     ll = "eza -lg";
