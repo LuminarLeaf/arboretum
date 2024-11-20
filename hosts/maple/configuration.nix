@@ -19,7 +19,7 @@
 
     ../../modules/system/hardware/razer.nix
 
-    ../../modules/system/wm/gnome.nix
+    ../../modules/system/wm/plasma.nix
 
     (import ../../modules/system/app/docker.nix {
       storageDriver = null;
@@ -122,16 +122,13 @@
 
   fonts.fontDir.enable = true;
 
-  # handeled by gnome
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = [
-  #     pkgs.xdg-desktop-portal
-  #     pkgs.xdg-desktop-portal-gtk
-  #   ];
-  # };
-  # xdg.terminal-exec.enable = true;
-  # xdg.terminal-exec.settings.default = ["kitty.desktop"];
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
 
   custom.hardware.nvidia.enablePrime = true;
 

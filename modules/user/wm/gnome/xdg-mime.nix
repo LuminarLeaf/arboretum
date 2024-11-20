@@ -36,6 +36,7 @@
       "audio/ogg"
       "audio/opus"
       "audio/wav"
+      "audio/flac"
       "audio/webm"
       "audio/x-matroska"
     ];

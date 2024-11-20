@@ -6,18 +6,20 @@
   imports = [
     ./dbus.nix
     ./fonts.nix
-    ./gnome-keyring.nix
     ./pipewire.nix
   ];
 
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
+  services = {
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
+    gnome.gnome-keyring.enable = true;
   };
 
   environment.systemPackages =
@@ -45,10 +47,4 @@
     gnome-music
     totem
   ];
-
-  # xdg.terminal-exec.settings.GNOME = [
-  #   "com.raggesilver.BlackBox.desktop"
-  #   "org.gnome.Console.desktop"
-  #   "org.gnome.Terminal.desktop"
-  # ];
 }

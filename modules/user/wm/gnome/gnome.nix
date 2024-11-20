@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ../../app/xdg-mime.nix
+    ./xdg-mime.nix
   ];
 
   programs.gnome-shell = {
