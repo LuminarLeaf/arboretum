@@ -17,11 +17,13 @@
         variant = "";
       };
     };
-    # displayManager.sddm.enable = true;
-    # displayManager.sddm.catppuccin.enable = true;
     displayManager.sddm = {
       enable = true;
-      catppuccin.enable = true;
+      catppuccin = {
+        enable = true;
+        font = "JetBrainsMono Nerd Font";
+        fontSize = "12";
+      };
       settings.General.InputMethod = "";
     };
     desktopManager.plasma6.enable = true;
@@ -31,6 +33,7 @@
     (with pkgs; [
       wl-clipboard
       kdePackages.kate
+      kdePackages.filelight
     ])
     ++ (
       if (config.services.flatpak.enable)

@@ -19,9 +19,7 @@
     ../modules/user/shell/neovim/nvim.nix
     ../modules/user/shell/cli-tools.nix
 
-    # ../modules/user/wm/gnome/gnome.nix
-    #TODO:
-    # ../modules/user/wm/plasma/plasma.nix
+    ../modules/user/wm/plasma/plasma.nix
   ];
 
   programs.home-manager.enable = true;
@@ -35,10 +33,6 @@
     obs-studio
     vscode
     localsend
-    # (discord.override {
-    #   withVencord = true;
-    #   withOpenASAR = true;
-    # })
     vesktop
     mpv
     firefox
