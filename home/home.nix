@@ -14,7 +14,7 @@
     ../modules/user/app/terminal/kitty.nix
     ../modules/user/app/git/git.nix
     ../modules/user/app/spicetify.nix
-    ../modules/user/app/mangohud.nix
+    ../modules/user/app/gaming.nix
 
     ../modules/user/shell/zsh.nix
     ../modules/user/shell/neovim/nvim.nix
@@ -37,7 +37,6 @@
     mpv
     firefox
     motrix
-    prismlauncher
   ];
 
   programs.obs-studio.enable = true;

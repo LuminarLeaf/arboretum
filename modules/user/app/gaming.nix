@@ -1,4 +1,22 @@
-{...}: {
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    (prismlauncher.override {
+      jdks = [
+        zulu8
+        (zulu8.overrideAttrs {
+          pname = "zulu8-forge";
+          version = "8.0.312";
+          src = pkgs.fetchurl {
+            url = "https://cdn.azul.com/zulu/bin/zulu8.58.0.13-ca-jdk8.0.312-linux_x64.tar.gz";
+            hash = "sha256-c0F0iPpLf3+MDFlA2r6oeQiymiPh7myUiy8MqLmvIx0=";
+          };
+        })
+        zulu17
+        zulu21
+      ];
+    })
+  ];
+
   xdg.configFile."MangoHud/MangoHud.conf".text = ''
     output_folder=~/.config/MangoHud/logs/
     toggle_hud=Shift_R+F12
