@@ -14,6 +14,7 @@
     ../modules/user/app/terminal/kitty.nix
     ../modules/user/app/git/git.nix
     ../modules/user/app/spicetify.nix
+    ../modules/user/app/mangohud.nix
 
     ../modules/user/shell/zsh.nix
     ../modules/user/shell/neovim/nvim.nix

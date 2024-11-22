@@ -8,7 +8,7 @@
     text = ["org.kde.kate.desktop"];
     image = ["org.kde.gwenview.desktop"];
     audio = ["org.kde.elisa.desktop"];
-    video = ["mpv.desktop"];
+    video = ["org.kde.haruna.desktop"];
     directory = ["org.kde.dolphin.desktop"];
     office = ["libreoffice.desktop"];
     pdf = ["org.kde.okular.desktop"];
