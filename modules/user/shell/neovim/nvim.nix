@@ -3,7 +3,7 @@
     # base packages
     neovim
     neovim-remote
-    # neovide
+    neovide
 
     nixd
     marksman # md
@@ -39,6 +39,6 @@
 
   programs.zsh.sessionVariables = {
     EDITOR = "nvim";
-    # VISUAL = "neovide";
+    VISUAL = "neovide";
   };
 }
