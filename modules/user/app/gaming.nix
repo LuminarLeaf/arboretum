@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     (prismlauncher.override {
       jdks = [
-        zulu8
+        openjdk8
         (zulu8.overrideAttrs {
           pname = "zulu8-forge";
           version = "8.0.312";
@@ -11,8 +11,8 @@
             hash = "sha256-c0F0iPpLf3+MDFlA2r6oeQiymiPh7myUiy8MqLmvIx0=";
           };
         })
-        zulu17
-        zulu21
+        openjdk17
+        openjdk21
       ];
     })
   ];
