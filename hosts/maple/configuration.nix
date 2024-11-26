@@ -16,6 +16,7 @@
     ../../modules/system/hardware/ssd.nix
     ../../modules/system/hardware/time.nix
     ../../modules/system/hardware/virtualization.nix
+    ../../modules/system/hardware/asus.nix
 
     ../../modules/system/hardware/razer.nix
 
@@ -124,9 +125,6 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal
-    ];
   };
 
   custom.hardware.nvidia.enablePrime = true;
@@ -134,6 +132,7 @@
   specialisation = {
     on-the-go.configuration = {
       custom.hardware.nvidia.disableNvidia = true;
+      custom.hardware.supergfxd = false;
       custom.docker.powerSave = true;
       custom.qemu = false;
       custom.virt-manager = false;
