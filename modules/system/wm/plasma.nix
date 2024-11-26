@@ -32,8 +32,10 @@
   environment.systemPackages =
     (with pkgs; [
       wl-clipboard
-      kdePackages.kate
       kdePackages.filelight
+      kdePackages.kate
+      kdePackages.kcalc
+      kdePackages.kcharselect
     ])
     ++ (
       if (config.services.flatpak.enable)

@@ -49,7 +49,7 @@
     cpu_temp
     cpu_power
     cpu_mhz
-    gpu_status
+    gpu_stats
     gpu_temp
     gpu_core_clock
     gpu_mem_clock
