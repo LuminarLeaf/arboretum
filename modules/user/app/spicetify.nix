@@ -8,7 +8,7 @@
   in {
     enable = true;
     enabledExtensions = with spicePkgs.extensions; [
-      adblock
+      # adblock
       autoSkipVideo
       beautifulLyrics
       copyToClipboard
@@ -18,6 +18,12 @@
       betterLibrary
       lyricsPlus
       newReleases
+    ];
+    enabledSnippets = with spicePkgs.snippets; [
+      removeGradient
+      roundedImages
+      smoothPlaylistRevealGradient
+      smoothProgressBar
     ];
     theme = spicePkgs.themes.catppuccin;
     colorScheme = "mocha";
