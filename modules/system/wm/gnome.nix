@@ -28,6 +28,7 @@
       wl-clipboard
       rhythmbox
       blackbox-terminal
+      zenity
       (writeShellScriptBin "xdg-terminal-exec" ''
         exec "${lib.getExe blackbox-terminal}" -c "$@"
       '')

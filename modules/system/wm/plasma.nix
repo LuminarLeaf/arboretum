@@ -36,6 +36,7 @@
       kdePackages.kate
       kdePackages.kcalc
       kdePackages.kcharselect
+      kdePackages.kdialog
     ])
     ++ (
       if (config.services.flatpak.enable)
