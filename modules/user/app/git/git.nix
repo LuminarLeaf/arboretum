@@ -18,9 +18,5 @@
         git_protocol = "ssh";
       };
     };
-    gh-dash = {
-      enable = true;
-      catppuccin.enable = true;
-    };
   };
 }

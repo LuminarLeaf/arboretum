@@ -106,13 +106,19 @@ in {
         mkdir -p $1 && cd $1
       }
 
+      e() {
+        if [[ -n "$VISUAL" ]]; then
+          "$VISUAL" "$@"
+        elif [[ -n "$EDITOR" ]]; then
+          "$EDITOR" "$@"
+        else
+          echo "No editor set"
+        fi
+      }
+
       # ddiso() {
       #   dd bs=4M if=$1 of=$2 status=progress oflag=sync"
       # }
-    '';
-
-    initExtraFirst = ''
-      . /etc/zinputrc
     '';
   };
 }
