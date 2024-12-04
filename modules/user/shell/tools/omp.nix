@@ -46,7 +46,7 @@
               type = "path";
               style = "plain";
               foreground = "p:text";
-              template = "{{ .Var.sepld }}{{ .Path }}{{ .Var.sepr }}";
+              template = "{{ .Var.sepld }}{{ path .Path .Location }}{{ .Var.sepr }}";
               properties.style = "full";
             }
             {

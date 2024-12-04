@@ -33,7 +33,8 @@
     (lib.mkIf config.custom.virt-manager {programs.virt-manager.enable = true;})
     (lib.mkIf config.custom.waydroid {
       virtualisation.waydroid.enable = true;
-      environment.systemPackages = [pkgs.androidenv.androidPkgs.platform-tools];
+      # environment.systemPackages = [pkgs.androidenv.androidPkgs.platform-tools];
+      programs.adb.enable = true;
       users.users.${userSettings.username} = {extraGroups = ["adbusers"];};
     })
   ];
