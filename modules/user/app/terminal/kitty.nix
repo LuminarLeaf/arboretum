@@ -3,8 +3,8 @@
     enable = true;
     package = pkgs.kitty;
     font = {
-      size = 11;
-      name = "JetBrainsMonoNL Nerd Font";
+      size = 12;
+      name = "MonaspiceNe Nerd Font";
     };
     settings = {
       background_opacity = "0.9";

@@ -17,10 +17,10 @@
 
     font = {
       normal = {
-        family = "JetBrainsMono Nerd Font";
+        family = "MonaspiceNe Nerd Font";
         style = "Regular";
       };
-      size = 11;
+      size = 12;
     };
 
     cursor = {

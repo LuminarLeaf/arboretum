@@ -33,7 +33,11 @@
     obsidian
     vscode
     localsend
-    vesktop
+    # vesktop # no custom activities right now
+    (discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
     mpv
     firefox
     motrix

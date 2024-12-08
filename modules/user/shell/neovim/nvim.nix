@@ -37,6 +37,16 @@
     recursive = true;
   };
 
+  programs.neovide.enable = true;
+  programs.neovide.settings = {
+    fork = false;
+    theme = "auto";
+    font = {
+      normal = ["MonaspiceNe Nerd Font" "JetBrainsMono Nerd Font"];
+      size = 12.0;
+    };
+  };
+
   programs.zsh.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "neovide";

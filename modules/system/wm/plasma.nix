@@ -21,7 +21,7 @@
       enable = true;
       catppuccin = {
         enable = true;
-        font = "JetBrainsMono Nerd Font";
+        font = "MonaspiceNe Nerd Font";
         fontSize = "12";
       };
       settings.General.InputMethod = "";

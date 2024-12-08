@@ -1,9 +1,8 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { "prettier" },
-    html = { "prettier" },
-    -- javascript = { "biome", "prettierd", "prettier", stop_after_first = true },
+    css = { "prettierd", "prettier", stop_after_first = true },
+    html = { "prettierd", "prettier", stop_after_first = true },
     javascript = { "biome", "prettierd", "prettier", stop_after_first = true },
     typescript = { "biome", "prettierd", "prettier", stop_after_first = true },
     javascriptreact = { "biome", "prettierd", "prettier", stop_after_first = true },
