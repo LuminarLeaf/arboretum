@@ -57,6 +57,9 @@
   networking.hostName = "maple";
   networking.networkmanager.enable = true;
 
+  # Use latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_IN";
   i18n.extraLocaleSettings = {
