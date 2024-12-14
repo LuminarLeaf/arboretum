@@ -20,7 +20,6 @@
     # dev
     gcc
     go
-    rustup
     nodejs
     bun
     python3

@@ -1,11 +1,11 @@
 local lint = require "lint"
 
 lint.linters_by_ft = {
-  javascript = { "eslint_d" },
-  typescript = { "eslint_d" },
-  javascriptreact = { "eslint_d" },
-  typescriptreact = { "eslint_d" },
-  python = { "mypy" },
+  javascript = { "biomejs" },
+  typescript = { "biomejs" },
+  javascriptreact = { "biomejs" },
+  typescriptreact = { "biomejs" },
+  -- python = { "ruff" },
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {

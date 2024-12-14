@@ -14,13 +14,12 @@
     typescript-language-server
     dockerfile-language-server-nodejs
     docker-compose-language-service
+    rust-analyzer
     vscode-langservers-extracted # html css json eslint
     bacon # rust lint
     sqls # sql mysql
     pyright # python lsp
-    black # python formatter
-    isort # python formatter
-    mypy # python lint
+    ruff # python formatter + lsp
     biome # ts js
     stylua
     # nodePackages.prettier # js ts json css html

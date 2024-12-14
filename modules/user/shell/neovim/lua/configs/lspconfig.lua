@@ -15,6 +15,7 @@ local servers = {
   "bashls",
   "yamlls",
   "sqls",
+  "ruff",
   "pyright",
   "clangd",
   "gopls",
