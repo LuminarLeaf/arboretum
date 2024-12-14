@@ -49,7 +49,7 @@ in {
     hardware = lib.mkIf (!cfg.disableNvidia) {
       nvidia = {
         modesetting.enable = true;
-        powerManagement.enable = true; # Might cause issues, will test later
+        powerManagement.enable = true;
         powerManagement.finegrained = true;
         open = false;
         nvidiaSettings = true;
@@ -62,7 +62,7 @@ in {
           offload.enable = true;
           offload.enableOffloadCmd = true;
           intelBusId = "PCI:0:2:0";
-          nvidiaBusId = "PCI:1:0:0"; # TODO: check this
+          nvidiaBusId = "PCI:1:0:0";
         };
       };
     };
