@@ -32,7 +32,6 @@
   home.packages = with pkgs; [
     obsidian
     vscode
-    localsend
     # vesktop # no custom activities right now
     (discord.override {
       withOpenASAR = true;
@@ -43,17 +42,21 @@
     motrix
   ];
 
-  programs.obs-studio.enable = true;
-  programs.obs-studio.catppuccin.enable = true;
-
-  xdg.enable = true;
-  xdg.userDirs = {
+  programs.obs-studio = {
     enable = true;
-    createDirectories = true;
-    publicShare = null;
+    catppuccin.enable = true;
   };
-  xdg.mime.enable = true;
-  xdg.mimeApps.enable = true;
+
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      publicShare = null;
+    };
+    mime.enable = true;
+    mimeApps.enable = true;
+  };
 
   news.display = "silent";
 }

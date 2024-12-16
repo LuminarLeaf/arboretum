@@ -38,27 +38,39 @@
     ../../modules/system/app/gaming.nix
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  nix.settings.trusted-users = ["@wheel"];
-
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      trusted-users = ["@wheel"];
+    };
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  };
 
   # Bootloader
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot";
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.copyKernels = true;
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.catppuccin.enable = true;
+  boot = {
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+        copyKernels = true;
+        useOSProber = true;
+        catppuccin.enable = true;
+      };
+    };
 
-  networking.hostName = "maple";
-  networking.networkmanager.enable = true;
+    # Use latest kernel
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
 
-  # Use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  networking = {
+    hostName = "maple";
+    networkmanager.enable = true;
+  };
 
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_IN";
@@ -118,11 +130,18 @@
 
   environment.shells = with pkgs; [bash zsh fish];
   users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
   system.userActivationScripts.zshrc = "touch .zshrc"; # disables the zsh initial "popup"
 
-  programs.neovim.enable = true;
-  programs.nh.enable = true;
+  programs = {
+    zsh.enable = true;
+    neovim.enable = true;
+    nh.enable = true;
+
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
+  };
 
   fonts.fontDir.enable = true;
 
@@ -134,12 +153,14 @@
 
   specialisation = {
     on-the-go.configuration = {
-      custom.hardware.nvidia.disableNvidia = true;
-      custom.hardware.supergfxd = false;
-      custom.docker.powerSave = true;
-      custom.qemu = false;
-      custom.virt-manager = false;
-      custom.waydroid = false;
+      custom = {
+        hardware.nvidia.disableNvidia = true;
+        hardware.supergfxd = false;
+        docker.powerSave = true;
+        qemu = false;
+        virt-manager = false;
+        waydroid = false;
+      };
 
       # suspend to RAM(deep)
       boot.kernelParams = ["mem_sleep_default=deep"];

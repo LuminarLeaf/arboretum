@@ -36,21 +36,25 @@
     recursive = true;
   };
 
-  programs.neovide.enable = true;
-  programs.neovide.settings = {
-    fork = false;
-    theme = "auto";
-    font = {
-      normal = ["MonaspiceNe Nerd Font"];
-      size = 12.0;
+  programs = {
+    neovide = {
+      enable = true;
+      settings = {
+        fork = false;
+        theme = "auto";
+        font = {
+          normal = ["MonaspiceNe Nerd Font"];
+          size = 12.0;
+        };
+        font.features = {
+          "MonaspiceNe Nerd Font" = ["+calt" "-liga" "-ss01" "-ss02" "-ss03" "-ss04" "-ss05" "-ss06" "-ss07" "-ss08" "-ss09"];
+        };
+      };
     };
-    font.features = {
-      "MonaspiceNe Nerd Font" = ["+calt" "-liga" "-ss01" "-ss02" "-ss03" "-ss04" "-ss05" "-ss06" "-ss07" "-ss08" "-ss09"];
-    };
-  };
 
-  programs.zsh.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "neovide";
+    zsh.sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "neovide";
+    };
   };
 }

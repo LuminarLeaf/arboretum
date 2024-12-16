@@ -1,6 +1,8 @@
 {...}: {
-  programs.ripgrep.enable = true;
-  programs.zsh.shellAliases = {
-    grep = "rg";
+  programs = {
+    ripgrep.enable = true;
+    zsh.shellAliases = {
+      grep = "rg";
+    };
   };
 }

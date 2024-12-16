@@ -84,15 +84,21 @@
   associations = with lib;
     listToAttrs (flatten (mapAttrsToList (key: map (type: attrsets.nameValuePair type defaultApps."${key}")) mimeMap));
 in {
-  xdg.configFile."mimeapps.list".force = true;
-  xdg.mimeApps.enable = true;
-  xdg.mimeApps.associations.added = associations;
-  xdg.mimeApps.defaultApplications = associations;
+  xdg = {
+    configFile."mimeapps.list".force = true;
+    mimeApps = {
+      enable = true;
+      associations.added = associations;
+      defaultApplications = associations;
+    };
+  };
 
-  home.packages = [pkgs.junction];
+  home = {
+    packages = [pkgs.junction];
 
-  home.sessionVariables = {
-    # prevent wine from creating file associations
-    WINEDLLOVERRIDES = "winemenubuilder.exe=d";
+    sessionVariables = {
+      # prevent wine from creating file associations
+      WINEDLLOVERRIDES = "winemenubuilder.exe=d";
+    };
   };
 }
