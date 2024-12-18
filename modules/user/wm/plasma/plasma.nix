@@ -26,6 +26,8 @@
     ];
 
     sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
+
+    file.${config.gtk.gtk2.configLocation}.force = true;
   };
 
   # TODO: plasma-manager for plasma colors, otherwise this looks bad

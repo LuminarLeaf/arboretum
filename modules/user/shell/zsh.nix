@@ -22,6 +22,7 @@ in {
 
     zsh = {
       enable = true;
+      # zprof.enable = true;
       shellAliases = aliases;
       defaultKeymap = "emacs";
       antidote = {

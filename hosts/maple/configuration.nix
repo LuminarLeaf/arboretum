@@ -135,6 +135,7 @@
   programs = {
     zsh.enable = true;
     neovim.enable = true;
+    vim.enable = true;
     nh.enable = true;
 
     localsend = {
