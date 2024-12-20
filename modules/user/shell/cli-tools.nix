@@ -9,6 +9,7 @@
     yq-go
     killall
     sd
+    hyperfine
 
     yt-dlp
     imagemagick

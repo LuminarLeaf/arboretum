@@ -1,0 +1,110 @@
+$schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+palette:
+  error: lightRed
+  git: lightWhite
+  go: lightBlue
+  nix: cyan
+  node: lightGreen
+  os: lightMagenta
+  py: lightYellow
+  root: red
+  rust: lightRed
+  separator: green
+  text: lightBlue
+var:
+  sepl: <p:separator>❬</>
+  sepld: <p:separator>-❬</>
+  sepr: <p:separator>❭</>
+secondary_prompt:
+  template: '❱❱ '
+  foreground: p:text
+transient_prompt:
+  template: '{{ .PWD }} ❱ '
+  foreground: p:text
+  foreground_templates:
+    - '{{ if gt .Code 0 }}p:error{{ end }}'
+console_title_template: '{{ .Shell }} in {{ .Folder }}'
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - properties:
+          cache_duration: none
+        template: ' '
+        foreground: p:root
+        type: root
+        style: plain
+      - properties:
+          cache_duration: none
+        template: '{{ .Var.sepl }}{{ .UserName }}{{ .Icon }} {{ .HostName }}{{ .Var.sepr }}'
+        foreground: p:os
+        type: os
+        style: plain
+      - properties:
+          cache_duration: none
+        template: '{{ if ne .Type "unknown" }}{{ .Var.sepld }}nix-shell{{ .Var.sepr }}{{ end }}'
+        foreground: p:nix
+        type: nix-shell
+        style: plain
+      - properties:
+          cache_duration: none
+          style: full
+        template: '{{ .Var.sepld }}{{ path .Path .Location }}{{ .Var.sepr }}'
+        foreground: p:text
+        type: path
+        style: plain
+      - properties:
+          cache_duration: none
+          display_mode: context
+        template: '{{ .Var.sepld }} {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}{{ .Var.sepr }}'
+        foreground: p:py
+        type: python
+        style: plain
+      - properties:
+          cache_duration: none
+        template: "{{ .Var.sepld }}\U000F0399 {{if .Error}}{{ .Error }} {{ else }}{{ .Full }}{{ end }}{{ .Var.sepr }}"
+        foreground: p:node
+        type: node
+        style: plain
+      - properties:
+          cache_duration: none
+          parse_mod_file: true
+        template: "{{ .Var.sepld }}\U000F07D3 {{if .Error}}{{ .Error }} {{ else }}{{ .Full }}{{ end }}{{ .Var.sepr }}"
+        foreground: p:go
+        type: go
+        style: plain
+      - properties:
+          cache_duration: none
+        template: '{{ .Var.sepld }} {{if .Error}}{{ .Error }} {{ else }}{{ .Full }}{{ end }}{{ .Var.sepr }}'
+        foreground: p:rust
+        type: rust
+        style: plain
+      - properties:
+          cache_duration: none
+          fetch_status: true
+        template: '{{ .Var.sepld }}{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ .Var.sepr }}'
+        foreground: p:git
+        type: git
+        style: plain
+    newline: true
+  - type: prompt
+    alignment: left
+    segments:
+      - properties:
+          cache_duration: none
+          threshold: 500
+        template: ' {{ .FormattedMs }} '
+        foreground: p:text
+        type: executiontime
+        style: plain
+      - properties:
+          cache_duration: none
+        template: ❱
+        type: text
+        style: plain
+        foreground_templates:
+          - '{{ if gt .Code 0 }}p:error{{ end }}'
+          - p:text
+    newline: true
+version: 3
+final_space: true

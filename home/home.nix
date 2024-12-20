@@ -37,8 +37,6 @@
       withOpenASAR = true;
       withVencord = true;
     })
-    mpv
-    firefox
     motrix
   ];
 

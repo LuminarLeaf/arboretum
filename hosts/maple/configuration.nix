@@ -26,16 +26,14 @@
       storageDriver = null;
       inherit pkgs lib config userSettings;
     })
-    ../../modules/system/app/mullvad.nix
     ../../modules/system/app/flatpak.nix
-    ../../modules/system/app/virtualization.nix
+    ../../modules/system/app/gaming.nix
+    ../../modules/system/app/mullvad.nix
     ../../modules/system/app/qbittorrent.nix
+    ../../modules/system/app/virtualization.nix
 
     ../../modules/system/security/firewall.nix
     ../../modules/system/security/gpg.nix
-
-    # TODO: WIP
-    ../../modules/system/app/gaming.nix
   ];
 
   nix = {

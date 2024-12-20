@@ -24,7 +24,7 @@ in {
       enable = true;
       # zprof.enable = true;
       shellAliases = aliases;
-      defaultKeymap = "emacs";
+      defaultKeymap = "viins";
       antidote = {
         enable = true;
         useFriendlyNames = true;
@@ -61,10 +61,18 @@ in {
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
         zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
         zstyle ':completion:*' menu no
-        # zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color always $realpath'
-        # zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color always $realpath'
+
+        bindkey '^a' beginning-of-line
+        bindkey '^e' end-of-line
+        bindkey '^?' backward-delete-char
+        bindkey '^F' forward-char
+        bindkey '^[B' vi-backward-word
+        bindkey '^[F' vi-forward-word
+        bindkey '^[N' down-line-or-history
+        bindkey '^[P' up-line-or-history
+        bindkey '^[^?' backward-kill-word
 
         # HACK: This breaks fzf-tab in tmux for some reason, remove if you want to use tmux AND fzf-tab
         zstyle ':fzf-tab:*' use-fzf-default-opts yes
@@ -118,9 +126,9 @@ in {
           fi
         }
 
-        # ddiso() {
-        #   dd bs=4M if=$1 of=$2 status=progress oflag=sync"
-        # }
+        ddiso() {
+          dd if=$1 of=$2 status=progress oflag=sync
+        }
       '';
     };
   };
