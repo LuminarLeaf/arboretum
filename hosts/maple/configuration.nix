@@ -57,13 +57,13 @@
         device = "nodev";
         copyKernels = true;
         useOSProber = true;
-        catppuccin.enable = true;
       };
     };
 
     # Use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
   };
+  catppuccin.grub.enable = true;
 
   networking = {
     hostName = "maple";

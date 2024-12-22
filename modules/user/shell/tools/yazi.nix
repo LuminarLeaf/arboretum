@@ -3,17 +3,12 @@
 
   programs.yazi = {
     enable = true;
-    # package = pkgs.yazi.override (prev: {
-    #   _7zz = prev._7zz.overrideAttrs (o: {
-    #     makeFlags = (o.makeFlags or []) ++ ["USE_ASM="];
-    #   });
-    # });
     settings.manager = {
       show_hidden = true;
       show_symlink = false;
     };
-    catppuccin.enable = true;
   };
+  catppuccin.yazi.enable = true;
 
   xdg.configFile."yazi/init.lua".text = ''
     function Status:name()

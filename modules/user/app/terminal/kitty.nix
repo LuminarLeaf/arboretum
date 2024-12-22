@@ -36,6 +36,6 @@
     #   "ctrl+shift+v" = "paste_from_clipboard";
     #
     # };
-    catppuccin.enable = true;
   };
+  catppuccin.kitty.enable = true;
 }

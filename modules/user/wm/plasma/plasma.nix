@@ -33,12 +33,12 @@
   # TODO: plasma-manager for plasma colors, otherwise this looks bad
   qt = {
     enable = true;
-    style = {
-      catppuccin.enable = true;
-      catppuccin.apply = true;
-      name = "kvantum";
-    };
+    style.name = "kvantum";
     platformTheme.name = "kvantum";
+  };
+  catppuccin.kvantum = {
+    enable = true;
+    apply = true;
   };
 
   gtk = {

@@ -5,8 +5,8 @@
       style = "plain";
       pager = "less -FR";
     };
-    catppuccin.enable = true;
   };
+  catppuccin.bat.enable = true;
 
   programs.zsh = {
     shellAliases.cat = "bat --style header,snip,changes,numbers";

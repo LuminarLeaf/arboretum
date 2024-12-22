@@ -2,7 +2,6 @@
   programs = {
     fzf = {
       enable = true;
-      catppuccin.enable = true;
       enableZshIntegration = true;
       tmux.enableShellIntegration = true;
       defaultCommand = "fd --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
@@ -25,4 +24,5 @@
       '';
     };
   };
+  catppuccin.fzf.enable = true;
 }

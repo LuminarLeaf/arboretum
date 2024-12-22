@@ -59,6 +59,6 @@
         ];
       };
     };
-    catppuccin.enable = true;
   };
+  catppuccin.alacritty.enable = true;
 }

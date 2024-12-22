@@ -29,7 +29,6 @@
   programs.btop = {
     enable = true;
     package = pkgs.btop.override {cudaSupport = true;};
-    catppuccin.enable = true;
   };
-  # programs.zsh.shellAliases."btop" = "btop --utf-force";
+  catppuccin.btop.enable = true;
 }
