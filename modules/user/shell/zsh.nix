@@ -54,6 +54,11 @@ in {
         share = true;
         size = 50000;
       };
+      initExtraFirst = ''
+        # needs to be loaded before zsh-syntax-highlighting
+        autoload -U select-word-style
+        select-word-style bash
+      '';
       initExtra = ''
         setopt APPEND_HISTORY
         setopt HIST_FIND_NO_DUPS
