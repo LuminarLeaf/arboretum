@@ -8,7 +8,7 @@
     enable = true;
     package = pkgs.steam.override {
       extraEnv = {
-        MANGOHUD = true;
+        # MANGOHUD = true;
         OBS_VKCAPTURE = true;
       };
       extraLibraries = pkgs: [pkgs.xorg.libxcb];
@@ -28,6 +28,6 @@
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-    GAMEMODERUNEXEC = lib.mkIf (config.hardware.nvidia.modesetting.enable) "nvidia-offload";
+    # GAMEMODERUNEXEC = lib.mkIf (config.hardware.nvidia.modesetting.enable) "nvidia-offload";
   };
 }
