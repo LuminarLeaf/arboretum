@@ -72,11 +72,11 @@ in {
         bindkey '^a' beginning-of-line
         bindkey '^e' end-of-line
         bindkey '^?' backward-delete-char
-        bindkey '^F' forward-char
-        bindkey '^[B' vi-backward-word
-        bindkey '^[F' vi-forward-word
-        bindkey '^[N' down-line-or-history
-        bindkey '^[P' up-line-or-history
+        bindkey '^f' forward-char
+        bindkey '^[b' vi-backward-word
+        bindkey '^[f' vi-forward-word
+        bindkey '^[n' down-line-or-history
+        bindkey '^[p' up-line-or-history
         bindkey '^[^?' backward-kill-word
 
         # HACK: This breaks fzf-tab in tmux for some reason, remove if you want to use tmux AND fzf-tab
