@@ -19,7 +19,17 @@
     };
     displayManager.sddm = {
       enable = true;
-      settings.General.InputMethod = "";
+      autoNumlock = true;
+      settings = {
+        General.InputMethod = "";
+        Theme.CursorTheme = "Qogir-dark";
+      };
+      extraPackages = [
+        (pkgs.qogir-icon-theme.override {
+          colorVariants = ["dark"];
+          themeVariants = ["default"];
+        })
+      ];
     };
     desktopManager.plasma6.enable = true;
   };
