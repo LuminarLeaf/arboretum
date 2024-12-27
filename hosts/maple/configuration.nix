@@ -124,6 +124,7 @@
     ])
     ++ [
       inputs.alejandra.defaultPackage.${pkgs.system}
+      inputs.ghostty.packages.${pkgs.system}.default
     ];
 
   environment.shells = with pkgs; [bash zsh fish];
