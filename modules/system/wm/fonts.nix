@@ -6,6 +6,8 @@
       noto-fonts
       noto-fonts-emoji
       monocraft
+      corefonts
+      vistafonts
     ])
     ++ (with pkgs.nerd-fonts; [
       caskaydia-cove
