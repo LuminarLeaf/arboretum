@@ -7,7 +7,6 @@
 
     nixd
     marksman # md
-    markdownlint-cli2
     vale # md lint
     lua-language-server
     bash-language-server
@@ -27,7 +26,6 @@
     prettierd # ↑
     eslint_d # js
     gopls # go lsp
-    gofumpt # go formatter
     clang-tools # clangd
   ];
 
