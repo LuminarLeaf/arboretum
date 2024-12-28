@@ -51,11 +51,10 @@
       };
     };
     iconTheme = {
-      name = "WhiteSur-purple-dark";
-      package = pkgs.whitesur-icon-theme.override {
-        boldPanelIcons = true;
-        alternativeIcons = true;
-        themeVariants = ["purple"];
+      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "lavender";
       };
     };
   };
