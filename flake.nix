@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     alejandra = {
       url = "github:kamadorueda/alejandra/3.0.0";
@@ -40,10 +40,6 @@
       inherit system;
       config.allowUnfree = true;
     };
-    pkgs-stable = import inputs.nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
   in {
     formatter.${system} = inputs.alejandra.defaultPackage.${system};
 
@@ -51,7 +47,7 @@
       maple = inputs.nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit pkgs pkgs-stable;
+          inherit pkgs;
           inherit userSettings;
           inherit inputs;
         };
@@ -71,7 +67,6 @@
           inputs.spicetify-nix.homeManagerModules.default
         ];
         extraSpecialArgs = {
-          inherit pkgs-stable;
           inherit userSettings;
           inherit inputs;
         };
