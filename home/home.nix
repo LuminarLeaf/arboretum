@@ -38,6 +38,7 @@
       withVencord = true;
     })
     motrix
+    libreoffice-fresh
   ];
 
   programs.obs-studio.enable = true;
