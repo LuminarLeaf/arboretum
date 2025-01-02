@@ -153,6 +153,8 @@
 
   specialisation = {
     on-the-go.configuration = {
+      system.nixos.tags = ["on-the-go"];
+
       custom = {
         hardware.nvidia.disableNvidia = true;
         hardware.supergfxd = false;

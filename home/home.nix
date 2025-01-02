@@ -39,6 +39,8 @@
     })
     motrix
     libreoffice-fresh
+    gimp
+    inkscape
   ];
 
   programs.obs-studio.enable = true;
