@@ -6,9 +6,9 @@
       noto-fonts
       noto-fonts-cjk-serif
       noto-fonts-emoji
-      monocraft
       corefonts
       vistafonts
+      monaspace # firefox and other things
     ])
     ++ (with pkgs.nerd-fonts; [
       caskaydia-cove
@@ -16,6 +16,5 @@
       hack
       jetbrains-mono
       monaspace
-      zed-mono
     ]);
 }
