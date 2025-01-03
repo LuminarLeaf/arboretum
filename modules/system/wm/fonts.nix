@@ -4,6 +4,7 @@
       inter
       roboto
       noto-fonts
+      noto-fonts-cjk-serif
       noto-fonts-emoji
       monocraft
       corefonts
