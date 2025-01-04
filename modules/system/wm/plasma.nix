@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   config,
   ...
 }: {
@@ -49,11 +50,7 @@
       kdePackages.kcharselect
       kdePackages.kdialog
     ])
-    ++ (
-      if (config.services.flatpak.enable)
-      then [pkgs.kdePackages.discover]
-      else []
-    );
+    ++ lib.optionals config.services.flatpak.enable [pkgs.kdePackages.discover];
 
   xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
 

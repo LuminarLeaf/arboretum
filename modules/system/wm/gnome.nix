@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   config,
   ...
 }: {
@@ -33,11 +34,7 @@
         exec "${lib.getExe blackbox-terminal}" -c "$@"
       '')
     ])
-    ++ (
-      if (config.services.flatpak.enable)
-      then [pkgs.gnome-software]
-      else []
-    );
+    ++ lib.optionals config.services.flatpak.enable [pkgs.gnome-software];
 
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour

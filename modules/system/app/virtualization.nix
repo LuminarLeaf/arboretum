@@ -24,16 +24,11 @@
       virtualisation.libvirtd.qemu.runAsRoot = false;
       environment.systemPackages =
         [pkgs.qemu]
-        ++ (
-          if config.custom.quickemu
-          then [pkgs.quickemu]
-          else []
-        );
+        ++ lib.optionals config.custom.quickemu [pkgs.quickemu];
     })
     (lib.mkIf config.custom.virt-manager {programs.virt-manager.enable = true;})
     (lib.mkIf config.custom.waydroid {
       virtualisation.waydroid.enable = true;
-      # environment.systemPackages = [pkgs.androidenv.androidPkgs.platform-tools];
       programs.adb.enable = true;
       users.users.${userSettings.username} = {extraGroups = ["adbusers"];};
     })
