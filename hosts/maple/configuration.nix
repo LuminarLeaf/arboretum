@@ -133,6 +133,7 @@
 
   programs = {
     zsh.enable = true;
+    fish.enable = true;
     neovim.enable = true;
     vim.enable = true;
     nh.enable = true;
