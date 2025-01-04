@@ -10,6 +10,8 @@
         init.defaultBranch = "main";
         merge.conflictStyle = "diff3";
         diff.colorMoved = "default";
+        gpg.format = "ssh";
+        user.signingkey = "~/.ssh/id_ed25519.pub";
       };
     };
     gh = {
