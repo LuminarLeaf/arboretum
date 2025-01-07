@@ -151,6 +151,7 @@
   };
 
   custom.hardware.nvidia.enablePrime = true;
+  custom.quickemu = false; # upstream build issue
 
   specialisation = {
     on-the-go.configuration = {
