@@ -45,7 +45,6 @@
       maple = inputs.nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit pkgs;
           inherit userSettings;
           inherit inputs;
         };

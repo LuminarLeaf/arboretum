@@ -44,6 +44,8 @@
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   # Bootloader
   boot = {
     loader = {
