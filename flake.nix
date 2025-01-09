@@ -25,8 +25,6 @@
       url = "github:VueTorrent/VueTorrent/latest-release";
       flake = false;
     };
-
-    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs = {self, ...} @ inputs: let

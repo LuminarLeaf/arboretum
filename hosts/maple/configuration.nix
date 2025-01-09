@@ -106,6 +106,7 @@
     extraGroups = ["wheel" "networkmanager"];
     packages = [];
     uid = 1000;
+    shell = pkgs.zsh;
   };
 
   environment.systemPackages =
@@ -133,17 +134,17 @@
       # cryptsetup
       kitty
       mpv
+      ghostty
 
       brave
       firefox
     ])
     ++ [
       inputs.alejandra.defaultPackage.${pkgs.system}
-      inputs.ghostty.packages.${pkgs.system}.default
     ];
 
   environment.shells = with pkgs; [bash zsh fish];
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.fish;
   system.userActivationScripts.zshrc = "touch .zshrc"; # disables the zsh initial "popup"
 
   programs = {
@@ -166,7 +167,6 @@
   };
 
   custom.hardware.nvidia.enablePrime = true;
-  custom.quickemu = false; # upstream build issue
 
   specialisation = {
     on-the-go.configuration = {
