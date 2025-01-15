@@ -29,8 +29,7 @@
 
           profile = "high-quality";
           vo = "gpu-next";
-          gpu-api = "auto";
-          hwdec = "vaapi-copy";
+          hwdec-codecs = "all";
 
           demuxer-mkv-subtitle-preroll = true;
           sub-auto = "fuzzy";
