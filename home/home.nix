@@ -13,6 +13,7 @@
     ../modules/user/app/terminal/alacritty.nix
     ../modules/user/app/terminal/kitty.nix
     ../modules/user/app/git/git.nix
+    ../modules/user/app/mpv.nix
     ../modules/user/app/spicetify.nix
     ../modules/user/app/gaming.nix
 
