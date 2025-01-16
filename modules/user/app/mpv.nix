@@ -114,6 +114,8 @@
           WHEEL_DOWN = "no-osd add volume -2; script-binding uosc/flash-volume";
           VOLUME_UP = "no-osd add volume 2; script-binding uosc/flash-volume";
           VOLUME_DOWN = "no-osd add volume -2; script-binding uosc/flash-volume";
+          KP_ADD = "no-osd add volume 2; script-binding uosc/flash-volume";
+          KP_SUBTRACT = "no-osd add volume -2; script-binding uosc/flash-volume";
 
           TAB = "script-binding uosc/toggle-ui";
 
@@ -132,31 +134,31 @@
           };
         };
         extraInput = ''
-          # script-binding memo-history                                     #! Recents
-          # script-binding uosc/open-file                                   #! Open
-          # script-binding uosc/playlist                                    #! Playlist
-          # script-binding uosc/chapters                                    #! Chapters
-          # script-binding uosc/subtitles                                   #! Subtitles
-          # script-binding uosc/audio                                       #! Audio
-          # script-binding uosc/audio-device                                #! Utils > Audio devices
-          # set hwdec no                                                    #! Utils > Hardware decoding > Disabled
-          # set hwdec auto-safe                                             #! Utils > Hardware decoding > Enabled
-          # set hwdec auto-copy-safe                                        #! Utils > Hardware decoding > Copyback
-          # apply-profile interp-inverse                                    #! Utils > Motion interpolation > Disabled
-          # apply-profile interp                                            #! Utils > Motion interpolation > Enabled
-          # set video-aspect-override     -1                                #! Utils > Aspect ratio > Disabled
-          # set video-aspect-override    4:3                                #! Utils > Aspect ratio > 4:3
-          # set video-aspect-override   16:9                                #! Utils > Aspect ratio > 16:9
-          # set video-aspect-override 2.35:1                                #! Utils > Aspect ratio > 2.35:1
-          # set video-rotate   0                                            #! Utils > Rotate > Disabled
-          # set video-rotate  90                                            #! Utils > Rotate > 90°
-          # set video-rotate 180                                            #! Utils > Rotate > 180°
-          # set video-rotate 270                                            #! Utils > Rotate > 270°
-          # set loop-file  no; set loop-playlist  no                        #! Utils > Loop > Disabled
-          # set loop-file inf; set loop-playlist  no                        #! Utils > Loop > Single
-          # set loop-file  no; set loop-playlist inf                        #! Utils > Loop > Playlist
-          # async screenshot video                                          #! Utils > Screenshot
-          # script-binding uosc/show-in-directory                           #! Utils > Show in directory
+          #           script-binding memo-history                                     #! Recents
+          o           script-binding uosc/open-file                                   #! Open
+          SHIFT+ENTER script-binding uosc/playlist                                    #! Playlist
+          ALT+c       script-binding uosc/chapters                                    #! Chapters
+          ALT+s       script-binding uosc/subtitles                                   #! Subtitles
+          #           script-binding uosc/audio                                       #! Audio
+          #           script-binding uosc/audio-device                                #! Utils > Audio devices
+          #           set hwdec no                                                    #! Utils > Hardware decoding > Disabled
+          #           set hwdec auto-safe                                             #! Utils > Hardware decoding > Enabled
+          #           set hwdec auto-copy-safe                                        #! Utils > Hardware decoding > Copyback
+          #           apply-profile interp-inverse                                    #! Utils > Motion interpolation > Disabled
+          #           apply-profile interp                                            #! Utils > Motion interpolation > Enabled
+          #           set video-aspect-override     -1                                #! Utils > Aspect ratio > Disabled
+          #           set video-aspect-override    4:3                                #! Utils > Aspect ratio > 4:3
+          #           set video-aspect-override   16:9                                #! Utils > Aspect ratio > 16:9
+          #           set video-aspect-override 2.35:1                                #! Utils > Aspect ratio > 2.35:1
+          #           set video-rotate   0                                            #! Utils > Rotate > Disabled
+          #           set video-rotate  90                                            #! Utils > Rotate > 90°
+          #           set video-rotate 180                                            #! Utils > Rotate > 180°
+          #           set video-rotate 270                                            #! Utils > Rotate > 270°
+          #           set loop-file  no; set loop-playlist  no                        #! Utils > Loop > Disabled
+          #           set loop-file inf; set loop-playlist  no                        #! Utils > Loop > Single
+          #           set loop-file  no; set loop-playlist inf                        #! Utils > Loop > Playlist
+          #           async screenshot video                                          #! Utils > Screenshot
+          #           script-binding uosc/show-in-directory                           #! Utils > Show in directory
         '';
       };
     }
