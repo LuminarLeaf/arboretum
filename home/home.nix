@@ -11,6 +11,7 @@
   imports = [
     ../modules/user/app/browser/firefox.nix
     ../modules/user/app/terminal/alacritty.nix
+    ../modules/user/app/terminal/ghostty.nix
     ../modules/user/app/terminal/kitty.nix
     ../modules/user/app/git/git.nix
     ../modules/user/app/mpv.nix
