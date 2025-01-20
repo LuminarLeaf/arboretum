@@ -102,7 +102,7 @@
         ];
         config = {
           osd-bar = false;
-          border = false;
+          # border = false;
         };
         bindings = {
           MBTN_LEFT = "cycle pause";

@@ -34,11 +34,7 @@
   home.packages = with pkgs; [
     obsidian
     vscode
-    # vesktop # no custom activities right now
-    (discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
+    vesktop
     motrix
     libreoffice-fresh
     gimp

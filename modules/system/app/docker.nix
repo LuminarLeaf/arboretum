@@ -29,7 +29,7 @@ assert lib.asserts.assertOneOf "storageDriver" storageDriver [
     virtualisation.docker = lib.mkIf (!config.custom.docker.powerSave) {
       enable = true;
       storageDriver = storageDriver;
-      enableNvidia = true;
+      # enableNvidia = true;
     };
 
     # Nvidia Container Toolkit based on wether Nvidia gpu is enabled or not

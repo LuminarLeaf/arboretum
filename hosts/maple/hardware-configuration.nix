@@ -40,7 +40,7 @@
     "/media/ext_wd" = {
       device = "/dev/disk/by-uuid/b6159c83-8d35-4e50-81cd-422028ef1fa6";
       fsType = "ext4";
-      options = ["defaults" "nofail" "noauto" "user"];
+      options = ["defaults" "nofail" "user"];
     };
   };
 
