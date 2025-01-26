@@ -17,6 +17,7 @@
     ../modules/user/app/mpv.nix
     ../modules/user/app/spicetify.nix
     ../modules/user/app/gaming.nix
+    ../modules/user/app/qbittorrent.nix
 
     ../modules/user/shell/zsh.nix
     ../modules/user/shell/neovim/nvim.nix
