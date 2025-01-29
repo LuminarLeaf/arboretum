@@ -16,7 +16,7 @@
           save-position-on-quit = true;
           resume-playback-check-mtime = true;
           force-seekable = true;
-          cursor-autohide = 100;
+          cursor-autohide = 1000;
           keep-open = true;
           volume-max = 150;
 
@@ -34,6 +34,7 @@
           demuxer-mkv-subtitle-preroll = true;
           sub-auto = "fuzzy";
 
+          # Debanding: Turned on via keymap
           deband-grain = 0;
           deband-range = 12;
           deband-threshold = 32;
@@ -105,7 +106,7 @@
           # border = false;
         };
         bindings = {
-          MBTN_LEFT = "cycle pause";
+          MBTN_MID = "cycle pause";
           MBTN_RIGHT = "script-binding uosc/menu";
           MBTN_FORWARD = "script-binding uosc/prev";
           MBTN_BACK = "script-binding uosc/next";
@@ -144,8 +145,8 @@
           #           set hwdec no                                                    #! Utils > Hardware decoding > Disabled
           #           set hwdec auto-safe                                             #! Utils > Hardware decoding > Enabled
           #           set hwdec auto-copy-safe                                        #! Utils > Hardware decoding > Copyback
-          #           apply-profile interp-inverse                                    #! Utils > Motion interpolation > Disabled
-          #           apply-profile interp                                            #! Utils > Motion interpolation > Enabled
+          #           set interpolation no                                            #! Utils > Motion interpolation > Disabled
+          #           set interpolation yes                                           #! Utils > Motion interpolation > Enabled
           #           set video-aspect-override     -1                                #! Utils > Aspect ratio > Disabled
           #           set video-aspect-override    4:3                                #! Utils > Aspect ratio > 4:3
           #           set video-aspect-override   16:9                                #! Utils > Aspect ratio > 16:9

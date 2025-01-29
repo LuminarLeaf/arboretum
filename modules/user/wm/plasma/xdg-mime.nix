@@ -14,7 +14,7 @@
     pdf = ["org.kde.okular.desktop"];
     terminal = ["kitty.desktop"];
     archive = ["org.kde.ark.desktop"];
-    discord = ["discord.desktop"];
+    discord = ["vesktop.desktop"];
   };
 
   mimeMap = {
