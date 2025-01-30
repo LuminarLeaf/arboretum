@@ -6,6 +6,7 @@
     neovide
 
     nixd
+    nil
     marksman # md
     vale # md lint
     lua-language-server
