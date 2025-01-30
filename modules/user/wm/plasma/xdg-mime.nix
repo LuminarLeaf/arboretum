@@ -12,7 +12,7 @@
     directory = ["org.kde.dolphin.desktop"];
     office = ["libreoffice.desktop"];
     pdf = ["org.kde.okular.desktop"];
-    terminal = ["kitty.desktop"];
+    terminal = ["ghostty.desktop"];
     archive = ["org.kde.ark.desktop"];
     discord = ["vesktop.desktop"];
   };

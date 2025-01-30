@@ -15,6 +15,8 @@
       gtk-tabs-location = "bottom";
       gtk-titlebar = false;
       window-padding-color = "extend";
+
+      custom-shader = "./mnoise.glsl";
     };
   };
 }
