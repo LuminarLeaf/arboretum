@@ -17,6 +17,9 @@
       window-padding-color = "extend";
 
       custom-shader = "./mnoise.glsl";
+      custom-shader-animation = "always";
     };
   };
+
+  xdg.configFile."ghostty/mnoise.glsl".source = ./mnoise.glsl;
 }
