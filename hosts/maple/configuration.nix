@@ -146,7 +146,6 @@
     ];
 
   environment.shells = with pkgs; [bash zsh fish];
-  users.defaultUserShell = pkgs.fish;
   system.userActivationScripts.zshrc = "touch .zshrc"; # disables the zsh initial "popup"
 
   programs = {
