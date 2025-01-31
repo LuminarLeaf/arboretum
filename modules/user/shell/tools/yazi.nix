@@ -11,7 +11,7 @@
       manager.prepend_keymap = [
         {
           run = [
-            ''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list'            ''
+            ''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' ''
             "yank"
           ];
           on = ["y"];
