@@ -55,4 +55,12 @@
   xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [khelpcenter];
+
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+        if (action.id == "org.freedesktop.login1.suspend" && subject.isInGroup("users")) {
+            return polkit.Result.YES;
+        }
+    });
+  '';
 }
