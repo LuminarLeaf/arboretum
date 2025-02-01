@@ -46,7 +46,7 @@
           screenshot-directory = "${config.xdg.userDirs.pictures}/Screenshots";
           screenshot-high-bit-depth = true;
           screenshot-format = "png";
-          screenshot-template = "mpvCapture %tY-%tM-%td %tH%tM%tS";
+          screenshot-template = "mpvCapture %tY-%tm-%td %tH:%tM:%tS";
 
           # alang = "ja,jp,jpn,en,eng,de,deu,ger";
           # slang = "en,eng,de,deu,ger";
