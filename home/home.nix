@@ -36,10 +36,11 @@
     obsidian
     vscode
     vesktop
-    motrix
     libreoffice-fresh
     gimp
     inkscape
+    varia
+    tangram
   ];
 
   programs.obs-studio.enable = true;
