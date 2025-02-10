@@ -11,10 +11,6 @@
       monaspace # firefox and other things
     ])
     ++ (with pkgs.nerd-fonts; [
-      caskaydia-cove
-      fira-code
-      hack
-      jetbrains-mono
       monaspace
     ]);
 }
