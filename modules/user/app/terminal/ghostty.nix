@@ -1,11 +1,18 @@
 {...}: {
   programs.ghostty = {
     enable = true;
+
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+
     settings = {
       theme = "catppuccin-mocha";
 
       background-blur-radius = 1;
-      background-opacity = 0.8;
+      background-opacity = 0.9;
+
+      confirm-close-surface = false;
 
       font-size = 12;
       font-family = "MonaspiceNe Nerd Font";
@@ -14,6 +21,8 @@
 
       gtk-tabs-location = "bottom";
       gtk-titlebar = false;
+
+      window-decoration = "client"; # issues in plasma
       window-padding-color = "extend";
     };
   };
