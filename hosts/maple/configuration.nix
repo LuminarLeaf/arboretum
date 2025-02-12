@@ -66,16 +66,6 @@
         copyKernels = true;
         useOSProber = true;
         extraEntries = ''
-          menuentry "System shutdown" {
-            echo "System shutting down..."
-            halt
-          }
-
-          menuentry "System reboot" {
-            echo "System rebooting..."
-            reboot
-          }
-
           menuentry "UEFI Firmware Settings" {
             fwsetup
           }
@@ -163,6 +153,8 @@
       openFirewall = true;
     };
   };
+
+  services.gvfs.enable = true;
 
   fonts.fontDir.enable = true;
 
