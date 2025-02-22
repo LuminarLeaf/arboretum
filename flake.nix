@@ -2,7 +2,7 @@
   description = "Leaf's Collection of Trees";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/1d182bfc59037ed9325e3493fe210e31ab6b2d86"; # revert to nixos-unstable after 383269 merges
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
