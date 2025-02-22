@@ -39,8 +39,7 @@
     libreoffice-fresh
     gimp
     inkscape
-    varia
-    tangram
+    # varia
   ];
 
   programs.obs-studio.enable = true;
