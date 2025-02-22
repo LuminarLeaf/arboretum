@@ -17,7 +17,7 @@
       name = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders.override {
         flavor = "mocha";
-        accent = "lavender";
+        accent = "mauve";
       };
     };
   };
