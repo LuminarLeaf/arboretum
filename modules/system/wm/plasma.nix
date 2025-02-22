@@ -23,14 +23,9 @@
       autoNumlock = true;
       settings = {
         General.InputMethod = "";
-        Theme.CursorTheme = "Qogir-dark";
+        Theme.CursorTheme = "Bibata-Modern-Ice";
       };
-      extraPackages = [
-        (pkgs.qogir-icon-theme.override {
-          colorVariants = ["dark"];
-          themeVariants = ["default"];
-        })
-      ];
+      extraPackages = [pkgs.bibata-cursors];
     };
     desktopManager.plasma6.enable = true;
   };
