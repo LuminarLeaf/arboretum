@@ -72,6 +72,7 @@
         '';
       };
     };
+    kernelPackages = pkgs.linuxPackages_xanmod;
   };
   catppuccin.grub.enable = true;
 
