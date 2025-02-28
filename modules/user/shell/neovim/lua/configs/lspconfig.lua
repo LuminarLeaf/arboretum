@@ -9,7 +9,6 @@ local servers = {
   "biome",
   "ts_ls",
   "marksman",
-  "nil_ls",
   "dockerls",
   "docker_compose_language_service",
   "jsonls",
