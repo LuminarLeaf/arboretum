@@ -4,8 +4,16 @@
   userSettings,
   ...
 }: {
-  gtk = {
+  gtk = let
+    gtk-extra-conf = {
+      gtk-application-prefer-dark-theme = true;
+      gtk-button-images = true;
+      gtk-menu-images = true;
+      gtk-error-bell = false;
+    };
+  in {
     enable = true;
+
     theme = {
       name = "catppuccin-mocha-mauve-standard";
       package = pkgs.catppuccin-gtk.override {
@@ -13,6 +21,7 @@
         variant = "mocha";
       };
     };
+
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders.override {
@@ -20,6 +29,9 @@
         accent = "mauve";
       };
     };
+
+    gtk3.extraConfig = gtk-extra-conf;
+    gtk4.extraConfig = gtk-extra-conf;
   };
 
   home.file.${config.gtk.gtk2.configLocation}.force = true;
