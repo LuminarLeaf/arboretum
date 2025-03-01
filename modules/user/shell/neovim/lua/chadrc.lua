@@ -7,7 +7,7 @@ local M = {}
 M = {
   base46 = {
     theme = "catppuccin",
-    transparency = true,
+    transparency = false,
     hl_override = {
       Comment = { italic = true },
       ["@comment"] = { italic = true },
@@ -18,9 +18,5 @@ M = {
     load_on_startup = true,
   },
 }
-
-if vim.g.neovide then
-  M.base46.transparency = false
-end
 
 return M
