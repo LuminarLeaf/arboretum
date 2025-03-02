@@ -34,6 +34,7 @@
 
   home.packages = with pkgs; [
     obsidian
+    obs-do
     vscode
     vesktop
     libreoffice-fresh
@@ -42,7 +43,10 @@
     # varia
   ];
 
-  programs.obs-studio.enable = true;
+  programs.obs-studio = {
+    enable = true;
+    package = pkgs.obs-studio.override {cudaSupport = true;};
+  };
   catppuccin.obs.enable = true;
 
   xdg = {
