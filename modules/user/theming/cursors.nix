@@ -12,4 +12,10 @@
     name = "Bibata-Modern-Ice";
     size = 24;
   };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      "cursor-theme" = "Bibata-Modern-Ice";
+    };
+  };
 }
