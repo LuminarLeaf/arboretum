@@ -62,9 +62,7 @@
       grub = {
         enable = true;
         efiSupport = true;
-        device = "nodev";
-        copyKernels = true;
-        useOSProber = true;
+        device = ["nodev"];
         extraEntries = ''
           menuentry "UEFI Firmware Settings" {
             fwsetup
@@ -78,6 +76,7 @@
 
   networking = {
     hostName = "maple";
+    hostId = "007f0200";
     networkmanager.enable = true;
   };
 
