@@ -23,7 +23,7 @@
     ../../modules/system/wm/plasma.nix
 
     (import ../../modules/system/app/docker.nix {
-      storageDriver = null;
+      storageDriver = "zfs";
       inherit pkgs lib config userSettings;
     })
     ../../modules/system/app/flatpak.nix

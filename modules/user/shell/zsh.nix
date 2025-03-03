@@ -9,6 +9,8 @@
     sn = "shutdown now";
     srn = "shutdown -r now";
 
+    zfs-list = "zfs list -o name,used,avail,compressratio,mountpoint";
+
     ".." = "cd ..";
     "..." = "cd ../..";
     "...." = "cd ../../..";
