@@ -62,7 +62,7 @@
       grub = {
         enable = true;
         efiSupport = true;
-        device = ["nodev"];
+        device = "nodev";
         extraEntries = ''
           menuentry "UEFI Firmware Settings" {
             fwsetup

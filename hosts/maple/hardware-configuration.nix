@@ -17,10 +17,10 @@
     extraModulePackages = [];
     supportedFilesystems.zfs = true;
     zfs.devNodes = "/dev/disk/by-id";
-    services.zfs = {
-      autoScrub.enable = true;
-      trim.enable = true;
-    };
+  };
+  services.zfs = {
+    autoScrub.enable = true;
+    trim.enable = true;
   };
 
   # https://github.com/openzfs/zfs/issues/10891
