@@ -49,18 +49,16 @@
       fsType = "zfs";
     };
 
-    # Disabled temporarily
+    "/media/data" = {
+      device = "/dev/disk/by-label/data";
+      fsType = "ext4";
+    };
 
-    # "/media/data" = {
-    #   device = "/dev/disk/by-uuid/a2367809-5415-48b9-a590-8e183f7aa166";
-    #   fsType = "ext4";
-    # };
-
-    # "/media/ext_wd" = {
-    #   device = "/dev/disk/by-uuid/b6159c83-8d35-4e50-81cd-422028ef1fa6";
-    #   fsType = "ext4";
-    #   options = ["defaults" "nofail" "user"];
-    # };
+    "/media/ext_wd" = {
+      device = "/dev/disk/by-label/WD_EXT";
+      fsType = "ext4";
+      options = ["defaults" "nofail" "user"];
+    };
   };
 
   swapDevices = [{device = "/dev/disk/by-label/SWAP";}];
