@@ -5,6 +5,7 @@
 }: let
   defaultApps = {
     browser = ["firefox.desktop"];
+    # browser = ["librewolf.desktop"];
     text = ["org.kde.kate.desktop"];
     image = ["org.kde.gwenview.desktop"];
     audio = ["org.kde.elisa.desktop"];
