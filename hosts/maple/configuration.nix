@@ -156,8 +156,6 @@
 
   services.gvfs.enable = true;
 
-  fonts.fontDir.enable = true;
-
   xdg.portal = {
     enable = true;
   };
