@@ -38,7 +38,7 @@
       };
 
       defaultFonts = let
-        common = ["Monaspace Neon" "Symbols Nerd Font" "Material Symbols" "Noto Color Emoji"];
+        common = ["Monaspace Neon" "Material Symbols" "Symbols Nerd Font" "Noto Color Emoji"];
       in {
         # serif = ["Libertinus Serif"] ++ common;
         # sansSerif = ["Geist"] ++ common;
