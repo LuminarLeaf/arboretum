@@ -7,8 +7,6 @@
     enableFishIntegration = true;
 
     settings = {
-      theme = "catppuccin-mocha";
-
       background-blur-radius = 1;
       background-opacity = 0.9;
 
@@ -26,4 +24,5 @@
       window-padding-color = "extend";
     };
   };
+  catppuccin.ghostty.enable = true;
 }
