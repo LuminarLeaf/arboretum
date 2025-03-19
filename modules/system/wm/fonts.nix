@@ -2,13 +2,14 @@
   fonts = {
     packages = with pkgs; [
       aleo-fonts
-      inter
-      roboto
-      lato
+      comfortaa
       geist-font
+      inter
+      lato
       lexend
-      libertinus
       liberation_ttf
+      libertinus
+      roboto
 
       noto-fonts
       noto-fonts-cjk-serif
@@ -38,13 +39,11 @@
       };
 
       defaultFonts = let
-        common = ["Monaspace Neon" "Material Symbols" "Symbols Nerd Font" "Noto Color Emoji"];
+        common = ["Material Symbols" "Symbols Nerd Font" "Noto Color Emoji"];
       in {
-        # serif = ["Libertinus Serif"] ++ common;
-        # sansSerif = ["Geist"] ++ common;
-        serif = common;
-        sansSerif = common;
-        monospace = common;
+        serif = ["Monaspace Xenon"] ++ common;
+        sansSerif = ["Monaspace Neon"] ++ common;
+        monospace = ["Monaspace Krypton"] ++ common;
         emoji = ["Noto Color Emoji" "Material Symbols"];
       };
     };
