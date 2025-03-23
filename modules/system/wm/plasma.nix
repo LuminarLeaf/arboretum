@@ -21,11 +21,10 @@
     displayManager.sddm = {
       enable = true;
       autoNumlock = true;
-      settings = {
-        General.InputMethod = "";
-        Theme.CursorTheme = "Bibata-Modern-Ice";
+      settings.Theme = {
+        CursorTheme = "Bibata-Modern-Ice";
+        CursorSize = 24;
       };
-      extraPackages = [pkgs.bibata-cursors];
     };
     desktopManager.plasma6.enable = true;
   };
@@ -38,6 +37,7 @@
 
   environment.systemPackages =
     (with pkgs; [
+      bibata-cursors
       wl-clipboard
       kdePackages.filelight
       kdePackages.kate
