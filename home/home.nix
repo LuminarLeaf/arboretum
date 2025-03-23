@@ -40,7 +40,9 @@
     libreoffice-fresh
     gimp
     inkscape
-    # varia
+    foliate
+    folio
+    varia
   ];
 
   programs.obs-studio = {
