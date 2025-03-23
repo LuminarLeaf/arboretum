@@ -22,6 +22,7 @@
 
           auto-window-resize = false;
           snap-window = true;
+          autofit-larger = "80%x90%";
           osd-font = "Monaspace Neon";
 
           autocreate-playlist = "same";
