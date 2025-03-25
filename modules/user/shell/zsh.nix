@@ -30,49 +30,51 @@ in {
         enable = true;
         useFriendlyNames = true;
         plugins = [
+          "romkatv/zsh-bench kind:path"
+
+          "mattmc3/ez-compinit"
+          "zsh-users/zsh-completions path:src kind:fpath"
+
+          "getantidote/use-omz"
+          "ohmyzsh/ohmyzsh path:plugins/git"
+          "ohmyzsh/ohmyzsh path:plugins/docker"
+          "ohmyzsh/ohmyzsh path:plugins/docker-compose"
+          "ohmyzsh/ohmyzsh path:plugins/rsync"
+          "ohmyzsh/ohmyzsh path:plugins/sudo"
+
+          "aloxaf/fzf-tab"
           "catppuccin/zsh-syntax-highlighting path:themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
 
           "zsh-users/zsh-syntax-highlighting"
-          "zsh-users/zsh-completions"
           "zsh-users/zsh-autosuggestions"
-          "aloxaf/fzf-tab"
-
-          "getantidote/use-omz"
-          "ohmyzsh/ohmyzsh path:plugins/git kind:defer"
-          "ohmyzsh/ohmyzsh path:plugins/docker kind:defer"
-          "ohmyzsh/ohmyzsh path:plugins/docker-compose kind:defer"
-          "ohmyzsh/ohmyzsh path:plugins/rsync kind:defer"
-          "ohmyzsh/ohmyzsh path:plugins/sudo kind:defer"
         ];
       };
       history = {
+        append = true;
+        findNoDups = true;
         ignoreAllDups = true;
         ignoreDups = true;
         ignorePatterns = ["rm *" "pkill *"];
         ignoreSpace = true;
         path = "$HOME/.zsh_history";
         save = 10000;
+        saveNoDups = true;
         share = true;
         size = 50000;
       };
       initExtraFirst =
         #bash
         ''
-          # needs to be loaded before zsh-syntax-highlighting
           autoload -U select-word-style
           select-word-style bash
         '';
       initExtra =
         #bash
         ''
-          setopt APPEND_HISTORY
-          setopt HIST_FIND_NO_DUPS
-
-          zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-          zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
-          zstyle ':completion:*' menu no
           zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color always $realpath'
           zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color always $realpath'
+          # HACK: This breaks fzf-tab in tmux for some reason, remove if you want to use tmux AND fzf-tab
+          zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
           bindkey '^a' beginning-of-line
           bindkey '^e' end-of-line
@@ -83,13 +85,6 @@ in {
           bindkey '^[n' down-line-or-history
           bindkey '^[p' up-line-or-history
           bindkey '^[^?' backward-kill-word
-
-          # HACK: This breaks fzf-tab in tmux for some reason, remove if you want to use tmux AND fzf-tab
-          zstyle ':fzf-tab:*' use-fzf-default-opts yes
-
-          check() {
-            if command -v $1 &> /dev/null; then return 0; else return 1; fi
-          }
 
           ex() {
             if [ $# -eq 0 ]; then
