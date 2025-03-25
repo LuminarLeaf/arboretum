@@ -19,6 +19,7 @@
 
       gtk-tabs-location = "bottom";
       gtk-titlebar = false;
+      gtk-single-instance = true;
 
       window-decoration = "client"; # issues in plasma
       window-padding-color = "extend";

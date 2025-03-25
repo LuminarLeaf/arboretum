@@ -5,6 +5,7 @@
       comfortaa
       geist-font
       inter
+      jost
       lato
       lexend
       liberation_ttf
