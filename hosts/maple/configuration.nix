@@ -48,6 +48,7 @@
       ];
     };
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    package = pkgs.lix;
   };
 
   nixpkgs.config.allowUnfree = true;
