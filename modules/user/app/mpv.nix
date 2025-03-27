@@ -79,7 +79,7 @@
         };
         scripts = with pkgs.mpvScripts; [
           dynamic-crop
-          quack
+          # quack
           mpris
         ];
       };

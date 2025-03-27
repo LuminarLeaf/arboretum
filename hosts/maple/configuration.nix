@@ -161,7 +161,6 @@
   };
 
   custom.hardware.nvidia.enablePrime = true;
-  custom.waydroid = false;
 
   specialisation = {
     on-the-go.configuration = {

@@ -31,7 +31,7 @@
 
   catppuccin.sddm = {
     enable = true;
-    font = "MonaspiceNe Nerd Font";
+    font = "Monaspace Neon";
     fontSize = "12";
   };
 
