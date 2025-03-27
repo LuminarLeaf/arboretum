@@ -12,6 +12,10 @@
   };
 
   config = lib.mkIf config.custom.gitDelta {
+    programs.git.extraConfig = {
+      merge.conflictStyle = "diff3";
+      diff.colorMoved = "default";
+    };
     programs.git.delta = {
       enable = true;
       options = {
