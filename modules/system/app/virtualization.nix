@@ -26,11 +26,14 @@
         [pkgs.qemu]
         ++ lib.optionals config.custom.quickemu [pkgs.quickemu];
     })
+
     (lib.mkIf config.custom.virt-manager {programs.virt-manager.enable = true;})
-    (lib.mkIf config.custom.waydroid {
-      virtualisation.waydroid.enable = true;
+
+    (lib.mkIf config.custom.waydroid {virtualisation.waydroid.enable = true;})
+
+    {
       programs.adb.enable = true;
       users.users.${userSettings.username} = {extraGroups = ["adbusers"];};
-    })
+    }
   ];
 }
