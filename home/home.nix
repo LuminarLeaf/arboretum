@@ -20,7 +20,7 @@
     ../modules/user/app/qbittorrent.nix
 
     ../modules/user/shell/zsh.nix
-    ../modules/user/shell/neovim/nvim.nix
+    ../modules/user/shell/nvim.nix
     ../modules/user/shell/cli-tools.nix
 
     ../modules/user/wm/plasma/plasma.nix

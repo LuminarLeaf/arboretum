@@ -29,10 +29,8 @@
     clang-tools # clangd
   ];
 
-  # TODO: nvim-dap
-
   home.file.".config/nvim" = {
-    source = ./.;
+    source = ./neovim;
     recursive = true;
   };
 
@@ -46,15 +44,13 @@
           normal = ["MonaspiceNe Nerd Font"];
           size = 12.0;
         };
-        font.features = {
-          "MonaspiceNe Nerd Font" = ["+calt" "-liga" "-ss01" "-ss02" "-ss03" "-ss04" "-ss05" "-ss06" "-ss07" "-ss08" "-ss09"];
-        };
+        # font.features = {"MonaspiceNe Nerd Font" = ["+calt" "-liga" "-ss01" "-ss02" "-ss03" "-ss04" "-ss05" "-ss06" "-ss07" "-ss08" "-ss09"];};
       };
     };
+  };
 
-    zsh.sessionVariables = {
-      EDITOR = "nvim";
-      VISUAL = "neovide";
-    };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "neovide";
   };
 }
