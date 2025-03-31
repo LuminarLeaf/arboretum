@@ -6,26 +6,39 @@
     neovide
 
     nixd
+
+    vscode-langservers-extracted # html css json eslint
+
     marksman # md
+    markdownlint-cli2
     vale # md lint
+
     lua-language-server
+    stylua
+
     bash-language-server
+    shfmt
+
     yaml-language-server
-    typescript-language-server
+
     dockerfile-language-server-nodejs
     docker-compose-language-service
+
+    typescript-language-server
+    biome # ts js
+    vtsls
+
     rust-analyzer
-    vscode-langservers-extracted # html css json eslint
     bacon # rust lint
+
     sqls # sql mysql
+
     pyright # python lsp
     ruff # python formatter + lsp
-    biome # ts js
-    stylua
-    # nodePackages.prettier # js ts json css html
-    prettierd # ↑
-    eslint_d # js
+
     gopls # go lsp
+    gofumpt
+
     clang-tools # clangd
   ];
 
@@ -48,7 +61,7 @@
           normal = ["MonaspiceNe Nerd Font"];
           size = 12.0;
         };
-        # font.features = {"MonaspiceNe Nerd Font" = ["+calt" "-liga" "-ss01" "-ss02" "-ss03" "-ss04" "-ss05" "-ss06" "-ss07" "-ss08" "-ss09"];};
+        font.features = {"MonaspiceNe Nerd Font" = ["+calt" "+liga" "+ss01" "+ss02" "+ss03" "+ss04" "+ss05" "+ss06" "+ss07" "+ss08" "+ss09"];};
       };
     };
   };
