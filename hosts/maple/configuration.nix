@@ -149,6 +149,11 @@
     vim.enable = true;
     nh.enable = true;
 
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+
     localsend = {
       enable = true;
       openFirewall = true;
