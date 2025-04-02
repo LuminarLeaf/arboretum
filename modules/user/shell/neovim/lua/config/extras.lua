@@ -1,4 +1,5 @@
 return {
+  { import = "lazyvim.plugins.extras.ai.copilot" },
   { import = "lazyvim.plugins.extras.coding.blink" },
   { import = "lazyvim.plugins.extras.coding.yanky" },
   { import = "lazyvim.plugins.extras.dap.core" },
