@@ -64,7 +64,7 @@
         inherit pkgs;
         modules = [
           ./home/home.nix
-          inputs.catppuccin.homeManagerModules.catppuccin
+          inputs.catppuccin.homeModules.catppuccin
           inputs.spicetify-nix.homeManagerModules.default
         ];
         extraSpecialArgs = {
