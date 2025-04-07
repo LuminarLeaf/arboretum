@@ -50,15 +50,12 @@ in {
         ];
       };
       history = {
-        append = true;
-        findNoDups = true;
         ignoreAllDups = true;
         ignoreDups = true;
         ignorePatterns = ["rm *" "pkill *"];
         ignoreSpace = true;
         path = "$HOME/.zsh_history";
         save = 10000;
-        saveNoDups = true;
         share = true;
         size = 50000;
       };
