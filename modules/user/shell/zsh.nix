@@ -26,6 +26,7 @@ in {
       enable = true;
       shellAliases = aliases;
       defaultKeymap = "viins";
+      completionInit = "";
       antidote = {
         enable = true;
         useFriendlyNames = true;
