@@ -1,9 +1,18 @@
-{...}: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   aliases = {
     c = "clear";
     less = "less -RF";
     du = "du -had1";
     df = "df -h";
+    duf = ''
+      ${lib.getExe pkgs.nushell} -c '
+      df -h -t vfat -t zfs -t ext4 --output=target,source,fstype,used,avail,size,pcent
+        | str replace "Mounted on" Mount | detect columns | sort-by "Mount"'
+    '';
     free = "free -h";
 
     sn = "shutdown now";
