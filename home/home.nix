@@ -19,7 +19,7 @@
     ../modules/user/app/gaming.nix
     ../modules/user/app/qbittorrent.nix
 
-    ../modules/user/shell/zsh.nix
+    ../modules/user/shell/shell.nix
     ../modules/user/shell/nvim.nix
     ../modules/user/shell/cli-tools.nix
 
