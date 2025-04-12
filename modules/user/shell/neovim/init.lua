@@ -3,10 +3,17 @@ require("config.lazy")
 
 -- neovide settings
 if vim.g.neovide then
-  vim.g.neovide_transparency = 0.9
-  vim.g.neovide_remember_window_size = true
-  vim.g.neovide_cursor_vfx_mode = "pixiedust"
+  -- Display
+  -- vim.o.guifont = "Maple Mono NF:h12:#h-none"
+  vim.g.neovide_transparency = 0.8
+  vim.g.neovide_floating_corner_radius = 0.25
+  vim.g.neovide_hide_mouse_when_typing = true
+
+  -- Functionality
   vim.g.neovide_refresh_rate = 144
-  vim.g.neovide_refresh_rate_idle = 15
-  vim.g.neovide_cursor_vfx_particle_density = 14
+  vim.g.neovide_refresh_rate_idle = 10
+
+  -- Cursor
+  vim.g.neovide_cursor_vfx_mode = "pixiedust"
+  vim.g.neovide_cursor_vfx_particle_density = 15
 end

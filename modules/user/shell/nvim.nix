@@ -3,7 +3,6 @@
     # base packages
     neovim
     neovim-remote
-    neovide
 
     nixd
 
@@ -51,18 +50,12 @@
     "L+ /home/leaf/.config/nvim/lazyvim.json - - - - /home/leaf/arboretum/modules/user/shell/neovim/lazyvim.json"
   ];
 
-  programs = {
-    neovide = {
-      enable = true;
-      settings = {
-        fork = false;
-        theme = "auto";
-        font = {
-          normal = ["MonaspiceNe Nerd Font"];
-          size = 12.0;
-        };
-        font.features = {"MonaspiceNe Nerd Font" = ["+calt" "+liga" "+ss01" "+ss02" "+ss03" "+ss04" "+ss05" "+ss06" "+ss07" "+ss08" "+ss09"];};
-      };
+  programs.neovide = {
+    enable = true;
+    settings.font = {
+      normal = ["Maple Mono NF"];
+      size = 14;
+      features = {"Maple Mono NF" = ["+cv03" "+ss05"];};
     };
   };
 
