@@ -22,8 +22,8 @@
       corefonts
       vistafonts
 
-      monaspace # firefox and other things
-      maple-mono
+      monaspace
+      maple-mono.NF
 
       nerd-fonts.monaspace
       nerd-fonts.symbols-only

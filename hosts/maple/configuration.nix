@@ -110,11 +110,9 @@
       age
       curl
       dnsutils
-      duf
       ffmpeg-full
       file
       git
-      hwinfo
       nixd
       pv
       rsync
@@ -133,7 +131,6 @@
       ghostty
 
       brave
-      firefox
     ])
     ++ [
       inputs.alejandra.defaultPackage.${pkgs.system}
@@ -148,6 +145,7 @@
     neovim.enable = true;
     vim.enable = true;
     nh.enable = true;
+    firefox.enable = true;
 
     direnv = {
       enable = true;
@@ -167,6 +165,7 @@
   };
 
   custom.hardware.nvidia.enablePrime = true;
+  custom.waydroid = false;
 
   specialisation = {
     on-the-go.configuration = {
