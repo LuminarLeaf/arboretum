@@ -5,7 +5,7 @@ require("config.lazy")
 if vim.g.neovide then
   -- Display
   -- vim.o.guifont = "Maple Mono NF:h12:#h-none"
-  vim.g.neovide_transparency = 0.8
+  vim.g.neovide_opacity = 1
   vim.g.neovide_floating_corner_radius = 0.25
   vim.g.neovide_hide_mouse_when_typing = true
 

@@ -35,7 +35,7 @@
   home.packages = with pkgs; [
     obsidian
     obs-do
-    vscode
+    vscode-fhs
     vesktop
     libreoffice-fresh
     gimp
