@@ -41,7 +41,6 @@
     gimp
     inkscape
     foliate
-    folio
     varia
   ];
 
