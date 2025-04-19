@@ -19,6 +19,7 @@
     shfmt
 
     yaml-language-server
+    taplo
 
     dockerfile-language-server-nodejs
     docker-compose-language-service

@@ -15,5 +15,5 @@ if vim.g.neovide then
 
   -- Cursor
   vim.g.neovide_cursor_vfx_mode = "pixiedust"
-  vim.g.neovide_cursor_vfx_particle_density = 15
+  vim.g.neovide_cursor_vfx_particle_density = 10
 end
