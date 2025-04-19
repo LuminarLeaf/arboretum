@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   fonts = {
     packages = with pkgs; [
+      aileron
       aleo-fonts
       comfortaa
       geist-font
@@ -22,6 +23,7 @@
       corefonts
       vistafonts
 
+      iosevka
       monaspace
       maple-mono.NF
 
