@@ -9,6 +9,7 @@
     settings = {
       background-blur-radius = 1;
       background-opacity = 0.9;
+      unfocused-split-opacity = 1;
 
       confirm-close-surface = false;
 
