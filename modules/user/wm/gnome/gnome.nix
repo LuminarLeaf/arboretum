@@ -28,6 +28,8 @@
     celluloid
     exaile
     deadbeef-with-plugins
+    # monitorets
+    # resources
 
     dconf-editor
   ];
