@@ -23,7 +23,10 @@
       corefonts
       vistafonts
 
-      iosevka
+      iosevka-bin
+      (iosevka-bin.override {variant = "Slab";})
+      (iosevka-bin.override {variant = "Aile";})
+      (iosevka-bin.override {variant = "Etoile";})
       monaspace
       maple-mono.NF
 
