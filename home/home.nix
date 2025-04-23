@@ -38,10 +38,13 @@
     vscode-fhs
     vesktop
     libreoffice-fresh
-    gimp
+    gimp3-with-plugins
     inkscape
     foliate
     varia
+    # apostrophe
+    # runemaster
+    warp
   ];
 
   programs.obs-studio = {
