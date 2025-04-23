@@ -57,7 +57,7 @@
     "/media/ext_wd" = {
       device = "/dev/disk/by-label/WD_EXT";
       fsType = "ext4";
-      options = ["defaults" "nofail" "user"];
+      options = ["defaults" "nofail"];
     };
   };
 
