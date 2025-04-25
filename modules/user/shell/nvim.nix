@@ -46,10 +46,10 @@
     source = ./neovim;
     recursive = true;
   };
-  systemd.user.tmpfiles.rules = [
-    "L+ /home/leaf/.config/nvim/lazy-lock.json - - - - /home/leaf/arboretum/modules/user/shell/neovim/lazy-lock.json"
-    "L+ /home/leaf/.config/nvim/lazyvim.json - - - - /home/leaf/arboretum/modules/user/shell/neovim/lazyvim.json"
-  ];
+  # systemd.user.tmpfiles.rules = [
+  #   "L+ /home/leaf/.config/nvim/lazy-lock.json - - - - /home/leaf/arboretum/modules/user/shell/neovim/lazy-lock.json"
+  #   "L+ /home/leaf/.config/nvim/lazyvim.json - - - - /home/leaf/arboretum/modules/user/shell/neovim/lazyvim.json"
+  # ];
 
   programs.neovide = {
     enable = true;
