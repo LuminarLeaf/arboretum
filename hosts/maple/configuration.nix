@@ -37,17 +37,23 @@
   ];
 
   nix = {
+    channel.enable = false;
+
+    registry = lib.mapAttrs (_: flake: {inherit flake;}) inputs;
+    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
+
     settings = {
       experimental-features = ["nix-command" "flakes"];
-      trusted-users = ["@wheel"];
       substituters = [
         "https://nix-community.cachix.org"
       ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
+
+      nix-path = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
+      flake-registry = "";
     };
-    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   };
 
   nixpkgs.config.allowUnfree = true;
