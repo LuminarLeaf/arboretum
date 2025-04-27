@@ -8,7 +8,7 @@
       version = 2;
       disable_notice = true;
       final_space = true;
-      console_title_template = "{{ .Shell }} in {{ .Folder }}";
+      # console_title_template = "{{ .Shell }} in {{ .Folder }}";
 
       var = {
         sepl = "<p:separator>❬</>";
