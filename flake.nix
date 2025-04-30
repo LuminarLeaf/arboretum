@@ -47,7 +47,6 @@
 
     nixosConfigurations = {
       maple = nixpkgs.lib.nixosSystem {
-        inherit system;
         specialArgs = {
           inherit userSettings;
           inherit inputs;
