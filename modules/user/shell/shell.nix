@@ -64,7 +64,7 @@ in {
         findNoDups = true;
         ignoreAllDups = true;
         ignoreDups = true;
-        ignorePatterns = ["rm *" "pkill *"];
+        # ignorePatterns = ["rm *" "pkill *"];
         ignoreSpace = true;
         path = "$HOME/.zsh_history";
         save = 10000;
