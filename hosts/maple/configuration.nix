@@ -26,7 +26,7 @@
       storageDriver = null;
       inherit pkgs lib config userSettings;
     })
-    ../../modules/system/app/flatpak.nix
+    # ../../modules/system/app/flatpak.nix
     ../../modules/system/app/gaming.nix
     ../../modules/system/app/mullvad.nix
     # ../../modules/system/app/qbittorrent.nix
