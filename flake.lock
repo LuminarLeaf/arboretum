@@ -170,6 +170,21 @@
         "url": "https://git.lix.systems/lix-project/lix/archive/release-2.92.tar.gz"
       }
     },
+    "nixCats": {
+      "locked": {
+        "lastModified": 1745981676,
+        "narHash": "sha256-KGkNQbZaX+1KKBjUoltOby36+rH2CPNLFpm1blZ5Li4=",
+        "owner": "BirdeeHub",
+        "repo": "nixCats-nvim",
+        "rev": "a4b78fc624b31b68536cdead4699c27bcb9e655a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BirdeeHub",
+        "repo": "nixCats-nvim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1745930157,
@@ -192,6 +207,7 @@
         "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "lix": "lix",
+        "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "spicetify-nix": "spicetify-nix",
         "vuetorrent": "vuetorrent"

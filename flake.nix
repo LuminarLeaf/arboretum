@@ -19,6 +19,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixCats.url = "github:BirdeeHub/nixCats-nvim";
+
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -77,6 +79,11 @@
           inherit inputs;
         };
       };
+    };
+
+    packages.x86_64-linux.nixCats = import ./pkgs/nixCats {
+      inherit inputs nixpkgs system;
+      nixCats = inputs.nixCats;
     };
   };
 }

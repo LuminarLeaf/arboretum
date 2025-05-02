@@ -1,30 +1,26 @@
 return {
   {
-    "LazyVim/LazyVim",
+    'LazyVim/LazyVim',
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = 'catppuccin',
     },
   },
   {
-    "catppuccin/nvim",
+    'catppuccin/nvim',
     opts = { term_colors = true },
   },
   {
-    "nvim-treesitter/nvim-treesitter-context",
-    opts = { max_lines = 10 },
-  },
-  {
-    "neovim/nvim-lspconfig",
+    'neovim/nvim-lspconfig',
     opts = {
       diagnostics = {
         virtual_text = {
-          prefix = "icons",
+          prefix = 'icons',
         },
       },
     },
   },
   {
-    "folke/snacks.nvim",
+    'folke/snacks.nvim',
     opts = {
       dashboard = {
         preset = {
