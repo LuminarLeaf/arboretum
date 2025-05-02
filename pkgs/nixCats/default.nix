@@ -84,6 +84,7 @@
         noice-nvim
         nui-nvim
         nvim-dap
+        nvim-dap-go
         nvim-dap-python
         nvim-dap-ui
         nvim-dap-virtual-text
