@@ -42,7 +42,7 @@
     media_player_color=CDD6F4
     ram_color=FAB387
     text_color=CDD6F4
-    text_outline_color=6C7086
+    text_outline_color=313244
     vram_color=F9E2AF
     wine_color=B4BEFE
 
