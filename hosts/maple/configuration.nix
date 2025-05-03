@@ -145,7 +145,10 @@
     fish.enable = true;
     neovim.enable = true;
     vim.enable = true;
-    nh.enable = true;
+    nh = {
+      enable = true;
+      flake = "/etc/nixos";
+    };
     firefox.enable = true;
 
     direnv = {
