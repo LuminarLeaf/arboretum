@@ -33,18 +33,17 @@
   };
 
   home.packages = with pkgs; [
-    obsidian
-    obs-do
-    vscode-fhs
-    vesktop
-    libreoffice-fresh
+    foliate
     gimp3-with-plugins
     inkscape
-    foliate
+    libreoffice-fresh
+    obs-do
+    obsidian
     varia
+    vesktop
+    vscode-fhs
     # apostrophe
     # runemaster
-    warp
   ];
 
   programs.obs-studio = {
