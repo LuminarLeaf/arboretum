@@ -23,27 +23,6 @@ local lazyOptions = {
 require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 'lazy.nvim' }, {
   { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
 
-  { 'williamboman/mason-lspconfig.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
-  { 'williamboman/mason.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
-  { 'jay-babu/mason-nvim-dap.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = require('nixCatsUtils').lazyAdd ':TSUpdate',
-    opts_extend = require('nixCatsUtils').lazyAdd(nil, false),
-    opts = {
-      ensure_installed = require('nixCatsUtils').lazyAdd(
-        { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
-        false
-      ),
-      auto_install = require('nixCatsUtils').lazyAdd(true, false),
-      ignore_install = require('nixCatsUtils').lazyAdd(nil, 'all'),
-    },
-  },
-  {
-    'folke/lazydev.nvim',
-    opts = { library = { { path = (nixCats.nixCatsPath or '') .. '/lua', words = { 'nixCats' } } } },
-  },
-
   { import = 'lazyvim.plugins.extras.ai.copilot-chat' },
   { import = 'lazyvim.plugins.extras.coding.blink' },
   { import = 'lazyvim.plugins.extras.coding.yanky' },
@@ -66,6 +45,27 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   { import = 'lazyvim.plugins.extras.ui.treesitter-context' },
   { import = 'lazyvim.plugins.extras.util.dot' },
   { import = 'lazyvim.plugins.extras.util.mini-hipatterns' },
+
+  { 'williamboman/mason-lspconfig.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
+  { 'williamboman/mason.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
+  { 'jay-babu/mason-nvim-dap.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
+  {
+    'folke/lazydev.nvim',
+    opts = { library = { { path = (nixCats.nixCatsPath or '') .. '/lua', words = { 'nixCats' } } } },
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = require('nixCatsUtils').lazyAdd ':TSUpdate',
+    opts_extend = require('nixCatsUtils').lazyAdd(nil, false),
+    opts = {
+      ensure_installed = require('nixCatsUtils').lazyAdd(
+        { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+        false
+      ),
+      auto_install = require('nixCatsUtils').lazyAdd(true, false),
+      ignore_install = require('nixCatsUtils').lazyAdd(nil, 'all'),
+    },
+  },
   -- import/override with your plugins
   { import = 'plugins' },
 }, lazyOptions)
