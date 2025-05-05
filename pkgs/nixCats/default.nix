@@ -40,10 +40,12 @@
         dockerfile-language-server-nodejs
         gofumpt
         gopls
+        gotools
         lua-language-server
         markdownlint-cli2
         marksman
         nixd
+        nodePackages.prettier
         pyright
         ruff
         rust-analyzer
