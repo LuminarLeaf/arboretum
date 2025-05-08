@@ -51,7 +51,7 @@ in {
         modesetting.enable = true;
         powerManagement.enable = true;
         powerManagement.finegrained = true;
-        open = false;
+        open = true;
         nvidiaSettings = true;
         dynamicBoost.enable = true;
 
