@@ -4,14 +4,20 @@
       aileron
       aleo-fonts
       comfortaa
+      fira-sans
       geist-font
+      hubot-sans
       inter
       jost
       lato
       lexend
       liberation_ttf
       libertinus
+      mona-sans
+      ostrich-sans
+      work-sans
       roboto
+      ubuntu-sans
 
       noto-fonts
       noto-fonts-cjk-serif
@@ -29,6 +35,7 @@
       (iosevka-bin.override {variant = "Etoile";})
       monaspace
       maple-mono.NF
+      ubuntu-sans-mono
 
       nerd-fonts.monaspace
       nerd-fonts.symbols-only
