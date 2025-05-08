@@ -38,6 +38,7 @@
         delve
         docker-compose-language-service
         dockerfile-language-server-nodejs
+        emmet-language-server
         gofumpt
         gopls
         gotools

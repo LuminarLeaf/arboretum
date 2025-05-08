@@ -20,7 +20,6 @@
       enable = true;
       options = {
         tabs = 2;
-        navigate = true;
         features = "lynx";
         lynx = {
           dark = true;

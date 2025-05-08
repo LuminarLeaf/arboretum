@@ -5,6 +5,7 @@ return {
       servers = {
         html = {},
         cssls = {},
+        emmet_language_server = {},
       },
     },
   },
