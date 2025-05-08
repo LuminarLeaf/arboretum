@@ -81,6 +81,7 @@ in {
       initExtra =
         #bash
         ''
+          zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
           zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color always $realpath'
           zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color always $realpath'
           # HACK: This breaks fzf-tab in tmux for some reason, remove if you want to use tmux AND fzf-tab
