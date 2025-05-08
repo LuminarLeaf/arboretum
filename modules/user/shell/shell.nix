@@ -72,14 +72,17 @@ in {
         share = true;
         size = 50000;
       };
-      initExtraFirst =
-        #bash
-        ''
-          autoload -U select-word-style
-          select-word-style bash
-        '';
-      initExtra =
-        #bash
+      initContent = lib.mkMerge [
+        (
+          lib.mkBefore
+          #sh
+          ''
+            autoload -U select-word-style
+            select-word-style bash
+          ''
+        )
+
+        #sh
         ''
           zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
           zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color always $realpath'
@@ -145,7 +148,8 @@ in {
           ddiso() {
             dd if=$1 of=$2 status=progress oflag=sync
           }
-        '';
+        ''
+      ];
     };
   };
 }

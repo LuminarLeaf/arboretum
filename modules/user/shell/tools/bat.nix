@@ -14,7 +14,7 @@
       MANPAGER = ''sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -plman' '';
       PAGER = "bat";
     };
-    initExtra = ''
+    initContent = ''
       bh() {
         "$@" --help 2>&1 | bat -pl help
       }

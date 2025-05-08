@@ -29,7 +29,7 @@
       };
     };
     zsh = {
-      initExtra = ''
+      initContent = ''
         _fzf_compgen_path() {
           fd --hidden -E .git -E node_modules -E .cache . "$1"
         }
