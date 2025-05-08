@@ -55,6 +55,7 @@
         sqls
         stylua
         taplo
+        texlab
         typescript-language-server
         vale
         vscode-js-debug
@@ -112,6 +113,7 @@
         ts-comments-nvim
         vim-illuminate
         vim-startuptime
+        vimtex
         which-key-nvim
         yanky-nvim
 
