@@ -22,7 +22,7 @@
       gtk-single-instance = true;
 
       window-decoration = "client"; # issues in plasma
-      window-padding-color = "extend";
+      window-padding-balance = true;
     };
   };
   catppuccin.ghostty.enable = true;
