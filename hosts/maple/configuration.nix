@@ -29,7 +29,6 @@
     # ../../modules/system/app/flatpak.nix
     ../../modules/system/app/gaming.nix
     ../../modules/system/app/mullvad.nix
-    # ../../modules/system/app/qbittorrent.nix
     ../../modules/system/app/virtualization.nix
 
     ../../modules/system/security/firewall.nix
@@ -72,7 +71,7 @@
         '';
       };
     };
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelPackages = pkgs.linuxPackages_zen;
   };
   catppuccin.grub.enable = true;
 
@@ -163,6 +162,9 @@
   };
 
   services.gvfs.enable = true;
+  # services.printing.enable = true;
+  # services.printing.drivers = with pkgs; [hplipWithPlugin];
+  systemd.services."NetworkManager-wait-online".enable = false;
 
   xdg.portal = {
     enable = true;
