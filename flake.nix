@@ -75,9 +75,12 @@
       };
     };
 
-    packages.x86_64-linux.nixCats = import ./pkgs/nixCats {
-      inherit inputs nixpkgs system;
-      nixCats = inputs.nixCats;
+    packages.x86_64-linux = {
+      nixCats = import ./pkgs/nixCats {
+        inherit inputs nixpkgs system;
+        nixCats = inputs.nixCats;
+      };
+      tmux-mighty-scroll = pkgs.callPackage ./pkgs/tmux-mighty-scroll {};
     };
   };
 }
