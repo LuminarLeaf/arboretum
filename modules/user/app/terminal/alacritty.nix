@@ -51,6 +51,11 @@
             mods = "Control|Shift";
             action = "Quit";
           }
+          {
+            key = "Return";
+            mods = "Alt";
+            action = "ToggleFullscreen";
+          }
         ];
       };
     };

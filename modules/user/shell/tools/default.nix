@@ -8,7 +8,7 @@
     ./omp.nix
     ./ripgrep.nix
     ./superfile.nix
-    # ./tmux.nix # i am sick of using this like this, will write a custom flake when i have time
+    ./tmux.nix
     ./yazi.nix
     ./zoxide.nix
   ];

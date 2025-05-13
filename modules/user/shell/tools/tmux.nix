@@ -1,141 +1,115 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.tmux = {
     enable = true;
-    terminal = "tmux-256color";
-    mouse = true;
-    prefix = "C-Space";
-    baseIndex = 1;
-    clock24 = true;
-    # historyLimit = 5000;
-    keyMode = "vi";
-    # newSession = true;
-    sensibleOnTop = true;
-    plugins = with pkgs; [
-      tmuxPlugins.sensible
-      tmuxPlugins.yank
-      tmuxPlugins.vim-tmux-navigator
-    ];
-    catppuccin = {
-      enable = true;
-      extraConfig = ''
-        set -g @catppuccin_flavor "mocha"
-        set -g @catppuccin_menu_selected_style "fg=#{@thm_surface_0},bg=#{@thm_mauve}"
-        set -g @catppuccin_status_background "none"
+    extraConfig =
+      #tmux
+      ''
+        # Change prefix to space
+        unbind C-b
+        set -g prefix C-Space
+        bind C-Space send-prefix
 
-        set -g @catppuccin_window_status_style "custom"
-        set -g @catppuccin_window_left_separator ""
-        set -g @catppuccin_window_middle_separator " █"
-        set -g @catppuccin_window_right_separator "█"
-        set -g @catppuccin_window_number_position "right"
+        # True Color
+        set -s default-terminal "tmux-256color"
+        set -sa terminal-overrides ",xterm-256color:Tc"
 
-        set -g @catppuccin_window_default_background "#{@thm_peach}"
-        set -g @catppuccin_window_current_background "#{@thm_sapphire}"
+        # Start indices from 1
+        set -g base-index 1
+        set -gw pane-base-index 1
+        set -g renumber-windows on
 
-        set -g @catppuccin_pane_border_style "fg=#{@thm_surface_0}"
-        set -g @catppuccin_pane_active_border_style "fg=#{@thm_lavender}"
+        set -gw mode-keys vi
 
-        set -g @catppuccin_status_left_separator  " "
-        set -g @catppuccin_status_right_separator ""
-        set -g @catppuccin_status_connect_separator "no"
-
+        set -g status-position top
+        set -g status-left-length 100
         set -g status-left ""
-        set -g status-right "#{E:@catppuccin_status_application}"
-        set -ag status-right "#{E:@catppuccin_status_directory}"
-        set -ag status-right "#{E:@catppuccin_status_session}"
+        set -g status-right-length 100
+        set -g status-right ""
+
+        set -s focus-events on
+        set -s set-clipboard on
+        set -s escape-time 20
+        set -g set-titles on
+        set -g display-time 4000
+        set -g history-limit 50000
+        set -g mouse on
+        set -g status-interval 5
+        set -g status-keys emacs
+        set -gw aggressive-resize on
+
+        # keybindings
+        bind -n M-P previous-window
+        bind -n M-N next-window
+
+        bind -n M-H select-pane -L
+        bind -n M-J select-pane -D
+        bind -n M-K select-pane -U
+        bind -n M-L select-pane -R
+
+        bind -n C-M-h resize-pane -L 5
+        bind -n C-M-j resize-pane -D 5
+        bind -n C-M-k resize-pane -U 5
+        bind -n C-M-l resize-pane -R 5
+
+        unbind -T copy-mode-vi MouseDragEnd1Pane
+
+        bind '"' split-window -v -c "#{pane_current_path}"
+        bind _ split-window -v -c "#{pane_current_path}"
+        bind % split-window -h -c "#{pane_current_path}"
+        bind | split-window -h -c "#{pane_current_path}"
+
+        bind C-l send-keys 'C-l'
+
+        bind -T copy-mode-vi v send-keys -X begin-selection
+        bind -T copy-mode-vi "C-v" send-keys -X rectangle-toggle
+        bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel
+
+        # Status Left
+        set -ga status-left "#[bg=#{?client_prefix,#{@thm_sapphire},#{?pane_in_mode,#{@thm_yellow},#{?pane_synchronized,#{@thm_red},#{@thm_lavender}}}},fg=#{@thm_bg}]  #S "
+        set -ga status-left "#[bg=#{@thm_green},fg=#{@thm_bg}]  #{pane_current_command} "
+        set -ga status-left "#[bg=#{@thm_red},fg=#{@thm_bg}]#{?window_zoomed_flag,  zoom ,}"
+
+        # Status Right
+        set -ga status-right "#[bg=#{@thm_maroon},fg=#{@thm_bg}] 󰅐 %H:%M "
+        set -ga status-right "#[bg=#{@thm_pink},fg=#{@thm_bg}]  #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}} "
+
+        # Status Windows
+        set -gw status-justify absolute-centre
+        set -gw automatic-rename on
+        set -gw automatic-rename-format ""
+
+        set -g window-status-format " #I#{?#{!=:#{window_name},},: #W,} "
+        set -g window-status-style "bg=#{@thm_bg},fg=#{@thm_lavender}"
+        set -g window-status-last-style "bg=#{@thm_bg},fg=#{@thm_mauve}"
+        set -g window-status-activity-style "bg=#{@thm_pink},fg=#{@thm_bg}"
+        set -g window-status-bell-style "bg=#{@thm_red},fg=#{@thm_bg},bold"
+        set -gF window-status-separator "#[fg=#{@thm_overlay_0}]|"
+
+        set -g window-status-current-format " #I#{?#{!=:#{window_name},},: #W,} "
+        set -g window-status-current-style "bg=#{@thm_mauve},fg=#{@thm_bg},bold"
       '';
-    };
-    # shell = "${pkgs.zsh}/bin/zsh";
-    # disableConfirmationPrompt = true;
-
-    # extraConfig = '''';
-    # extraConfigBeforePlugins = '''';
+    plugins = [
+      {
+        plugin = pkgs.tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavor "mocha"
+          set -g @catppuccin_status_background "none"
+          set -g @catppuccin_window_status_style "none"
+          set -g @catppuccin_pane_status_enabled "off"
+          set -g @catppuccin_pane_border_status "off"
+        '';
+      }
+      {
+        plugin = pkgs.tmuxPlugins.fingers;
+        extraConfig = ''
+          set -g @fingers-key f
+        '';
+      }
+      inputs.self.packages.${pkgs.system}.tmux-mighty-scroll
+    ];
   };
-  catppuccin.sources.tmux = pkgs.fetchFromGitHub {
-    owner = "catppuccin";
-    repo = "tmux";
-    rev = "10aac293a892125ea9f895fd4348ed90baab649d";
-    sha256 = "sha256-p0xrk4WXNoVJfekA/L3cxIVrLqjFbBe2S/rc/6JXz6M=";
-  };
-  # programs.tmux = {
-  #   enable = true;
-  #   package = pkgs.tmux;
-  #   extraConfig = ''
-  #     # Enable mouse support
-  #     set -g mouse on
-
-  #     # Set prefix
-  #     unbind C-b
-  #     set -g prefix C-Space
-  #     bind C-Space send-prefix
-
-  #     # Shift Alt vim keys to switch windows
-  #     bind -n M-H previous-window
-  #     bind -n M-L next-window
-
-  #     # Start windows and panes at 1
-  #     set -g base-index 1
-  #     set -g pane-base-index 1
-  #     set-window-option -g pane-base-index 1
-  #     set-option -g renumber-windows on
-
-  #     # Enable 24 bit color
-  #     set -g default-terminal "tmux-256color"
-  #     set -ga terminal-overrides ",*256col*:Tc"
-  #     set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
-  #     set-environment -g COLORTERM "truecolor"
-
-  #     # Plugins
-  #     set -g @plugin 'tmux-plugins/tpm'
-  #     set -g @plugin 'tmux-plugins/tmux-sensible'
-  #     set -g @plugin 'catppuccin/tmux#v1.0.3'
-  #     set -g @plugin 'tmux-plugins/tmux-yank'
-  #     set -g @plugin 'christoomey/vim-tmux-navigator'
-  #     set -g @plugin 'noscript/tmux-mighty-scroll'
-  #     set -g @plugin 'alexwforsythe/tmux-which-key'
-
-  #     # Catppuccin
-  #     set -g @catppuccin_flavor "mocha"
-  #     set -g @catppuccin_menu_selected_style "fg=#{@thm_surface_0},bg=#{@thm_mauve}"
-  #     set -g @catppuccin_status_background "none"
-
-  #     set -g @catppuccin_window_status_style "custom"
-  #     set -g @catppuccin_window_left_separator ""
-  #     set -g @catppuccin_window_middle_separator " █"
-  #     set -g @catppuccin_window_right_separator "█"
-  #     set -g @catppuccin_window_number_position "right"
-
-  #     set -g @catppuccin_window_default_background "#{@thm_peach}"
-  #     set -g @catppuccin_window_current_background "#{@thm_sapphire}"
-
-  #     set -g @catppuccin_pane_border_style "fg=#{@thm_surface_0}"
-  #     set -g @catppuccin_pane_active_border_style "fg=#{@thm_lavender}"
-
-  #     set -g @catppuccin_status_left_separator  " "
-  #     set -g @catppuccin_status_right_separator ""
-  #     set -g @catppuccin_status_connect_separator "no"
-
-  #     set -g status-left ""
-  #     set -g status-right "#{E:@catppuccin_status_application}"
-  #     set -ag status-right "#{E:@catppuccin_status_directory}"
-  #     set -ag status-right "#{E:@catppuccin_status_session}"
-
-  #     # Set vi mode
-  #     set-window-option -g mode-keys vi
-
-  #     # keybindings
-  #     bind-key -T copy-mode-vi v send-keys -X begin-selection
-  #     bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
-  #     bind-key -T copy-mode-vi y send-keys copy-selection-and-cancel
-
-  #     bind-key '"' split-window -v -c "#{pane_current_path}"
-  #     bind-key % split-window -h -c "#{pane_current_path}"
-
-  #     # Restore Ctrl-l
-  #     bind C-l send-keys 'C-l'
-
-  #     if "test ! -d ~/.tmux/plugins/tpm" \
-  #       "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
-  #     run '~/.tmux/plugins/tpm/tpm'
-  #   '';
-  # };
 }

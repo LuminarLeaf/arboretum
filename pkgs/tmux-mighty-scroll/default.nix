@@ -8,7 +8,7 @@
 }: let
   mighty-scroll = stdenv.mkDerivation (finalAttrs: {
     pname = "tmux-mighty-scroll";
-    version = "v2025-04-15";
+    version = "unstable-2025-04-15";
 
     src = fetchFromGitHub {
       owner = "noscript";
