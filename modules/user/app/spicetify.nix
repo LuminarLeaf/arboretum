@@ -10,16 +10,24 @@
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       beautifulLyrics
-      copyToClipboard
+      # copyToClipboard
+      hidePodcasts
+      queueTime
       shuffle
     ];
     enabledCustomApps = with spicePkgs.apps; [
       lyricsPlus
     ];
     enabledSnippets = with spicePkgs.snippets; [
+      hideDownloadButton
+      hideFriendActivityButton
+      hideLyricsButton
+      hideMiniPlayerButton
+      hideNowPlayingViewButton
+      modernScrollbar
       removeGradient
+      roundedButtons
       roundedImages
-      smoothPlaylistRevealGradient
       smoothProgressBar
     ];
     theme = spicePkgs.themes.catppuccin;
