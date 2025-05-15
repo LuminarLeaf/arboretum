@@ -42,8 +42,8 @@
         set -gw aggressive-resize on
 
         # keybindings
-        bind -n M-P previous-window
-        bind -n M-N next-window
+        bind -n 'M-:' previous-window
+        bind -n 'M-"' next-window
 
         bind -n M-H select-pane -L
         bind -n M-J select-pane -D
