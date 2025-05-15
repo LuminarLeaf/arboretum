@@ -4,6 +4,7 @@
   ];
 
   home.packages = with pkgs; [
+    dysk
     ripgrep
     jq
     yq-go
