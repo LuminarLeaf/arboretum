@@ -57,6 +57,9 @@
 
         unbind -T copy-mode-vi MouseDragEnd1Pane
 
+        bind W new-window -c "#{pane_current_path}"
+        bind C-w new-window -a -c "#{pane_current_path}"
+
         bind '"' split-window -v -c "#{pane_current_path}"
         bind _ split-window -v -c "#{pane_current_path}"
         bind % split-window -h -c "#{pane_current_path}"
