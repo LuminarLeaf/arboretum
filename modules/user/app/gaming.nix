@@ -30,21 +30,24 @@
     font_size=24
     position=top-left
 
-    background_alpha=0.4
+    background_alpha=0.8
     cpu_text=CPU
     gpu_text=GPU
 
     background_color=1E1E1E
-    cpu_color=89DCEB
+    cpu_color=89B4FA
+    cpu_load_color=CDD6F4,FAB387,F38BA8
     engine_color=F38BA8
+    fps_color_change=F38BA8,F9E2AF,A6E3A1
     frametime_color=A6E3A1
-    gpu_color=CBA6F7
+    gpu_color=A6E3A1
+    gpu_load_color=CDD6F4,FAB387,F38BA8
     media_player_color=CDD6F4
-    ram_color=FAB387
+    ram_color=F5C2E7
     text_color=CDD6F4
     text_outline_color=313244
     vram_color=F9E2AF
-    wine_color=B4BEFE
+    wine_color=F38BA8
 
     fps
     cpu_stats
