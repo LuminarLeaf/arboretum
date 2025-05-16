@@ -5,6 +5,7 @@
 }: {
   programs.tmux = {
     enable = true;
+    tmuxinator.enable = true;
     extraConfig =
       #tmux
       ''

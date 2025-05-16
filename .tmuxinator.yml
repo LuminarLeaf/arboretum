@@ -1,0 +1,11 @@
+# ./.tmuxinator.yml
+
+name: arboretum
+# root: ~/arboretum/
+
+startup_window: editor
+
+windows:
+  - editor: nvim
+  - ns: ns
+  - shell:
