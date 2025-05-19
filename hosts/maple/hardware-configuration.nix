@@ -52,12 +52,13 @@
     "/media/data" = {
       device = "/dev/disk/by-label/data";
       fsType = "ext4";
+      options = ["defaults" "noatime"];
     };
 
     "/media/ext_wd" = {
       device = "/dev/disk/by-label/WD_EXT";
       fsType = "ext4";
-      options = ["defaults" "nofail"];
+      options = ["defaults" "noatime" "nofail"];
     };
   };
 

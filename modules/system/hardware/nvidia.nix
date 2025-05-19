@@ -26,6 +26,7 @@ in {
         "nouveau"
         "nvidia"
         "nvidia_drm"
+        "nvidia_uvm"
         "nvidia_modeset"
       ];
       extraModprobeConfig = ''
