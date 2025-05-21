@@ -4,10 +4,9 @@
   base16-schemes,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "base24-schemes";
-  version = "${base16-schemes.version}";
+  inherit (base16-schemes) version src;
 
-  src = base16-schemes.src;
+  pname = "base24-schemes";
 
   installPhase = ''
     runHook preInstall
