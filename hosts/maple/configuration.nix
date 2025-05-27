@@ -21,6 +21,7 @@
     ../../modules/system/hardware/razer.nix
 
     ../../modules/system/wm/plasma.nix
+    # ../../modules/system/wm/gnome.nix
 
     (import ../../modules/system/app/docker.nix {
       storageDriver = null;
@@ -71,7 +72,8 @@
         '';
       };
     };
-    kernelPackages = pkgs.linuxPackages_zen;
+    # kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_xanmod;
   };
   catppuccin.grub.enable = true;
 
@@ -193,6 +195,14 @@
         HibernateDelaySec=30m
         SuspendState=mem
       '';
+    };
+    vfio.configuration = {
+      system.nixos.tags = ["with-vfio"];
+
+      custom.hardware.nvidia.enable = false;
+      custom.hardware.nvidia.pci_passthrough = true;
+      custom.hardware.supergfxd = false;
+      custom.docker.powerSave = true;
     };
   };
 
