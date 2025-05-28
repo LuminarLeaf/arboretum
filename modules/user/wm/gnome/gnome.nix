@@ -41,7 +41,11 @@
         accent-color = "purple";
         color-scheme = "prefer-dark";
         show-battery-percentage = true;
+        font-name = "sans-serif 11";
+        document-font-name = "serif 11";
+        monospace-font-name = "monospace 11";
       };
+      "org/gnome/mutter/wayland/keybindings" = {restore-shortcuts = "@as []";};
       "org/gnome/desktop/peripherals/mouse" = {accel-profile = "flat";};
       "org/gnome/desktop/session" = {idle-delay = "uint32 600";};
       "org/gnome/desktop/sound" = {allow-volume-above-100-percent = true;};
@@ -51,9 +55,19 @@
         visual-bell = false;
       };
       "org/gnome/settings-daemon/plugins/power" = {sleep-inactive-ac-type = "nothing";};
+      "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Control><Alt>t";
+        command = "ghostty";
+        name = "Terminal";
+      };
       "org/gnome/shell" = {favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop" "vesktop.desktop" "spotify.desktop"];};
       "org/gnome/shell/app-switcher" = {current-workspace-only = true;};
-      "org/gnome/shell/extensions/blur-my-shell/applications/" = {
+      "org/gnome/shell/keybindings" = {
+        focus-active-notification = "@as []";
+        toggle-message-tray = ["<Super>n"];
+      };
+      "org/gnome/shell/extensions/blur-my-shell/applications" = {
         blur = true;
         dynamic-opacity = false;
         whitelist = ["com.mitchellh.ghostty" "kitty"];
