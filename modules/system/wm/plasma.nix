@@ -17,6 +17,7 @@
         layout = "us";
         variant = "";
       };
+      excludePackages = [pkgs.xterm];
     };
     displayManager.sddm = {
       enable = true;

@@ -68,9 +68,9 @@
         toggle-message-tray = ["<Super>n"];
       };
       "org/gnome/shell/extensions/blur-my-shell/applications" = {
-        blur = true;
-        dynamic-opacity = false;
-        whitelist = ["com.mitchellh.ghostty" "kitty"];
+        blur = false;
+        # dynamic-opacity = false;
+        # whitelist = ["com.mitchellh.ghostty" "kitty"];
       };
       "org/gnome/shell/extensions/clipboard-indicator" = {
         cache-size = 10;

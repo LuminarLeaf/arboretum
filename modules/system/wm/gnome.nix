@@ -19,6 +19,7 @@
         layout = "us";
         variant = "";
       };
+      excludePackages = [pkgs.xterm];
     };
     gnome.gnome-keyring.enable = true;
   };
