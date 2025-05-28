@@ -20,8 +20,8 @@
 
     ../../modules/system/hardware/razer.nix
 
-    ../../modules/system/wm/plasma.nix
-    # ../../modules/system/wm/gnome.nix
+    # ../../modules/system/wm/plasma.nix
+    ../../modules/system/wm/gnome.nix
 
     (import ../../modules/system/app/docker.nix {
       storageDriver = null;

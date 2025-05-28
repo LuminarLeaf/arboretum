@@ -23,8 +23,8 @@
     ../modules/user/shell/nvim.nix
     ../modules/user/shell/cli-tools.nix
 
-    ../modules/user/wm/plasma/plasma.nix
-    # ../modules/user/wm/gnome/gnome.nix
+    # ../modules/user/wm/plasma/plasma.nix
+    ../modules/user/wm/gnome/gnome.nix
   ];
 
   programs.home-manager.enable = true;
