@@ -28,10 +28,9 @@
       gnome-tweaks
       wl-clipboard
       rhythmbox
-      blackbox-terminal
       zenity
       (writeShellScriptBin "xdg-terminal-exec" ''
-        exec "${lib.getExe blackbox-terminal}" -c "$@"
+        exec "${lib.getExe ghostty}" -e "$@"
       '')
     ])
     ++ lib.optionals config.services.flatpak.enable [pkgs.gnome-software];
