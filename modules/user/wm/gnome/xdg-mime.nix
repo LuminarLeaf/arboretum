@@ -7,7 +7,7 @@
     browser = ["firefox.desktop"];
     text = ["org.gnome.TextEditor.desktop"];
     image = ["org.gnome.Loupe.desktop"];
-    audio = ["deadbeef.desktop"];
+    audio = ["org.gnome.Decibels.desktop"];
     video = ["io.github.celluloid_player.Celluloid.desktop"];
     directory = ["org.gnome.Nautilus.desktop"];
     office = ["libreoffice.desktop"];

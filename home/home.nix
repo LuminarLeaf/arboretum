@@ -47,7 +47,7 @@
     # runemaster
   ];
 
-  home.sessionVariables.NIXOS_OZONE_WL = 1;
+  # home.sessionVariables.NIXOS_OZONE_WL = 1;
 
   programs.obs-studio = {
     enable = true;
