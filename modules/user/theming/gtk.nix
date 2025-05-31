@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   config,
   userSettings,
@@ -34,7 +35,7 @@
     gtk4.extraConfig = gtk-extra-conf;
   };
 
-  home.file.${config.gtk.gtk2.configLocation}.force = true;
+  home.file.${config.gtk.gtk2.configLocation}.force = lib.mkForce true;
 
   xdg = {
     # gtk4/libadwaita

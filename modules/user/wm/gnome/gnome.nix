@@ -14,12 +14,14 @@
       };
     };
     extensions = [
-      {package = pkgs.gnomeExtensions.clipboard-indicator;}
-      {package = pkgs.gnomeExtensions.dash-to-dock;}
       {package = pkgs.gnomeExtensions.appindicator;}
       {package = pkgs.gnomeExtensions.blur-my-shell;}
-      {package = pkgs.gnomeExtensions.window-is-ready-remover;}
+      {package = pkgs.gnomeExtensions.clipboard-indicator;}
+      {package = pkgs.gnomeExtensions.dash-to-dock;}
+      {package = pkgs.gnomeExtensions.fullscreen-to-empty-workspace-2;}
       {package = pkgs.gnomeExtensions.pip-on-top;}
+      {package = pkgs.gnomeExtensions.resolution-and-refresh-rate-in-quick-settings;}
+      {package = pkgs.gnomeExtensions.window-is-ready-remover;}
     ];
   };
 
@@ -46,6 +48,7 @@
         monospace-font-name = "monospace 11";
       };
       "org/gnome/mutter/wayland/keybindings" = {restore-shortcuts = "@as []";};
+      "org/gnome/desktop/input-sources" = {xkb-options = ["lv3:rwin_switch"];};
       "org/gnome/desktop/peripherals/mouse" = {accel-profile = "flat";};
       "org/gnome/desktop/session" = {idle-delay = "uint32 600";};
       "org/gnome/desktop/sound" = {allow-volume-above-100-percent = true;};
@@ -84,6 +87,7 @@
         show-show-apps-button = true;
         show-trash = false;
       };
+      "org/gnome/shell/extensions/fullscreen-to-empty-workspace" = {move-window-when-maximized = false;};
       "org/gnome/shell/extensions/pip-on-top" = {stick = true;};
     };
   };
