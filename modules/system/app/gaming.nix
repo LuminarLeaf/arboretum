@@ -22,7 +22,7 @@
     protonup
     gamescope
 
-    bottles
+    (bottles.override {removeWarningPopup = true;})
     wine
   ];
 

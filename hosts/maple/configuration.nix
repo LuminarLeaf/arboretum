@@ -164,8 +164,8 @@
   };
 
   services.gvfs.enable = true;
-  # services.printing.enable = true;
-  # services.printing.drivers = with pkgs; [hplipWithPlugin];
+  services.printing.enable = true;
+  services.printing.drivers = with pkgs; [hplipWithPlugin];
   systemd.services."NetworkManager-wait-online".enable = false;
 
   xdg.portal = {
