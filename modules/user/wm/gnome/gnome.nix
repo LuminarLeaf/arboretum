@@ -58,11 +58,16 @@
         visual-bell = false;
       };
       "org/gnome/settings-daemon/plugins/power" = {sleep-inactive-ac-type = "nothing";};
-      "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
+      "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"];
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Control><Alt>t";
         command = "ghostty";
         name = "Terminal";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "F9";
+        command = "obs-do toggle-record";
+        name = "OBS Toggle Record";
       };
       "org/gnome/shell" = {favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop" "vesktop.desktop" "spotify.desktop"];};
       "org/gnome/shell/app-switcher" = {current-workspace-only = true;};

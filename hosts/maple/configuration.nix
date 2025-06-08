@@ -29,7 +29,7 @@
     })
     # ../../modules/system/app/flatpak.nix
     ../../modules/system/app/gaming.nix
-    ../../modules/system/app/mullvad.nix
+    # ../../modules/system/app/mullvad.nix
     ../../modules/system/app/virtualization.nix
 
     ../../modules/system/security/firewall.nix
@@ -203,6 +203,9 @@
       custom.hardware.nvidia.pci_passthrough = true;
       custom.hardware.supergfxd = false;
       custom.docker.powerSave = true;
+
+      systemd.tmpfiles.rules = ["f /dev/shm/looking-glass 0660 ${userSettings.username} qemu-libvirtd -"];
+      environment.systemPackages = [pkgs.looking-glass-client];
     };
   };
 
