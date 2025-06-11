@@ -3,12 +3,12 @@
 
   programs.yazi = {
     enable = true;
-    settings.manager = {
+    settings.mgr = {
       show_hidden = true;
       show_symlink = false;
     };
     keymap = {
-      manager.prepend_keymap = [
+      mgr.prepend_keymap = [
         {
           run = [
             ''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' ''
