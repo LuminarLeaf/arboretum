@@ -26,9 +26,10 @@
 
   environment.systemPackages =
     (with pkgs; [
+      ffmpegthumbnailer
       gnome-tweaks
-      wl-clipboard
       rhythmbox
+      wl-clipboard
       zenity
       (writeShellScriptBin "xdg-terminal-exec" ''
         exec "${lib.getExe ghostty}" -e "$@"
