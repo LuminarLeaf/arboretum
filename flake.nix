@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    alejandra = {
-      url = "github:kamadorueda/alejandra/3.0.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     catppuccin = {
@@ -45,7 +40,7 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    formatter.${system} = inputs.alejandra.defaultPackage.${system};
+    formatter.${system} = pkgs.alejandra;
 
     nixosConfigurations = {
       maple = nixpkgs.lib.nixosSystem {

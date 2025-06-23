@@ -30,6 +30,7 @@
           exec ${pkgs.lazygit}/bin/lazygit --use-config-file ${pkgs.writeText "lazygit_config.yml" ""} "$@"
         '')
 
+        alejandra
         bacon
         bash-language-server
         biome

@@ -107,36 +107,33 @@
     shell = pkgs.zsh;
   };
 
-  environment.systemPackages =
-    (with pkgs; [
-      age
-      curl
-      dnsutils
-      ffmpeg-full
-      file
-      git
-      nixd
-      pv
-      rsync
-      tldr
-      tmux
-      wget
+  environment.systemPackages = with pkgs; [
+    age
+    alejandra
+    curl
+    dnsutils
+    ffmpeg-full
+    file
+    git
+    nixd
+    pv
+    rsync
+    tldr
+    tmux
+    wget
 
-      rar
-      unar
-      p7zip
-      unzip
-      xz
-      # cryptsetup
-      kitty
-      mpv
-      ghostty
+    rar
+    unar
+    p7zip
+    unzip
+    xz
+    # cryptsetup
+    kitty
+    mpv
+    ghostty
 
-      brave
-    ])
-    ++ [
-      inputs.alejandra.defaultPackage.${pkgs.system}
-    ];
+    brave
+  ];
 
   environment.shells = with pkgs; [bash zsh fish];
   system.userActivationScripts.zshrc = "touch .zshrc"; # disables the zsh initial "popup"
