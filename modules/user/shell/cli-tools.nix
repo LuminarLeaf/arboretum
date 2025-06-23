@@ -28,10 +28,7 @@
     python3
 
     nix-search-tv
-    (writeScriptBin "ns" (builtins.readFile (fetchurl {
-      url = "https://github.com/3timeslazy/nix-search-tv/raw/70e3dae0f790bc6ffce6199e3da967c297e8aea9/nixpkgs.sh";
-      hash = "sha256-/TKONYWLxSvCIxP8A2PuIrtabWUkpbJEwZi5vVw6/wk=";
-    })))
+    (writeScriptBin "ns" (builtins.readFile "${nix-search-tv.src}/nixpkgs.sh"))
   ];
 
   programs.btop = {
