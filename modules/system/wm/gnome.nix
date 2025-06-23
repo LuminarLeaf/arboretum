@@ -21,7 +21,10 @@
       };
       excludePackages = [pkgs.xterm];
     };
-    gnome.gnome-keyring.enable = true;
+    gnome = {
+      gnome-keyring.enable = true;
+      sushi.enable = true;
+    };
   };
 
   environment.systemPackages =
@@ -29,6 +32,7 @@
       ffmpegthumbnailer
       gnome-tweaks
       rhythmbox
+      gradia
       wl-clipboard
       zenity
       (writeShellScriptBin "xdg-terminal-exec" ''
