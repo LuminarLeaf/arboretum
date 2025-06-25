@@ -10,6 +10,12 @@ return {
     opts = { term_colors = true },
   },
   {
+    'folke/which-key.nvim',
+    opts = {
+      preset = 'classic',
+    },
+  },
+  {
     'neovim/nvim-lspconfig',
     opts = {
       diagnostics = {
