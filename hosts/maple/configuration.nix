@@ -135,12 +135,12 @@
     brave
   ];
 
-  environment.shells = with pkgs; [bash zsh fish];
+  environment.shells = with pkgs; [bash zsh];
   system.userActivationScripts.zshrc = "touch .zshrc"; # disables the zsh initial "popup"
 
   programs = {
     zsh.enable = true;
-    fish.enable = true;
+    # fish.enable = true;
     neovim.enable = true;
     vim.enable = true;
     nh = {
