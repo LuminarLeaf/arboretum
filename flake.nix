@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    lix = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -51,6 +56,7 @@
         modules = [
           ./hosts/maple/configuration.nix
           inputs.catppuccin.nixosModules.catppuccin
+          inputs.lix.nixosModules.default
         ];
       };
     };
