@@ -41,6 +41,20 @@ return {
  ██████  █████████████████████ ████ █████ █████ ████ ██████]],
         },
       },
+      picker = {
+        sources = {
+          files = { hidden = true, ignore = true },
+          grep = { hidden = true, ignore = true },
+        },
+      },
+    },
+  },
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    opts = {
+      filesystem = {
+        filtered_items = { hide_dotfiles = false },
+      },
     },
   },
   {

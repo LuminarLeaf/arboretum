@@ -31,8 +31,9 @@
     (with pkgs; [
       ffmpegthumbnailer
       gnome-tweaks
-      rhythmbox
       gradia
+      nautilus-python
+      rhythmbox
       wl-clipboard
       zenity
       (writeShellScriptBin "xdg-terminal-exec" ''
