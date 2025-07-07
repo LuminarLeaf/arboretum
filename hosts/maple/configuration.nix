@@ -46,8 +46,14 @@
       experimental-features = ["nix-command" "flakes"];
       flake-registry = "";
       nix-path = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
-      substituters = ["https://nix-community.cachix.org"];
-      trusted-public-keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://cache.lix.systems"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
+      ];
       trusted-users = ["root" "@wheel"];
     };
   };
@@ -185,6 +191,16 @@
         waydroid = false;
       };
 
+      boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
+      services = {
+        printing.enable = lib.mkForce false;
+        gvfs.enable = lib.mkForce false;
+        openssh.enable = lib.mkForce false;
+      };
+      hardware.openrazer.enable = lib.mkForce false;
+      virtualisation.libvirtd.enable = lib.mkForce false;
+      programs.gnupg.agent.enable = lib.mkForce false;
+
       # suspend to RAM(deep)
       boot.kernelParams = ["mem_sleep_default=deep"];
       # suspend then hibernate
@@ -193,17 +209,17 @@
         SuspendState=mem
       '';
     };
-    vfio.configuration = {
-      system.nixos.tags = ["with-vfio"];
-
-      custom.hardware.nvidia.enable = false;
-      custom.hardware.nvidia.pci_passthrough = true;
-      custom.hardware.supergfxd = false;
-      custom.docker.powerSave = true;
-
-      systemd.tmpfiles.rules = ["f /dev/shm/looking-glass 0660 ${userSettings.username} qemu-libvirtd -"];
-      environment.systemPackages = [pkgs.looking-glass-client];
-    };
+    # vfio.configuration = {
+    #   system.nixos.tags = ["with-vfio"];
+    #
+    #   custom.hardware.nvidia.enable = false;
+    #   custom.hardware.nvidia.pci_passthrough = true;
+    #   custom.hardware.supergfxd = false;
+    #   custom.docker.powerSave = true;
+    #
+    #   systemd.tmpfiles.rules = ["f /dev/shm/looking-glass 0660 ${userSettings.username} qemu-libvirtd -"];
+    #   environment.systemPackages = [pkgs.looking-glass-client];
+    # };
   };
 
   system.stateVersion = "24.05";

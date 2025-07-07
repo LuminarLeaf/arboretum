@@ -18,7 +18,7 @@
     settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
       CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
 
       PLATFORM_PROFILE_ON_AC = "performance";
@@ -33,6 +33,7 @@
       STOP_CHARGE_THRESH_BAT0 = 60;
 
       DEVICES_TO_DISABLE_ON_BAT_NOT_IN_USE = "bluetooth";
+      DEVICES_TO_ENABLE_ON_AC = "wifi bluetooth";
     };
   };
 }

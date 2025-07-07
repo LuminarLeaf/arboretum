@@ -54,6 +54,7 @@
         shellcheck
         shfmt
         sqls
+        statix
         stylua
         taplo
         texlab

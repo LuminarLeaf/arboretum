@@ -141,7 +141,7 @@
           SHIFT+ENTER script-binding uosc/playlist                                    #! Playlist
           ALT+c       script-binding uosc/chapters                                    #! Chapters
           ALT+s       script-binding uosc/subtitles                                   #! Subtitles
-          #           script-binding uosc/audio                                       #! Audio
+          ALT+a       script-binding uosc/audio                                       #! Audio
           #           script-binding uosc/audio-device                                #! Utils > Audio devices
           #           set hwdec no                                                    #! Utils > Hardware decoding > Disabled
           #           set hwdec auto-safe                                             #! Utils > Hardware decoding > Enabled

@@ -21,7 +21,7 @@
       {package = pkgs.gnomeExtensions.fullscreen-to-empty-workspace-2;}
       {package = pkgs.gnomeExtensions.pip-on-top;}
       {package = pkgs.gnomeExtensions.resolution-and-refresh-rate-in-quick-settings;}
-      {package = pkgs.gnomeExtensions.window-is-ready-remover;}
+      {package = pkgs.gnomeExtensions.grand-theft-focus;}
     ];
   };
 

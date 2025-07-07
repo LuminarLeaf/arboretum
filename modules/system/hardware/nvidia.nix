@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -30,9 +31,22 @@ in {
     };
   };
 
+  #TODO: Add assertions
+
   config = lib.mkMerge [
     (lib.mkIf cfg.enable {
       services.xserver.videoDrivers = ["nvidia"];
+      # environment.systemPackages = [pkgs.lact];
+      # systemd.services.lactd = {
+      #   description = "GPU Control Daemon";
+      #   wantedBy = ["multi-user.target"];
+      #   after = ["multi-user.target"];
+      #   serviceConfig = {
+      #     ExecStart = "${lib.getExe' pkgs.lact "lact"} daemon";
+      #     Restart = "on-failure";
+      #     Nice = "-10";
+      #   };
+      # };
       hardware.nvidia = {
         modesetting.enable = true;
         powerManagement.enable = true;

@@ -78,8 +78,8 @@
 
     packages.x86_64-linux = {
       nixCats = import ./pkgs/nixCats {
+        inherit (inputs) nixCats;
         inherit inputs nixpkgs system;
-        nixCats = inputs.nixCats;
       };
       tmux-mighty-scroll = pkgs.callPackage ./pkgs/tmux-mighty-scroll {};
       base24-schemes = pkgs.callPackage ./pkgs/base24-schemes {};

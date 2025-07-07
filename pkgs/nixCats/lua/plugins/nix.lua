@@ -18,6 +18,12 @@ return {
     },
   },
   {
+    'mfussenegger/nvim-lint',
+    opts = {
+      linters_by_ft = { nix = { 'statix' } },
+    },
+  },
+  {
     'stevearc/conform.nvim',
     optional = true,
     opts = {
