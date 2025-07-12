@@ -78,7 +78,7 @@
           "Alt+down" = "ignore";
         };
         scripts = with pkgs.mpvScripts; [
-          dynamic-crop
+          # dynamic-crop
           # quack
           mpris
         ];
