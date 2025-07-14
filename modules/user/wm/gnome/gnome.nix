@@ -52,6 +52,12 @@
       "org/gnome/desktop/peripherals/mouse" = {accel-profile = "flat";};
       "org/gnome/desktop/session" = {idle-delay = "uint32 600";};
       "org/gnome/desktop/sound" = {allow-volume-above-100-percent = true;};
+      "org/gnome/desktop/wm/keybindings" = {
+        switch-applications = ["<Super>Tab"];
+        switch-applications-backward = ["<Shift><Super>Tab"];
+        siwtch-windows = ["<Alt>Tab"];
+        switch-windows-backward = ["<Shift><Alt>Tab"];
+      };
       "org/gnome/desktop/wm/preferences" = {
         audible-bell = false;
         resize-with-right-button = true;

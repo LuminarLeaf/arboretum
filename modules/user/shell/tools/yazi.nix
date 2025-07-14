@@ -3,9 +3,17 @@
 
   programs.yazi = {
     enable = true;
-    settings.mgr = {
-      show_hidden = true;
-      show_symlink = false;
+    settings = {
+      mgr = {
+        show_hidden = true;
+        show_symlink = false;
+      };
+      plugin.prepend_preloaders = [
+        {
+          name = "/media/ext_wd/**";
+          run = "noop";
+        }
+      ];
     };
     keymap = {
       mgr.prepend_keymap = [

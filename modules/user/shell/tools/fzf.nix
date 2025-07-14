@@ -1,4 +1,4 @@
-{...}: {
+_: {
   programs = {
     fzf = {
       enable = true;
@@ -9,6 +9,9 @@
         "--layout=reverse"
         "--border"
         "--prompt='❱ '"
+        "--marker='󰧞'"
+        "--pointer=''"
+        "--info=right"
       ];
       fileWidgetCommand = "fd --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
       changeDirWidgetCommand = "fd --type d --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
