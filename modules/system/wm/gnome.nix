@@ -33,7 +33,6 @@
       gnome-tweaks
       gradia
       nautilus-python
-      rhythmbox
       wl-clipboard
       zenity
       (writeShellScriptBin "xdg-terminal-exec" ''

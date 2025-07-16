@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     (prismlauncher.override {
       jdks = [
-        openjdk8
+        zulu8
         (zulu8.overrideAttrs {
           pname = "zulu8-minecraft";
           version = "8.0.312";
