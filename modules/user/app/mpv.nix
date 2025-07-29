@@ -19,6 +19,7 @@
           cursor-autohide = 1000;
           keep-open = true;
           volume-max = 150;
+          cache = true;
 
           auto-window-resize = false;
           snap-window = true;
