@@ -1,9 +1,16 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
+  home.activation = {
+    oh-my-posh-clean-cache = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      run ${lib.getExe config.programs.oh-my-posh.package} cache clear
+    '';
+  };
   programs.oh-my-posh = {
     enable = true;
-    package = pkgs.oh-my-posh;
     enableZshIntegration = true;
-    # useTheme = "catppuccin";
     settings = {
       version = 2;
       disable_notice = true;
