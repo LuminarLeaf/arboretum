@@ -21,10 +21,12 @@
     output_folder=~/.config/MangoHud/logs/
     toggle_hud=Shift_R+F12
     toggle_logging=Shift_L+F12
-    toggle_fps_limit=F1
+    toggle_fps_limit=Shift_L+F1
     upload_log=F5
     media_player_name=spotify
     legacy_layout=false
+
+    fps_limit=0,144,60,30
 
     round_corners=10
     font_size=24
@@ -61,6 +63,6 @@
     gpu_power
     vram
     ram
-    frame_timing=1
+    frame_timing
   '';
 }
