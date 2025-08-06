@@ -50,8 +50,8 @@
           screenshot-format = "png";
           screenshot-template = "mpvCapture %tY-%tm-%td %tH:%tM:%tS";
 
-          # alang = "ja,jp,jpn,en,eng,de,deu,ger";
-          # slang = "en,eng,de,deu,ger";
+          alang = "ja,jp,jpn,ko,kor,zh,zho,en,eng";
+          slang = "en,eng,hi,hin";
         };
         bindings = {
           "[" = "add speed -0.1";
@@ -79,7 +79,7 @@
           "Alt+down" = "ignore";
         };
         scripts = with pkgs.mpvScripts; [
-          # dynamic-crop
+          dynamic-crop
           # quack
           mpris
         ];
