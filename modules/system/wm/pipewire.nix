@@ -9,7 +9,8 @@
     jack.enable = true;
   };
   environment.systemPackages = with pkgs; [
-    pamixer
-    pavucontrol
+    easyeffects
+    pwvucontrol
+    wiremix
   ];
 }
