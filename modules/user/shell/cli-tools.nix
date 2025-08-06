@@ -31,15 +31,19 @@
     (writeScriptBin "ns" (builtins.readFile "${nix-search-tv.src}/nixpkgs.sh"))
   ];
 
-  programs.btop = {
-    enable = true;
-    package = pkgs.btop.override {cudaSupport = true;};
-  };
   catppuccin.btop.enable = true;
+  programs = {
+    btop = {
+      enable = true;
+      package = pkgs.btop.override {cudaSupport = true;};
+    };
 
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-    enableZshIntegration = true;
+    tealdeer.enable = true;
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      enableZshIntegration = true;
+    };
   };
 }

@@ -122,7 +122,6 @@
     nixd
     pv
     rsync
-    tldr
     tmux
     wget
 
