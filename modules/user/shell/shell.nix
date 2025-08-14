@@ -99,6 +99,8 @@ in {
           bindkey '^[p' up-line-or-history
           bindkey '^[^?' backward-kill-word
 
+          setopt globdots
+
           ex() {
             if [ $# -eq 0 ]; then
               echo "error: no <file> provided for extraction"
