@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     catppuccin = {
@@ -60,6 +65,7 @@
         inherit pkgs;
         modules = [
           ./home/home.nix
+          inputs.nix-index-database.homeModules.nix-index
           inputs.catppuccin.homeModules.catppuccin
           inputs.spicetify-nix.homeManagerModules.default
         ];
