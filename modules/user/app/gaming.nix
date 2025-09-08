@@ -31,8 +31,9 @@
     round_corners=10
     font_size=24
     position=top-left
+    table_columns=5
 
-    background_alpha=0.8
+    background_alpha=0.6
     cpu_text=CPU
     gpu_text=GPU
 
