@@ -198,13 +198,8 @@
       virtualisation.libvirtd.enable = lib.mkForce false;
       programs.gnupg.agent.enable = lib.mkForce false;
 
-      # suspend to RAM(deep)
+      # suspend to RAM (s3 / deep)
       boot.kernelParams = ["mem_sleep_default=deep"];
-      # suspend then hibernate
-      systemd.sleep.extraConfig = ''
-        HibernateDelaySec=30m
-        SuspendState=mem
-      '';
     };
     # vfio.configuration = {
     #   system.nixos.tags = ["with-vfio"];
