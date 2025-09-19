@@ -48,8 +48,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   { import = 'lazyvim.plugins.extras.util.dot' },
   { import = 'lazyvim.plugins.extras.util.mini-hipatterns' },
 
-  { 'williamboman/mason-lspconfig.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
-  { 'williamboman/mason.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
+  { 'mason-org/mason-lspconfig.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
+  { 'mason-org/mason.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
   { 'jay-babu/mason-nvim-dap.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
   {
     'folke/lazydev.nvim',

@@ -87,6 +87,10 @@
         lazydev-nvim
         lualine-nvim
         markdown-preview-nvim
+        mini-ai
+        mini-hipatterns
+        mini-icons
+        mini-pairs
         neo-tree-nvim
         noice-nvim
         nui-nvim
@@ -120,6 +124,18 @@
         which-key-nvim
         yanky-nvim
 
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "venv-selector.nvim";
+          version = "2025-09-19";
+          # TODO: either npins or flake input
+          src = pkgs.fetchFromGitHub {
+            owner = "linux-cultist";
+            repo = "venv-selector.nvim";
+            rev = "2b49d1f8b8fcf5cfbd0913136f48f118225cca5d";
+            sha256 = "sha256-mz9RT1foan2DCHTZppuPZHaEqREqOHg2WU7uk3bjl0E=";
+          };
+          meta.homepage = "https://github.com/linux-cultist/venv-selector.nvim";
+        })
         {
           plugin = catppuccin-nvim;
           name = "catppuccin";
@@ -127,22 +143,6 @@
         {
           plugin = harpoon2;
           name = "harpoon";
-        }
-        {
-          plugin = mini-ai;
-          name = "mini.ai";
-        }
-        {
-          plugin = mini-hipatterns;
-          name = "mini.hipatterns";
-        }
-        {
-          plugin = mini-icons;
-          name = "mini.icons";
-        }
-        {
-          plugin = mini-pairs;
-          name = "mini.pairs";
         }
       ];
     };
