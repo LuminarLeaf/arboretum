@@ -27,7 +27,9 @@
     bun
     python3
 
-    nix-search-tv
+    (nix-search-tv.overrideAttrs {
+      env.GOEXPERIMENT = "jsonv2";
+    })
     (writeScriptBin "ns" (builtins.readFile "${nix-search-tv.src}/nixpkgs.sh"))
   ];
 
