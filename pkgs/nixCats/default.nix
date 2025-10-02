@@ -38,7 +38,7 @@
         clang-tools
         delve
         docker-compose-language-service
-        dockerfile-language-server-nodejs
+        dockerfile-language-server
         emmet-language-server
         gofumpt
         gopls

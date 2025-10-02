@@ -15,6 +15,7 @@
     };
 
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    nixCats-nixpkgs.url = "github:NixOS/nixpkgs/0147c2f1d54b30b5dd6d4a8c8542e8d7edf93b5d";
 
     catppuccin = {
       url = "github:catppuccin/nix";
@@ -79,7 +80,8 @@
     packages.x86_64-linux = {
       nixCats = import ./pkgs/nixCats {
         inherit (inputs) nixCats;
-        inherit inputs nixpkgs system;
+        inherit inputs system;
+        nixpkgs = inputs.nixCats-nixpkgs;
       };
       tmux-mighty-scroll = pkgs.callPackage ./pkgs/tmux-mighty-scroll {};
       base24-schemes = pkgs.callPackage ./pkgs/base24-schemes {};
