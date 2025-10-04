@@ -27,10 +27,13 @@
     bun
     python3
 
-    (nix-search-tv.overrideAttrs {
-      env.GOEXPERIMENT = "jsonv2";
+    # yanked from @iynaix
+    (writeShellApplication {
+      name = "ns";
+      runtimeInputs = with pkgs; [fzf nix-search-tv];
+      # prevent IFD, thanks @Michael-C-Buckley
+      text = ''exec "${pkgs.nix-search-tv.src}/nixpkgs.sh" "$@"'';
     })
-    (writeScriptBin "ns" (builtins.readFile "${nix-search-tv.src}/nixpkgs.sh"))
   ];
 
   catppuccin.btop.enable = true;
