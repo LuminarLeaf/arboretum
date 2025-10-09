@@ -29,7 +29,7 @@
     gnome-tweaks
     celluloid
     exaile
-    deadbeef-with-plugins
+    # deadbeef-with-plugins
     # monitorets
     # resources
 

@@ -86,6 +86,9 @@
         set -gw automatic-rename on
         set -gw automatic-rename-format ""
 
+        set -g message-style "bg=#{@thm_bg},fg=#{@thm_white},bold"
+        set -g mode-style "bg=#{@thm_lavender},fg=#{@thm_bg}"
+
         set -g window-status-format " #I#{?#{!=:#{window_name},},: #W,} "
         set -g window-status-style "bg=#{@thm_bg},fg=#{@thm_lavender}"
         set -g window-status-last-style "bg=#{@thm_bg},fg=#{@thm_mauve}"
