@@ -72,6 +72,9 @@ in {
         share = true;
         size = 50000;
       };
+      sessionVariables = {
+        KEYTIMEOUT = "1";
+      };
       initContent = lib.mkMerge [
         (
           lib.mkBefore
@@ -89,19 +92,40 @@ in {
           zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color always $realpath'
           zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
-          bindkey '^a' beginning-of-line
-          bindkey '^e' end-of-line
-          bindkey '^?' backward-delete-char
-          bindkey '^f' forward-char
-          bindkey '^[b' vi-backward-word
-          bindkey '^[f' vi-forward-word
-          bindkey '^[n' down-line-or-history
-          bindkey '^[p' up-line-or-history
-          bindkey '^[^?' backward-kill-word
+          bindkey -M viins '^a' beginning-of-line
+          bindkey -M viins '^e' end-of-line
+          bindkey -M viins '^?' backward-delete-char
+          bindkey -M viins '^f' forward-char
+          bindkey -M viins '^[b' vi-backward-word
+          bindkey -M viins '^[f' vi-forward-word
+          bindkey -M viins '^[n' down-line-or-history
+          bindkey -M viins '^[p' up-line-or-history
+          bindkey -M viins '^[^?' backward-kill-word
 
           setopt globdots
 
-          ex() {
+          autoload edit-command-line
+          zle -N edit-command-line
+          bindkey -M vicmd vv edit-command-line
+
+          function zle-keymap-select {
+            if [[ $KEYMAP == vicmd ]]; then
+              echo -ne '\e[2 q'
+            else
+              echo -ne '\e[6 q'
+            fi
+          }
+          zle -N zle-keymap-select
+
+          # Yank to system clipboard
+          function vi-yank-clipboard {
+            zle vi-yank
+            echo "$CUTBUFFER" | wl-copy
+          }
+          zle -N vi-yank-clipboard
+          bindkey -M vicmd 'y' vi-yank-clipboard
+
+          function ex() {
             if [ $# -eq 0 ]; then
               echo "error: no <file> provided for extraction"
               echo "usage: ex <file>"
@@ -128,7 +152,7 @@ in {
             done
           }
 
-          mkcd() {
+          function mkcd() {
             if [ $# -eq 0 ]; then
               echo "error: no <dir> provided for creation"
               echo "usage: mkcd <dir>"
@@ -136,7 +160,7 @@ in {
             mkdir -p $1 && cd $1
           }
 
-          e() {
+          function e() {
             if [[ -n "$VISUAL" ]]; then
               "$VISUAL" "$@"
             elif [[ -n "$EDITOR" ]]; then
@@ -146,7 +170,7 @@ in {
             fi
           }
 
-          ddiso() {
+          function ddiso() {
             dd if=$1 of=$2 status=progress oflag=sync
           }
         ''
