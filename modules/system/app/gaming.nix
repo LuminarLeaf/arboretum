@@ -13,6 +13,9 @@
       };
       extraLibraries = pkgs: [pkgs.xorg.libxcb];
     };
+    extraCompatPackages = [
+      pkgs.proton-ge-bin
+    ];
   };
 
   programs.gamemode.enable = true;
@@ -22,6 +25,7 @@
     protonup
     gamescope
 
+    heroic
     (bottles.override {removeWarningPopup = true;})
     wine
   ];
