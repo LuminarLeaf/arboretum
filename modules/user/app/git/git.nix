@@ -4,9 +4,11 @@
   programs = {
     git = {
       enable = true;
-      userName = userSettings.name;
-      userEmail = userSettings.git_email;
-      extraConfig = {
+      settings = {
+        user = {
+          inherit (userSettings) name;
+          email = userSettings.git_email;
+        };
         init.defaultBranch = "main";
         commit.gpgsign = true;
         gpg.format = "ssh";

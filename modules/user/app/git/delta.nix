@@ -12,12 +12,13 @@
   };
 
   config = lib.mkIf config.custom.gitDelta {
-    programs.git.extraConfig = {
+    programs.git.settings = {
       merge.conflictStyle = "zdiff3";
       diff.colorMoved = "default";
     };
-    programs.git.delta = {
+    programs.delta = {
       enable = true;
+      enableGitIntegration = true;
       options = {
         tabs = 2;
         features = "lynx";
