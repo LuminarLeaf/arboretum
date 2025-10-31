@@ -22,7 +22,7 @@
 
   environment.systemPackages = with pkgs; [
     mangohud
-    protonup
+    protonup-rs
     gamescope
 
     heroic
