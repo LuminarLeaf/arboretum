@@ -14,6 +14,7 @@
       liberation_ttf
       libertinus
       mona-sans
+      nebula-sans
       ostrich-sans
       work-sans
       roboto
