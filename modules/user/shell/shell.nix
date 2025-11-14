@@ -40,17 +40,13 @@ in {
         enable = true;
         useFriendlyNames = true;
         plugins = [
-          "romkatv/zsh-bench kind:path"
+          # "romkatv/zsh-bench kind:path"
 
           "mattmc3/ez-compinit"
           "zsh-users/zsh-completions path:src kind:fpath"
 
-          "getantidote/use-omz"
           "ohmyzsh/ohmyzsh path:plugins/git"
-          "ohmyzsh/ohmyzsh path:plugins/docker"
-          "ohmyzsh/ohmyzsh path:plugins/docker-compose"
           "ohmyzsh/ohmyzsh path:plugins/rsync"
-          "ohmyzsh/ohmyzsh path:plugins/sudo"
 
           "aloxaf/fzf-tab"
           "catppuccin/zsh-syntax-highlighting path:themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
