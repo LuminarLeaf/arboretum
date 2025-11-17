@@ -18,10 +18,9 @@
       {package = pkgs.gnomeExtensions.blur-my-shell;}
       {package = pkgs.gnomeExtensions.clipboard-indicator;}
       {package = pkgs.gnomeExtensions.dash-to-dock;}
-      {package = pkgs.gnomeExtensions.fullscreen-to-empty-workspace-2;}
-      {package = pkgs.gnomeExtensions.pip-on-top;}
-      {package = pkgs.gnomeExtensions.resolution-and-refresh-rate-in-quick-settings;}
       {package = pkgs.gnomeExtensions.grand-theft-focus;}
+      {package = pkgs.gnomeExtensions.in-picture;}
+      {package = pkgs.gnomeExtensions.resolution-and-refresh-rate-in-quick-settings;}
     ];
   };
 
@@ -98,8 +97,13 @@
         show-show-apps-button = true;
         show-trash = false;
       };
-      "org/gnome/shell/extensions/fullscreen-to-empty-workspace" = {move-window-when-maximized = false;};
-      "org/gnome/shell/extensions/pip-on-top" = {stick = true;};
+      "org/gnome/shell/extensions/in-picture" = {
+        stick = true;
+        top = true;
+      };
+      "org/gnome/shell/extensions/quick-settings-resolution-and-refresh-rate" = {
+        add-resolution-toggle-menu = false;
+      };
     };
   };
 }
