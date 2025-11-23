@@ -116,7 +116,7 @@
           set -g @fingers-key f
         '';
       }
-      inputs.self.packages.${pkgs.system}.tmux-mighty-scroll
+      inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.tmux-mighty-scroll
     ];
   };
 }

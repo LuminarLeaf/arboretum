@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = [
-    inputs.self.packages.${pkgs.system}.nixCats
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.nixCats
   ];
 
   programs.neovide = {
