@@ -46,7 +46,7 @@
           dither = "fruit";
 
           screenshot-directory = "${config.xdg.userDirs.pictures}/Screenshots";
-          screenshot-high-bit-depth = true;
+          # screenshot-high-bit-depth = true;
           screenshot-format = "png";
           screenshot-template = "mpvCapture %tY-%tm-%td %tH:%tM:%tS";
 
