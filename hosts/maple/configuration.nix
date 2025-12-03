@@ -78,6 +78,8 @@
     };
     # kernelPackages = pkgs.linuxPackages_zen;
     kernelPackages = pkgs.linuxPackages_xanmod;
+    # suspend to RAM (s3 / deep)
+    kernelParams = ["mem_sleep_default=deep"];
   };
   catppuccin.grub.enable = true;
 
@@ -197,9 +199,6 @@
       hardware.openrazer.enable = lib.mkForce false;
       virtualisation.libvirtd.enable = lib.mkForce false;
       programs.gnupg.agent.enable = lib.mkForce false;
-
-      # suspend to RAM (s3 / deep)
-      boot.kernelParams = ["mem_sleep_default=deep"];
     };
     # vfio.configuration = {
     #   system.nixos.tags = ["with-vfio"];
