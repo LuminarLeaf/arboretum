@@ -27,7 +27,6 @@
 
     heroic
     (bottles.override {removeWarningPopup = true;})
-    wine
   ];
 
   environment.sessionVariables = {
