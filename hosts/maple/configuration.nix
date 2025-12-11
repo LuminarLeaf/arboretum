@@ -29,7 +29,7 @@
     })
     # ../../modules/system/app/flatpak.nix
     ../../modules/system/app/gaming.nix
-    # ../../modules/system/app/mullvad.nix
+    ../../modules/system/app/mullvad.nix
     ../../modules/system/app/virtualization.nix
 
     ../../modules/system/security/firewall.nix
