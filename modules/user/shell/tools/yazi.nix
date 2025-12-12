@@ -1,12 +1,12 @@
 {pkgs, ...}: {
-  home.packages = [pkgs.ueberzugpp];
-
   programs.yazi = {
     enable = true;
+
     settings = {
       mgr = {
         show_hidden = true;
         show_symlink = false;
+        scrolloff = 3;
       };
       plugin.prepend_preloaders = [
         {
@@ -15,54 +15,74 @@
         }
       ];
     };
+
+    plugins = {
+      inherit
+        (pkgs.yaziPlugins)
+        wl-clipboard
+        yatline
+        yatline-catppuccin
+        ;
+    };
+
     keymap = {
       mgr.prepend_keymap = [
         {
-          run = [
-            ''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' ''
-            "yank"
-          ];
-          on = ["y"];
+          run = ["plugin wl-clipboard"];
+          on = ["<C-y>"];
         }
       ];
     };
+
     initLua =
       #lua
       ''
-        function Status:name()
-          local h = self._tab.current.hovered
-          if not h then
-            return ui.Line {}
-          end
+        local catppuccin_theme = require("yatline-catppuccin"):setup("mocha")
 
-          local linked = ""
-          if h.link_to ~= nil then
-            linked = " -> " .. tostring(h.link_to)
-          end
+        local hostname = ya.host_name() or "unknown"
 
-          return ui.Line(" " .. h.name .. linked)
-        end
+        require("yatline"):setup({
+        	theme = catppuccin_theme,
+        	show_background = true,
 
-        Status:children_add(function()
-          local h = cx.active.current.hovered
-          if h == nil or ya.target_family() ~= "unix" then
-            return ui.Line {}
-          end
+        	section_separator = { open = "", close = "" },
+        	part_separator = { open = "│", close = "│" },
+        	inverse_separator = { open = "", close = "" },
 
-          return ui.Line {
-            ui.Span(ya.user_name(h.cha.uid) or tostring(h.cha.uid)):fg("magenta"),
-            ui.Span(":"),
-            ui.Span(ya.group_name(h.cha.gid) or tostring(h.cha.gid)):fg("magenta"),
-            ui.Span(" "),
-          }
-        end, 500, Status.RIGHT)
+        	tab_width = 0,
 
-        Header:children_add(function()
-          if ya.target_family() ~= "unix" then
-            return ui.Line {}
-          end
-          return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
-        end, 500, Header.LEFT)
+        	header_line = {
+        		left = {
+        			section_a = { { type = "line", custom = false, name = "tabs", params = { "left" } } },
+        			section_b = { { type = "string", custom = false, name = "tab_path" } },
+        			section_c = {},
+        		},
+        		right = {
+        			section_a = { { type = "string", custom = true, name = hostname } },
+        			section_b = { { type = "coloreds", custom = false, name = "count" } },
+        			section_c = {
+        				{ type = "coloreds", custom = false, name = "task_states" },
+        				{ type = "coloreds", custom = false, name = "task_workload" },
+        			},
+        		},
+        	},
+
+        	status_line = {
+        		left = {
+        			section_a = { { type = "string", custom = false, name = "tab_mode" } },
+        			section_b = { { type = "string", custom = false, name = "hovered_size" } },
+        			section_c = { { type = "string", custom = false, name = "hovered_name" } },
+        		},
+        		right = {
+        			section_a = { { type = "string", custom = false, name = "cursor_position" } },
+        			section_b = {},
+        			section_c = {
+        				{ type = "coloreds", custom = false, name = "permissions" },
+        				{ type = "string", custom = false, name = "hovered_ownership" },
+        			},
+        		},
+        	},
+        })
       '';
   };
   catppuccin.yazi.enable = true;
