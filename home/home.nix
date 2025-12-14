@@ -41,7 +41,16 @@
     obs-do
     obsidian
     varia
-    vesktop
+    # vesktop
+    (symlinkJoin {
+      name = "vesktop";
+      paths = [vesktop];
+      nativeBuildInputs = [makeWrapper];
+      postBuild = ''
+        wrapProgram $out/bin/vesktop \
+          --add-flags "--user-agent-os windows"
+      '';
+    })
     vscode-fhs
     # apostrophe
     # runemaster
