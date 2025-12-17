@@ -74,7 +74,7 @@
         command = "obs-do toggle-record";
         name = "OBS Toggle Record";
       };
-      "org/gnome/shell" = {favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop" "vesktop.desktop" "spotify.desktop"];};
+      "org/gnome/shell" = {favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop" "vesktop.desktop"];};
       "org/gnome/shell/app-switcher" = {current-workspace-only = true;};
       "org/gnome/shell/keybindings" = {
         focus-active-notification = "@as []";
