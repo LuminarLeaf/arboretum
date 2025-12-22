@@ -41,6 +41,7 @@
     obs-do
     obsidian
     varia
+    signal-desktop
     # vesktop
     (symlinkJoin {
       name = "vesktop";
