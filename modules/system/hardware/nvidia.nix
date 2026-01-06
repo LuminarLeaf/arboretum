@@ -52,7 +52,7 @@ in {
         powerManagement.enable = true;
         powerManagement.finegrained = true;
         open = true;
-        nvidiaSettings = true;
+        nvidiaSettings = false;
         dynamicBoost.enable = true;
 
         package = nvidiaDriverChannel;
