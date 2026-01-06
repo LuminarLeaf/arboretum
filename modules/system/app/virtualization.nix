@@ -32,7 +32,7 @@
     (lib.mkIf config.custom.waydroid {virtualisation.waydroid.enable = true;})
 
     {
-      programs.adb.enable = true;
+      environment.systemPackages = [pkgs.android-tools];
       users.users.${userSettings.username} = {extraGroups = ["adbusers"];};
     }
   ];
