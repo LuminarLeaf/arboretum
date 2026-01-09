@@ -62,7 +62,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     opts = {
       ensure_installed = require('nixCatsUtils').lazyAdd(
         { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
-        false
+        {}
       ),
       auto_install = require('nixCatsUtils').lazyAdd(true, false),
       ignore_install = require('nixCatsUtils').lazyAdd(nil, 'all'),

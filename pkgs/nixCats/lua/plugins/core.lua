@@ -9,14 +9,6 @@ return {
     'catppuccin/nvim',
     opts = { term_colors = true },
   },
-  -- TODO: Remove this once tree-sitter is updated and I dont need to pin nixpkgs for nixCats or I move to NVF
-  {
-    'akinsho/bufferline.nvim',
-    init = function()
-      local bufline = require 'catppuccin.groups.integrations.bufferline'
-      bufline.get = bufline.get_theme
-    end,
-  },
   {
     'folke/which-key.nvim',
     opts = {
