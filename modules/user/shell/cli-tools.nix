@@ -9,6 +9,7 @@
     ripgrep
     jq
     yq-go
+    fx
     killall
     sd
     hyperfine
