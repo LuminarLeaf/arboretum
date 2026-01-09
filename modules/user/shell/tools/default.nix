@@ -7,7 +7,6 @@
     ./glow.nix
     ./omp.nix
     ./ripgrep.nix
-    ./superfile.nix
     ./tmux.nix
     ./yazi.nix
     ./zoxide.nix
