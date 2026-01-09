@@ -15,7 +15,6 @@
     };
 
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
-    # nixCats-nixpkgs.url = "github:NixOS/nixpkgs/0147c2f1d54b30b5dd6d4a8c8542e8d7edf93b5d";
 
     catppuccin = {
       url = "github:catppuccin/nix";
@@ -63,7 +62,6 @@
           ./home/home.nix
           inputs.nix-index-database.homeModules.nix-index
           inputs.catppuccin.homeModules.catppuccin
-          inputs.spicetify-nix.homeManagerModules.default
         ];
         extraSpecialArgs = {
           inherit userSettings;
