@@ -57,7 +57,7 @@
         statix
         stylua
         taplo
-        texlab
+        tree-sitter
         typescript-language-server
         vale
         vscode-js-debug
@@ -118,24 +118,12 @@
         tokyonight-nvim
         trouble-nvim
         ts-comments-nvim
+        venv-selector-nvim
         vim-illuminate
         vim-startuptime
-        vimtex
         which-key-nvim
         yanky-nvim
 
-        (pkgs.vimUtils.buildVimPlugin {
-          pname = "venv-selector.nvim";
-          version = "2025-09-19";
-          # TODO: either npins or flake input
-          src = pkgs.fetchFromGitHub {
-            owner = "linux-cultist";
-            repo = "venv-selector.nvim";
-            rev = "2b49d1f8b8fcf5cfbd0913136f48f118225cca5d";
-            sha256 = "sha256-mz9RT1foan2DCHTZppuPZHaEqREqOHg2WU7uk3bjl0E=";
-          };
-          meta.homepage = "https://github.com/linux-cultist/venv-selector.nvim";
-        })
         {
           plugin = catppuccin-nvim;
           name = "catppuccin";
