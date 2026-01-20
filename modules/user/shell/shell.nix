@@ -14,6 +14,7 @@
         | str replace "Mounted on" Mount | detect columns | sort-by "Mount"'
     '';
     free = "free -h";
+    "7z" = "7zz";
 
     sn = "shutdown now";
     srn = "shutdown -r now";

@@ -127,7 +127,7 @@
 
     rar
     unar
-    p7zip
+    _7zz-rar
     unzip
     xz
     # cryptsetup
