@@ -72,7 +72,12 @@ return {
       filetypes = {
         help = false,
         sh = function()
-          if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), '^%.env.*') then
+          local basename = vim.fs.basename(vim.api.nvim_buf_get_name(0))
+          if
+            string.match(basename, '^%.env')
+            or string.match(basename, '%.env$')
+            or string.match(basename, '%.env%.')
+          then
             -- disable for .env files
             return false
           end
