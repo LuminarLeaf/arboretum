@@ -4,15 +4,15 @@
   ];
 
   home.packages = with pkgs; [
-    dysk
     dust
-    ripgrep
-    jq
-    yq-go
+    dysk
     fx
-    killall
-    sd
     hyperfine
+    jq
+    killall
+    ripgrep
+    serie
+    yq-go
 
     yt-dlp
     imagemagick
