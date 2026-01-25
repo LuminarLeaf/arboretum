@@ -54,6 +54,7 @@
         shellcheck
         shfmt
         sqls
+        sqlite
         statix
         stylua
         taplo

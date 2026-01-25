@@ -10,12 +10,6 @@ return {
     opts = { term_colors = true },
   },
   {
-    'folke/which-key.nvim',
-    opts = {
-      preset = 'classic',
-    },
-  },
-  {
     'neovim/nvim-lspconfig',
     opts = {
       diagnostics = {
@@ -78,7 +72,6 @@ return {
             or string.match(basename, '%.env$')
             or string.match(basename, '%.env%.')
           then
-            -- disable for .env files
             return false
           end
           return true
