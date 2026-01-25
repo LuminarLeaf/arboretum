@@ -30,6 +30,12 @@
         {
           run = ["plugin wl-clipboard"];
           on = ["<C-y>"];
+          desc = "Copy to system clipboard";
+        }
+        {
+          run = [''shell "$SHELL" --block ''];
+          on = ["!"];
+          desc = "Open $SHELL here";
         }
       ];
     };
