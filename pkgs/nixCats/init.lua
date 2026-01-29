@@ -54,19 +54,6 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     'folke/lazydev.nvim',
     opts = { library = { { path = (nixCats.nixCatsPath or '') .. '/lua', words = { 'nixCats' } } } },
   },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = require('nixCatsUtils').lazyAdd ':TSUpdate',
-    opts_extend = require('nixCatsUtils').lazyAdd(nil, false),
-    opts = {
-      ensure_installed = require('nixCatsUtils').lazyAdd(
-        { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
-        {}
-      ),
-      auto_install = require('nixCatsUtils').lazyAdd(true, false),
-      ignore_install = require('nixCatsUtils').lazyAdd(nil, 'all'),
-    },
-  },
   -- import/override with your plugins
   { import = 'plugins' },
 }, lazyOptions)
