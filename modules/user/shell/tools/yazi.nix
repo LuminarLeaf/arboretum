@@ -17,12 +17,8 @@
     };
 
     plugins = {
-      inherit
-        (pkgs.yaziPlugins)
-        wl-clipboard
-        yatline
-        yatline-catppuccin
-        ;
+      inherit (pkgs.yaziPlugins) yatline yatline-catppuccin;
+      wl-clipboard = ./wl-clipboard;
     };
 
     keymap = {
