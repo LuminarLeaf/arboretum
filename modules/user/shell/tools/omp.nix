@@ -1,13 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
-  home.activation = {
-    oh-my-posh-clean-cache = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      run ${lib.getExe config.programs.oh-my-posh.package} cache clear
-    '';
-  };
+_: {
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
