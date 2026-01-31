@@ -92,6 +92,10 @@ return {
       ignore_install = require('nixCatsUtils').lazyAdd(nil, 'all'),
     },
     config = function(_, opts)
+      local TS = require 'nvim-treesitter'
+      TS.setup(opts)
+      LazyVim.treesitter.get_installed(true)
+
       ---@param buf integer
       ---@param language string
       local function treesitter_try_attach(buf, language)
@@ -100,14 +104,15 @@ return {
           return false
         end
         -- enables syntax highlighting and other treesitter features
-        vim.treesitter.start(buf, language)
+        pcall(vim.treesitter.start, buf)
 
         -- enables treesitter based folds
-        vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-        vim.wo.foldmethod = 'expr'
+        if LazyVim.set_default('foldmethod', 'expr') then
+          LazyVim.set_default('foldexpr', 'v:lua.LazyVim.treesitter.foldexpr()')
+        end
 
         -- enables treesitter based indentation
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        LazyVim.set_default('indentexpr', 'v:lua.LazyVim.treesitter.indentexpr()')
 
         return true
       end
