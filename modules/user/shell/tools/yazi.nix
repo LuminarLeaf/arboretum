@@ -61,11 +61,8 @@
         		},
         		right = {
         			section_a = { { type = "string", custom = true, name = hostname } },
-        			section_b = { { type = "coloreds", custom = false, name = "count" } },
-        			section_c = {
-        				{ type = "coloreds", custom = false, name = "task_states" },
-        				{ type = "coloreds", custom = false, name = "task_workload" },
-        			},
+        			section_b = { { type = "coloreds", custom = false, name = "count", params = { false, true } } },
+        			section_c = { { type = "coloreds", custom = false, name = "task_states", params = { true } } },
         		},
         	},
 
@@ -73,11 +70,11 @@
         		left = {
         			section_a = { { type = "string", custom = false, name = "tab_mode" } },
         			section_b = { { type = "string", custom = false, name = "hovered_size" } },
-        			section_c = { { type = "string", custom = false, name = "hovered_name" } },
+        			section_c = { { type = "string", custom = false, name = "hovered_name", params = { false, nil, nil, true } } },
         		},
         		right = {
         			section_a = { { type = "string", custom = false, name = "cursor_position" } },
-        			section_b = {},
+        			section_b = { { type = "string", name = "cursor_percentage" } },
         			section_c = {
         				{ type = "coloreds", custom = false, name = "permissions" },
         				{ type = "string", custom = false, name = "hovered_ownership" },
