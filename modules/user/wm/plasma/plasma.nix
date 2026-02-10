@@ -6,10 +6,10 @@
 
   home = {
     packages = with pkgs; [
-      deadbeef-with-plugins
+      exaile
       haruna
     ];
 
-    sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
+    # sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
   };
 }
