@@ -10,6 +10,6 @@
       haruna
     ];
 
-    # sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
+    sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
   };
 }

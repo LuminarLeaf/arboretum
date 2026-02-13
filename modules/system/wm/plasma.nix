@@ -11,14 +11,7 @@
   ];
 
   services = {
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-      excludePackages = [pkgs.xterm];
-    };
+    gvfs.enable = true;
     displayManager.sddm = {
       enable = true;
       autoNumlock = true;
@@ -35,6 +28,8 @@
     font = "Monaspace Neon";
     fontSize = "12";
   };
+
+  programs.ssh.enableAskPassword = true;
 
   environment.systemPackages =
     (with pkgs; [
