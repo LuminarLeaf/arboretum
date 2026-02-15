@@ -81,6 +81,8 @@
   };
   catppuccin.grub.enable = true;
 
+  zramSwap.enable = true;
+
   networking = {
     hostName = "maple";
     hostId = "007f0200";
