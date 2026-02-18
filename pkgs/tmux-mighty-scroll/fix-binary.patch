@@ -1,5 +1,3 @@
-diff --git a/mighty-scroll.tmux b/mighty-scroll.tmux
-index 899f0ad..ce121cc 100755
 --- a/mighty-scroll.tmux
 +++ b/mighty-scroll.tmux
 @@ -8,18 +8,7 @@ case "$OSTYPE" in
