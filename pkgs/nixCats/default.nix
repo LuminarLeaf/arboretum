@@ -41,6 +41,7 @@
         dockerfile-language-server
         emmet-language-server
         gofumpt
+        golangci-lint
         gopls
         gotools
         lua-language-server
