@@ -11,7 +11,7 @@
         # MANGOHUD = true;
         OBS_VKCAPTURE = true;
       };
-      extraLibraries = pkgs: [pkgs.xorg.libxcb];
+      extraLibraries = pkgs: [pkgs.libxcb];
     };
     extraCompatPackages = [
       pkgs.proton-ge-bin

@@ -2,6 +2,9 @@
   programs.yazi = {
     enable = true;
 
+    # TODO: remove when changing state version to >26.05
+    shellWrapperName = "yy";
+
     settings = {
       mgr = {
         show_hidden = true;

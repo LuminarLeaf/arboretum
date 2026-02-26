@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   lib,
   ...
 }: let
@@ -37,6 +38,10 @@ in {
       shellAliases = aliases;
       defaultKeymap = "viins";
       completionInit = "";
+
+      # TODO: remove when changing state version to >26.05
+      dotDir = config.home.homeDirectory;
+
       antidote = {
         enable = true;
         useFriendlyNames = true;
