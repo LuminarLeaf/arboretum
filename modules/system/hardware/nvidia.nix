@@ -65,6 +65,12 @@ in {
           nvidiaBusId = "PCI:1:0:0";
         };
       };
+      environment.sessionVariables = lib.mkIf cfg.enablePrime {
+        "__GLX_VENDOR_LIBRARY_NAME" = "mesa"; # amdgpu for AMD
+      };
+      boot.extraModprobeConfig = ''
+        options nvidia NVreg_EnableS0ixPowerManagement=0x01
+      '';
     })
 
     (lib.mkIf cfg.disableNvidia {
