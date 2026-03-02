@@ -117,30 +117,30 @@
   };
 
   environment.systemPackages = with pkgs; [
+    _7zz-rar
     age
     alejandra
+    brave
+    cage
+    # cryptsetup
     curl
     dnsutils
     ffmpeg-full
     file
+    ghostty
     git
-    nixd
-    pv
-    rsync
-    tmux
-    wget
-
-    rar
-    unar
-    _7zz-rar
-    unzip
-    xz
-    # cryptsetup
     kitty
     mpv
-    ghostty
-
-    brave
+    nixd
+    pciutils
+    pv
+    rar
+    rsync
+    unar
+    unzip
+    usbutils
+    wget
+    xz
   ];
 
   environment.shells = with pkgs; [bash zsh];
