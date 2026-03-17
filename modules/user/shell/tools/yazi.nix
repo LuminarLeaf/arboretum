@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.yazi = {
     enable = true;
 
@@ -17,6 +21,16 @@
           run = "noop";
         }
       ];
+    };
+
+    theme.flavor = {
+      dark = "catppuccin-mocha";
+      light = "catppuccin-latte";
+    };
+
+    flavors = {
+      catppuccin-mocha = "${inputs.yazi-flavours}/catppuccin-mocha.yazi";
+      catppuccin-latte = "${inputs.yazi-flavours}/catppuccin-latte.yazi";
     };
 
     plugins = {
@@ -87,5 +101,4 @@
         })
       '';
   };
-  catppuccin.yazi.enable = true;
 }
