@@ -59,9 +59,9 @@
       defaultFonts = let
         common = ["Material Symbols" "Symbols Nerd Font" "Noto Color Emoji"];
       in {
-        serif = ["Monaspace Xenon"] ++ common;
-        sansSerif = ["Monaspace Neon"] ++ common;
-        monospace = ["Monaspace Krypton"] ++ common;
+        serif = ["Iosevka Etoile"] ++ common;
+        sansSerif = ["Iosevka Aile"] ++ common;
+        monospace = ["Iosevka"] ++ common;
         emoji = ["Noto Color Emoji" "Material Symbols"];
       };
     };
