@@ -25,7 +25,7 @@
 
   catppuccin.sddm = {
     enable = true;
-    font = "Monaspace Neon";
+    font = "monospace";
     fontSize = "12";
   };
 

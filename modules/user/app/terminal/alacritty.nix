@@ -18,10 +18,10 @@
 
       font = {
         normal = {
-          family = "MonaspiceNe Nerd Font";
+          family = "monospace";
           style = "Regular";
         };
-        size = 12;
+        size = 13;
       };
 
       cursor.style = {

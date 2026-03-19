@@ -23,7 +23,7 @@
 
           auto-window-resize = false;
           autofit-larger = "80%x90%";
-          osd-font = "Monaspace Neon";
+          osd-font = "sans-serif";
 
           autocreate-playlist = "same";
           directory-mode = "auto";

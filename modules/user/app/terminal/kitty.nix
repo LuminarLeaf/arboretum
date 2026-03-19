@@ -3,8 +3,8 @@
     enable = true;
     package = pkgs.kitty;
     font = {
-      size = 12;
-      name = "MonaspiceNe Nerd Font";
+      size = 13;
+      name = "monospace";
     };
     settings = {
       background_opacity = "0.9";
@@ -26,16 +26,7 @@
       tab_title_template = " {index} {title[title.rfind('/')+1:]}";
       active_tab_title_template = "  {index} {title[title.rfind('/')+1:]}";
       active_tab_font_style = "normal";
-
-      # WIP Keybinds
-      # clear_all_shortcuts = "yes";
-      # kitty_mod = "alt+shift";
     };
-    # keybindings = {
-    #   "ctrl+shift+c" = "copy_to_clipboard";
-    #   "ctrl+shift+v" = "paste_from_clipboard";
-    #
-    # };
   };
   catppuccin.kitty.enable = true;
 }
