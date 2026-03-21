@@ -10,9 +10,8 @@
   programs.neovide = {
     enable = true;
     settings.font = {
-      normal = ["Maple Mono NF"];
+      normal = ["monospace"];
       size = 14;
-      features = {"Maple Mono NF" = ["+cv03" "+ss05"];};
     };
   };
 
