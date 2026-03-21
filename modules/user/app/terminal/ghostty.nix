@@ -1,4 +1,4 @@
-{...}: {
+_: {
   programs.ghostty = {
     enable = true;
 
@@ -21,6 +21,8 @@
 
       window-decoration = "client"; # issues in plasma
       window-padding-balance = true;
+
+      window-inherit-working-directory = false;
     };
   };
   catppuccin.ghostty.enable = true;
