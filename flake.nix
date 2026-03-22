@@ -44,6 +44,12 @@
     };
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+
+    hm-modules = [
+      ./home/home.nix
+      inputs.nix-index-database.homeModules.nix-index
+      inputs.catppuccin.homeModules.catppuccin
+    ];
   in {
     formatter.${system} = pkgs.alejandra;
 
@@ -56,6 +62,19 @@
         modules = [
           ./hosts/maple/configuration.nix
           inputs.catppuccin.nixosModules.catppuccin
+
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.${userSettings.username}.imports = hm-modules;
+              backupFileExtension = "backup-hm";
+
+              extraSpecialArgs = {inherit userSettings inputs;};
+              verbose = true;
+            };
+          }
         ];
       };
     };
@@ -63,11 +82,14 @@
     homeConfigurations = {
       ${userSettings.username} = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [
-          ./home/home.nix
-          inputs.nix-index-database.homeModules.nix-index
-          inputs.catppuccin.homeModules.catppuccin
-        ];
+        modules =
+          hm-modules
+          ++ [
+            {
+              nixpkgs.config.allowUnfree = true;
+              programs.home-manager.enable = true;
+            }
+          ];
         extraSpecialArgs = {
           inherit userSettings;
           inherit inputs;

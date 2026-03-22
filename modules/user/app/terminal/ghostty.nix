@@ -19,7 +19,6 @@ _: {
       # gtk-tabs-location = "bottom";
       gtk-titlebar = false;
 
-      window-decoration = "client"; # issues in plasma
       window-padding-balance = true;
 
       window-inherit-working-directory = false;
