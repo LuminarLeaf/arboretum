@@ -25,7 +25,7 @@
     protonup-rs
     gamescope
 
-    heroic
+    # heroic
     (bottles.override {removeWarningPopup = true;})
   ];
 
