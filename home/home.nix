@@ -35,6 +35,7 @@
 
   home.packages = with pkgs; [
     foliate
+    fractal
     gimp3-with-plugins
     inkscape
     libreoffice-fresh
