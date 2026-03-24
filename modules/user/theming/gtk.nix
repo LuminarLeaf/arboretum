@@ -32,7 +32,10 @@
     };
 
     gtk3.extraConfig = gtk-extra-conf;
-    gtk4.extraConfig = gtk-extra-conf;
+    gtk4 = {
+      inherit (config.gtk) theme;
+      extraConfig = gtk-extra-conf;
+    };
   };
 
   home.file.${config.gtk.gtk2.configLocation}.force = lib.mkForce true;
@@ -44,7 +47,6 @@
     in {
       "gtk-4.0/assets".source = "${gtk4-dir}/${config.gtk.theme.name}/gtk-4.0/assets";
       "gtk-4.0/gtk.css".source = "${gtk4-dir}/${config.gtk.theme.name}/gtk-4.0/gtk.css";
-      "gtk-4.0/gtk-dark.css".source = "${gtk4-dir}/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
     };
 
     # Flatpak

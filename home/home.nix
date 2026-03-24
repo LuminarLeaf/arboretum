@@ -66,6 +66,7 @@
       enable = true;
       createDirectories = true;
       publicShare = null;
+      setSessionVariables = false;
     };
     mime.enable = true;
     mimeApps.enable = true;
