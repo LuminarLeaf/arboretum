@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "adw-catppuccin": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1774479458,
+        "narHash": "sha256-wpB9gEIKaqOBMqHTpOFJdZWo0z+eg5s3gMwTkvcey8g=",
+        "owner": "LuminarLeaf",
+        "repo": "adw-catppuccin",
+        "rev": "62b2e64ea6b1ccdca7c5eb566e52130c993f03e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LuminarLeaf",
+        "repo": "adw-catppuccin",
+        "type": "github"
+      }
+    },
     "catppuccin": {
       "inputs": {
         "nixpkgs": [
@@ -94,6 +110,7 @@
     },
     "root": {
       "inputs": {
+        "adw-catppuccin": "adw-catppuccin",
         "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",

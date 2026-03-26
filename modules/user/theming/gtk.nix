@@ -2,7 +2,7 @@
   lib,
   pkgs,
   config,
-  userSettings,
+  inputs,
   ...
 }: {
   gtk = let
@@ -16,11 +16,8 @@
     enable = true;
 
     theme = {
-      name = "catppuccin-mocha-mauve-standard";
-      package = pkgs.catppuccin-gtk.override {
-        accents = ["mauve"];
-        variant = "mocha";
-      };
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
 
     iconTheme = {
@@ -33,8 +30,14 @@
 
     gtk3.extraConfig = gtk-extra-conf;
     gtk4 = {
-      inherit (config.gtk) theme;
+      theme = null;
       extraConfig = gtk-extra-conf;
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      "accent-color" = "purple";
     };
   };
 
@@ -43,10 +46,15 @@
   xdg = {
     # gtk4/libadwaita
     configFile = let
-      gtk4-dir = "${config.gtk.theme.package}/share/themes";
+      inherit (config.catppuccin) flavor accent;
+      get-adw-css = gtk: "${inputs.adw-catppuccin}/themes/${flavor}/catppuccin-${flavor}-${accent}${
+        if gtk == 3
+        then "-gtk3"
+        else ""
+      }.css";
     in {
-      "gtk-4.0/assets".source = "${gtk4-dir}/${config.gtk.theme.name}/gtk-4.0/assets";
-      "gtk-4.0/gtk.css".source = "${gtk4-dir}/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+      "gtk-4.0/gtk.css".source = get-adw-css 4;
+      "gtk-3.0/gtk.css".source = get-adw-css 3;
     };
   };
 }
