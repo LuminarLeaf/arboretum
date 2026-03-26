@@ -48,15 +48,5 @@
       "gtk-4.0/assets".source = "${gtk4-dir}/${config.gtk.theme.name}/gtk-4.0/assets";
       "gtk-4.0/gtk.css".source = "${gtk4-dir}/${config.gtk.theme.name}/gtk-4.0/gtk.css";
     };
-
-    # Flatpak
-    dataFile = {
-      "themes/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}";
-      "icons/${config.gtk.iconTheme.name}".source = "${config.gtk.iconTheme.package}/share/icons/${config.gtk.iconTheme.name}";
-      "flatpak/overrides/global".text = ''
-        [Context]
-          filesystems=/run/media/${userSettings.username};xdg-data/themes:ro;xdg-data/icons:ro;xdg-config/gtkrc:ro;xdg-config/gtkrc-2.0:ro;xdg-config/gtk-2.0:ro;xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro;/nix
-      '';
-    };
   };
 }
