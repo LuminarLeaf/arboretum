@@ -20,6 +20,7 @@
 
       scrollback_lines = 10000;
       cursor_shape = "beam";
+      cursor_trail = "3";
       tab_bar_edge = "bottom";
       tab_bar_style = "slant";
       tab_title_max_length = 30;
