@@ -117,7 +117,7 @@
     _7zz-rar
     age
     alejandra
-    brave
+    ungoogled-chromium
     cage
     # cryptsetup
     curl
