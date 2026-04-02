@@ -48,7 +48,7 @@
         markdownlint-cli2
         marksman
         nixd
-        nodePackages.prettier
+        prettier
         pyright
         ruff
         rust-analyzer
