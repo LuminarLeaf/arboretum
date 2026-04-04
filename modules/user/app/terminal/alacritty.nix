@@ -6,8 +6,8 @@
       env.TERM = "xterm-256color";
       window = {
         padding = {
-          x = 5;
-          y = 5;
+          x = 0;
+          y = 0;
         };
         dynamic_padding = true;
         opacity = 0.9;

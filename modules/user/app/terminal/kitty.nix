@@ -14,7 +14,7 @@
       initial_window_height = "30c";
       enable_audio_bell = false;
       hide_window_decorations = "titlebar-only";
-      window_padding_width = "1";
+      window_padding_width = "0";
       wayland_enable_ime = "no";
       wayland_titlebar_color = "background";
 

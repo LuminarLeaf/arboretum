@@ -20,6 +20,8 @@ _: {
       gtk-titlebar = false;
 
       window-padding-balance = true;
+      window-padding-x = 0;
+      window-padding-y = 0;
 
       window-inherit-working-directory = false;
     };
