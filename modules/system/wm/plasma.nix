@@ -31,6 +31,11 @@
 
   programs.ssh.enableAskPassword = true;
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
+
   environment.systemPackages =
     (with pkgs; [
       bibata-cursors
@@ -45,7 +50,7 @@
 
   xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
 
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [khelpcenter];
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [khelpcenter qrca];
 
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
