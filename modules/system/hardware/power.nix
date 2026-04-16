@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  services.power-profiles-daemon.enable = false;
-
   environment.systemPackages = [
     pkgs.powertop
   ];
@@ -10,8 +8,14 @@
     # powertop.enable = true;
   };
 
-  services.system76-scheduler.settings.cfsProfiles.enable = true;
-  services.thermald.enable = true;
+  services = {
+    power-profiles-daemon.enable = false;
+    system76-scheduler = {
+      enable = true;
+      settings.cfsProfiles.enable = true;
+    };
+    thermald.enable = true;
+  };
 
   services.tlp = {
     enable = true;
