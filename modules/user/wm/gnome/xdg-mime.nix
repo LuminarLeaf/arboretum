@@ -10,7 +10,7 @@
     audio = ["org.gnome.Decibels.desktop"];
     video = ["io.github.celluloid_player.Celluloid.desktop"];
     directory = ["org.gnome.Nautilus.desktop"];
-    office = ["libreoffice.desktop"];
+    office = ["onlyoffice-desktopeditors.desktop"];
     pdf = ["org.gnome.Evince.desktop"];
     terminal = ["kitty.desktop"];
     archive = ["org.gnome.FileRoller.desktop"];

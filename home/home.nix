@@ -32,7 +32,7 @@
     fractal
     gimp3-with-plugins
     inkscape
-    libreoffice-fresh
+    onlyoffice-desktopeditors
     obs-do
     obsidian
     varia

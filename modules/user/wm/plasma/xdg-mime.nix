@@ -11,7 +11,7 @@
     audio = ["org.kde.elisa.desktop"];
     video = ["org.kde.haruna.desktop"];
     directory = ["org.kde.dolphin.desktop"];
-    office = ["libreoffice.desktop"];
+    office = ["onlyoffice-desktopeditors.desktop"];
     pdf = ["org.kde.okular.desktop"];
     terminal = ["com.mitchellh.ghostty.desktop"];
     archive = ["org.kde.ark.desktop"];
