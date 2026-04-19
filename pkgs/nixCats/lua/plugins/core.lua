@@ -1,3 +1,8 @@
+local envDetect = function()
+  local bufName = vim.fs.basename(vim.api.nvim_buf_get_name(0))
+  return not (bufName:match '^%.env' or bufName:match '^%..+%.env')
+end
+
 return {
   {
     'LazyVim/LazyVim',
@@ -63,19 +68,13 @@ return {
   {
     'zbirenbaum/copilot.lua',
     opts = {
+      server_opts_overrides = { settings = { telemetry = { telemetryLevel = 'off' } } },
       filetypes = {
+        markdown = false,
         help = false,
-        sh = function()
-          local basename = vim.fs.basename(vim.api.nvim_buf_get_name(0))
-          if
-            string.match(basename, '^%.env')
-            or string.match(basename, '%.env$')
-            or string.match(basename, '%.env%.')
-          then
-            return false
-          end
-          return true
-        end,
+        env = false,
+        sh = envDetect,
+        text = envDetect,
       },
     },
   },
