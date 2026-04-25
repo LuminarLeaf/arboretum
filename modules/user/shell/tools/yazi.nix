@@ -15,12 +15,20 @@
         show_symlink = false;
         scrolloff = 3;
       };
-      plugin.prepend_preloaders = [
-        {
-          name = "/media/ext_wd/**";
-          run = "noop";
-        }
-      ];
+      plugin = {
+        prepend_previewers = [
+          {
+            url = "*.env";
+            run = "noop";
+          }
+        ];
+        prepend_preloaders = [
+          {
+            name = "/media/ext_wd/**";
+            run = "noop";
+          }
+        ];
+      };
     };
 
     theme.flavor = {
