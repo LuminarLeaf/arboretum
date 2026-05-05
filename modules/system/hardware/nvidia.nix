@@ -5,7 +5,6 @@
   ...
 }: let
   cfg = config.custom.hardware.nvidia;
-  nvidiaDriverChannel = config.boot.kernelPackages.nvidiaPackages.beta; # stable, latest, beta, etc.
 in {
   # TODO: Fix this BS in the refactor;
   options = {
@@ -55,7 +54,7 @@ in {
         nvidiaSettings = false;
         dynamicBoost.enable = true;
 
-        package = nvidiaDriverChannel;
+        branch = "stable";
 
         # Enable NVIDIA Prime
         prime = lib.mkIf cfg.enablePrime {
