@@ -47,7 +47,7 @@
           --add-flags "--user-agent-os windows"
       '';
     })
-    vscode-fhs
+    vscode
     # apostrophe
     # runemaster
   ];
