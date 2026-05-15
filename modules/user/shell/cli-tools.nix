@@ -25,7 +25,6 @@
     gcc
     go
     nodejs
-    bun
     python3
 
     # yanked from @iynaix
