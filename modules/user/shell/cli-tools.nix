@@ -36,6 +36,8 @@
     })
   ];
 
+  xdg.configFile."nix-search-tv/config.json".text = builtins.toJSON {indexes = ["nixpkgs" "nixos" "home-manager" "noogle"];};
+
   catppuccin.btop.enable = true;
   programs = {
     btop = {
