@@ -143,7 +143,10 @@
   ];
 
   environment.shells = with pkgs; [bash zsh];
-  system.userActivationScripts.zshrc = "touch .zshrc"; # disables the zsh initial "popup"
+  system = {
+    userActivationScripts.zshrc = "touch .zshrc"; # disables the zsh initial "popup"
+    systemBuilderCommands = "ln -s ${inputs.self.sourceInfo.outPath} $out/src";
+  };
 
   programs = {
     zsh.enable = true;
