@@ -7,6 +7,10 @@ _: {
     enableFishIntegration = true;
 
     settings = {
+      keybind = [
+        "ctrl+shift+c=close_surface"
+      ];
+
       background-blur-radius = 1;
       background-opacity = 0.9;
       unfocused-split-opacity = 1;
