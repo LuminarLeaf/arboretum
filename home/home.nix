@@ -28,6 +28,7 @@
   ];
 
   home.packages = with pkgs; [
+    aria2
     foliate
     fractal
     gimp3-with-plugins
@@ -35,9 +36,7 @@
     onlyoffice-desktopeditors
     obs-do
     obsidian
-    varia
     signal-desktop
-    # vesktop
     (symlinkJoin {
       name = "vesktop";
       paths = [vesktop];
@@ -51,8 +50,6 @@
     # apostrophe
     # runemaster
   ];
-
-  # home.sessionVariables.NIXOS_OZONE_WL = 1;
 
   programs.obs-studio = {
     enable = true;
