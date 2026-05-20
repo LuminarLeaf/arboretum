@@ -23,8 +23,6 @@ local lazyOptions = {
 require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 'lazy.nvim' }, {
   { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
 
-  { import = 'lazyvim.plugins.extras.ai.copilot' },
-  { import = 'lazyvim.plugins.extras.ai.copilot-chat' },
   { import = 'lazyvim.plugins.extras.coding.blink' },
   { import = 'lazyvim.plugins.extras.coding.mini-surround' },
   { import = 'lazyvim.plugins.extras.coding.yanky' },

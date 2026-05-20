@@ -80,8 +80,6 @@
         bufferline-nvim
         clangd_extensions-nvim
         conform-nvim
-        copilot-lua
-        CopilotChat-nvim
         flash-nvim
         friendly-snippets
         gitsigns-nvim

@@ -66,19 +66,6 @@ return {
     },
   },
   {
-    'zbirenbaum/copilot.lua',
-    opts = {
-      server_opts_overrides = { settings = { telemetry = { telemetryLevel = 'off' } } },
-      filetypes = {
-        markdown = false,
-        help = false,
-        env = false,
-        sh = envDetect,
-        text = envDetect,
-      },
-    },
-  },
-  {
     'nvim-treesitter/nvim-treesitter',
     build = require('nixCatsUtils').lazyAdd ':TSUpdate',
     opts_extend = require('nixCatsUtils').lazyAdd(nil, false),
