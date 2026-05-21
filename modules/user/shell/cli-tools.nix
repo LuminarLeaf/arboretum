@@ -26,6 +26,7 @@
     go
     nodejs
     python3
+    uv
 
     # yanked from @iynaix
     (writeShellApplication {
