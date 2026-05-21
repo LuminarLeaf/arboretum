@@ -15,8 +15,11 @@
     };
     kernelModules = ["kvm-intel"];
     extraModulePackages = [];
+
     supportedFilesystems.zfs = true;
     zfs.devNodes = "/dev/disk/by-id";
+
+    tmp.cleanOnBoot = true;
   };
   services.zfs = {
     autoScrub.enable = true;
