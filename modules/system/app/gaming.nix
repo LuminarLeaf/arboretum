@@ -25,7 +25,7 @@
     gamescope
 
     # heroic
-    # inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bottles
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bottles
   ];
 
   environment.sessionVariables = {
