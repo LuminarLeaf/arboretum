@@ -1,7 +1,6 @@
 {
   pkgs,
-  config,
-  lib,
+  inputs,
   ...
 }: {
   programs.steam = {
@@ -26,7 +25,7 @@
     gamescope
 
     # heroic
-    (bottles.override {removeWarningPopup = true;})
+    # inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bottles
   ];
 
   environment.sessionVariables = {
