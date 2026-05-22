@@ -1,4 +1,4 @@
-name: "Boorusama build and cache"
+name: "Cachix action"
 
 on:
   workflow_dispatch:
