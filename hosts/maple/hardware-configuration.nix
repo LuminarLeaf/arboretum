@@ -19,6 +19,9 @@
     supportedFilesystems.zfs = true;
     zfs.devNodes = "/dev/disk/by-id";
 
+    # TODO: remove when changing state version to >26.05 (new default)
+    zfs.forceImportRoot = false;
+
     tmp.cleanOnBoot = true;
   };
   services.zfs = {
