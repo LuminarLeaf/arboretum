@@ -24,7 +24,7 @@
         ];
         prepend_preloaders = [
           {
-            name = "/media/ext_wd/**";
+            url = "/media/ext_wd/**";
             run = "noop";
           }
         ];
