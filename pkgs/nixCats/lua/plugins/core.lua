@@ -1,8 +1,3 @@
-local envDetect = function()
-  local bufName = vim.fs.basename(vim.api.nvim_buf_get_name(0))
-  return not (bufName:match '^%.env' or bufName:match '^%..+%.env')
-end
-
 return {
   {
     'LazyVim/LazyVim',
