@@ -92,7 +92,6 @@
         mini-icons
         mini-pairs
         mini-surround
-        neo-tree-nvim
         noice-nvim
         nui-nvim
         nvim-dap
