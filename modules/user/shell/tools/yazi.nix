@@ -11,9 +11,9 @@
 
     settings = {
       mgr = {
+        sort_by = "natural";
         show_hidden = true;
         show_symlink = false;
-        scrolloff = 3;
       };
       plugin = {
         prepend_previewers = [
@@ -31,9 +31,15 @@
       };
     };
 
-    theme.flavor = {
-      dark = "catppuccin-mocha";
-      light = "catppuccin-latte";
+    theme = {
+      flavor = {
+        dark = "catppuccin-mocha";
+        light = "catppuccin-latte";
+      };
+      indicator.padding = {
+        open = "█";
+        close = "█";
+      };
     };
 
     flavors = {
