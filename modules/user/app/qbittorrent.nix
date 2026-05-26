@@ -1,13 +1,9 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     qbittorrent-nox
   ];
   xdg.configFile."vuetorrent" = {
-    source = inputs.vuetorrent;
+    source = "${pkgs.vuetorrent}/share/vuetorrent";
     target = "vuetorrent";
   };
   systemd.user.services = {

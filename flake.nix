@@ -26,11 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    vuetorrent = {
-      url = "github:VueTorrent/VueTorrent/latest-release";
-      flake = false;
-    };
-
     yazi-flavours = {
       url = "github:yazi-rs/flavors";
       flake = false;

@@ -159,25 +159,7 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
-        "vuetorrent": "vuetorrent",
         "yazi-flavours": "yazi-flavours"
-      }
-    },
-    "vuetorrent": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1779178716,
-        "narHash": "sha256-MtTN4O1sCF7JhSzz218qrF+zNZEII09AhLxG6fCPIOk=",
-        "owner": "VueTorrent",
-        "repo": "VueTorrent",
-        "rev": "1ef6b93bc2321dae7b7f93de8327498626fa13bd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "VueTorrent",
-        "ref": "latest-release",
-        "repo": "VueTorrent",
-        "type": "github"
       }
     },
     "yazi-flavours": {
