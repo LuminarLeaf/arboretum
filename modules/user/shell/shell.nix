@@ -74,7 +74,7 @@ in {
         share = true;
         size = 50000;
       };
-      sessionVariables = {
+      localVariables = {
         KEYTIMEOUT = "1";
       };
       initContent = lib.mkMerge [
