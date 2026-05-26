@@ -35,7 +35,10 @@ in {
   config = lib.mkMerge [
     (lib.mkIf cfg.enable {
       services.xserver.videoDrivers = ["modesetting" "nvidia"];
-      # environment.systemPackages = [pkgs.lact];
+      environment.systemPackages = [
+        # pkgs.lact
+        pkgs.nvidia_oc
+      ];
       # systemd.services.lactd = {
       #   description = "GPU Control Daemon";
       #   wantedBy = ["multi-user.target"];
