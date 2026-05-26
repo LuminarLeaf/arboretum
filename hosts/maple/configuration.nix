@@ -36,16 +36,19 @@
     ../../modules/system/security/gpg.nix
   ];
 
-  nix = {
+  nix = let
+    flakes = inputs |> lib.filterAttrs (_: input: input |> lib.isType "flake");
+    nixPath = flakes |> lib.mapAttrsToList (n: _: "${n}=flake:${n}");
+  in {
     channel.enable = false;
 
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) inputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
+    registry = flakes |> lib.mapAttrs (_: flake: {inherit flake;});
+    inherit nixPath;
 
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = ["nix-command" "flakes" "pipe-operators"];
       flake-registry = "";
-      nix-path = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
+      nix-path = nixPath;
       extra-substituters = [
         "https://cache.nixos-cuda.org"
         "https://nix-community.cachix.org"
