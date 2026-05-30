@@ -153,9 +153,12 @@
 
   programs = {
     zsh.enable = true;
-    # fish.enable = true;
-    neovim.enable = true;
-    vim.enable = true;
+    fish.enable = true;
+    neovim = {
+      enable = true;
+      package = inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.nixCats;
+      defaultEditor = true;
+    };
     nh = {
       enable = true;
       flake = "/etc/nixos";

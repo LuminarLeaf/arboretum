@@ -146,7 +146,7 @@
       suffix-path = true;
       suffix-LD = true;
       wrapRc = true;
-      # aliases = ["vim"];
+      aliases = ["vim" "vi"];
       hosts.python3.enable = true;
       hosts.node.enable = true;
     };
