@@ -45,6 +45,7 @@
       kdePackages.kcalc
       kdePackages.kcharselect
       kdePackages.kdialog
+      kde-rounded-corners
     ])
     ++ lib.optionals config.services.flatpak.enable [pkgs.kdePackages.discover];
 
