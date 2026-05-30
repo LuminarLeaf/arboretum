@@ -41,6 +41,7 @@ return {
           grep = { hidden = true, ignore = true },
         },
       },
+      image = { enabled = true },
     },
   },
   {
@@ -81,11 +82,11 @@ return {
 
         -- enables treesitter based folds
         if LazyVim.set_default('foldmethod', 'expr') then
-          LazyVim.set_default('foldexpr', 'v:lua.LazyVim.treesitter.foldexpr()')
+          LazyVim.set_default('foldexpr', 'v:lua.vim.treesitter.foldexpr()')
         end
 
         -- enables treesitter based indentation
-        LazyVim.set_default('indentexpr', 'v:lua.LazyVim.treesitter.indentexpr()')
+        LazyVim.set_default('indentexpr', 'v:lua.vim.treesitter.indentexpr()')
 
         return true
       end
