@@ -21,9 +21,6 @@
     "bottles/runners/Proton-GE-Latest" = {
       source = pkgs.proton-ge-bin.steamcompattool;
     };
-    "bottles/runners/Proton-CachyOS" = {
-      source = pkgs.nur.repos.vladexa.proton-cachyos.steamcompattool;
-    };
   };
 
   xdg.configFile."MangoHud/MangoHud.conf".text = ''

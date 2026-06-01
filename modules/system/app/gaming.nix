@@ -14,7 +14,6 @@
     };
     extraCompatPackages = [
       pkgs.proton-ge-bin
-      pkgs.nur.repos.vladexa.proton-cachyos
     ];
   };
 

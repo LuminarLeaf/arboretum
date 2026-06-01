@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,7 +62,6 @@
         modules = [
           ./hosts/maple/configuration.nix
           inputs.catppuccin.nixosModules.catppuccin
-          inputs.nur.modules.nixos.default
 
           inputs.home-manager.nixosModules.home-manager
           {
