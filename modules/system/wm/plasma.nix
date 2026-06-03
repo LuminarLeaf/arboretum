@@ -46,9 +46,6 @@
       kdePackages.kcharselect
       kdePackages.kdialog
       kde-rounded-corners
-
-      # spectacle ocr
-      tesseract
     ])
     ++ lib.optionals config.services.flatpak.enable [pkgs.kdePackages.discover];
 
