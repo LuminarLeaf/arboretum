@@ -25,7 +25,7 @@
     gamescope
 
     # heroic
-    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bottles
+    (bottles.override {removeWarningPopup = true;})
   ];
 
   environment.sessionVariables = {

@@ -45,10 +45,18 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
 
+    catppuccin-config = {
+      catppuccin = {
+        enable = true;
+        autoEnable = false;
+      };
+    };
+
     hm-modules = [
       ./home/home.nix
       inputs.nix-index-database.homeModules.nix-index
       inputs.catppuccin.homeModules.catppuccin
+      catppuccin-config
     ];
   in {
     formatter.${system} = pkgs.alejandra;
@@ -62,6 +70,7 @@
         modules = [
           ./hosts/maple/configuration.nix
           inputs.catppuccin.nixosModules.catppuccin
+          catppuccin-config
 
           inputs.home-manager.nixosModules.home-manager
           {
@@ -104,11 +113,6 @@
       };
       tmux-mighty-scroll = pkgs.callPackage ./pkgs/tmux-mighty-scroll {};
       base24-schemes = pkgs.callPackage ./pkgs/base24-schemes {};
-
-      # https://github.com/NixOS/nixpkgs/pull/511730
-      # https://github.com/NixOS/nixpkgs/pull/515956
-      bottles = pkgs.callPackage ./pkgs/bottles {inherit (self.packages.x86_64-linux) fvs2;};
-      fvs2 = pkgs.callPackage ./pkgs/fvs2 {};
     };
   };
 }
