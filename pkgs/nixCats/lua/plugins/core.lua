@@ -85,8 +85,8 @@ return {
           LazyVim.set_default('foldexpr', 'v:lua.vim.treesitter.foldexpr()')
         end
 
-        -- enables treesitter based indentation
-        LazyVim.set_default('indentexpr', 'v:lua.vim.treesitter.indentexpr()')
+        -- -- enables treesitter based indentation
+        -- LazyVim.set_default('indentexpr', 'v:lua.vim.treesitter.indentexpr()')
 
         return true
       end
