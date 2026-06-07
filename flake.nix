@@ -43,7 +43,13 @@
       git_email = "80571430+LuminarLeaf@users.noreply.github.com";
     };
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
+        android_sdk.accept_license = true;
+      };
+    };
 
     catppuccin-config = {
       catppuccin = {
@@ -95,7 +101,6 @@
           hm-modules
           ++ [
             {
-              nixpkgs.config.allowUnfree = true;
               programs.home-manager.enable = true;
             }
           ];
@@ -113,6 +118,7 @@
       };
       tmux-mighty-scroll = pkgs.callPackage ./pkgs/tmux-mighty-scroll {};
       base24-schemes = pkgs.callPackage ./pkgs/base24-schemes {};
+      android-studio = pkgs.android-studio-full;
     };
   };
 }
