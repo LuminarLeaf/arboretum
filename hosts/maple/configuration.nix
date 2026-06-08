@@ -31,6 +31,7 @@
     ../../modules/system/app/gaming.nix
     ../../modules/system/app/mullvad.nix
     ../../modules/system/app/virtualization.nix
+    ../../modules/system/app/android.nix
 
     ../../modules/system/security/firewall.nix
     ../../modules/system/security/gpg.nix
