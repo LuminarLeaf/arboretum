@@ -7,6 +7,7 @@
     repoJson = ./repo.json;
     # numLatestPlatformVersions = 2;
     platformVersions = ["36.1" "37"];
+    buildToolsVersions = ["36.1.0" "37.0.0"];
     includeEmulator = "if-supported";
     includeSystemImages = "if-supported";
     includeSources = true;
@@ -22,7 +23,7 @@ in {
     environment.systemPackages = [
       pkgs.android-tools
 
-      (pkgs.androidStudioPackages.beta.withSdk androidComposition.androidsdk)
+      (pkgs.androidStudioPackages.stable.withSdk androidComposition.androidsdk)
     ];
     users.users.${userSettings.username} = {extraGroups = ["adbusers" "kvm"];};
   };

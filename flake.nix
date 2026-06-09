@@ -4,6 +4,12 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
+    nixpkgs-patch-android-studio-bump = {
+      url = "https://github.com/NixOS/nixpkgs/pull/529755.diff";
+      flake = false;
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,7 +74,9 @@
     formatter.${system} = pkgs.alejandra;
 
     nixosConfigurations = {
-      maple = nixpkgs.lib.nixosSystem {
+      maple = inputs.nixpkgs-patcher.lib.nixosSystem {
+        nixpkgsPatcher.inputs = inputs;
+
         specialArgs = {
           inherit userSettings;
           inherit inputs;
