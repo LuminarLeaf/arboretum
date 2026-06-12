@@ -16,6 +16,14 @@
         show_symlink = false;
       };
       plugin = {
+        prepend_fetchers = [
+          {
+            url = "/media/ext_wd/**";
+            run = "mime-ext.local";
+            prio = "high";
+            group = "mime";
+          }
+        ];
         prepend_previewers = [
           {
             url = "*.env";
@@ -48,21 +56,39 @@
     };
 
     plugins = {
-      inherit (pkgs.yaziPlugins) yatline yatline-catppuccin;
-      wl-clipboard = ./wl-clipboard;
+      inherit
+        (pkgs.yaziPlugins)
+        yatline
+        yatline-catppuccin
+        wl-clipboard
+        toggle-pane
+        mime-ext
+        ;
     };
 
     keymap = {
       mgr.prepend_keymap = [
+        {
+          run = [''shell "$SHELL" --block ''];
+          on = ["!"];
+          desc = "Open $SHELL here";
+        }
+
+        # plugins
         {
           run = ["plugin wl-clipboard"];
           on = ["<C-y>"];
           desc = "Copy to system clipboard";
         }
         {
-          run = [''shell "$SHELL" --block ''];
-          on = ["!"];
-          desc = "Open $SHELL here";
+          run = ["plugin toggle-pane max-preview"];
+          on = ["<C-t>" "p"];
+          desc = "Maximize or restore the preview pane";
+        }
+        {
+          run = ["plugin toggle-pane min-preview"];
+          on = ["<C-t>" "P"];
+          desc = "Show or hide the preview pane";
         }
       ];
     };
