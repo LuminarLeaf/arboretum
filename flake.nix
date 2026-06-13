@@ -117,7 +117,6 @@
         inherit inputs system;
       };
       tmux-mighty-scroll = pkgs.callPackage ./pkgs/tmux-mighty-scroll {};
-      base24-schemes = pkgs.callPackage ./pkgs/base24-schemes {};
     };
   };
 }
