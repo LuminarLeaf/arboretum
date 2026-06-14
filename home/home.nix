@@ -37,6 +37,7 @@
     obs-do
     obsidian
     signal-desktop
+    gajim
     (symlinkJoin {
       name = "vesktop";
       paths = [vesktop];
