@@ -102,19 +102,29 @@
     plugins = [
       {
         plugin = pkgs.tmuxPlugins.catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_flavor "mocha"
-          set -g @catppuccin_status_background "none"
-          set -g @catppuccin_window_status_style "none"
-          set -g @catppuccin_pane_status_enabled "off"
-          set -g @catppuccin_pane_border_status "off"
-        '';
+        extraConfig =
+          #tmux
+          ''
+            set -g @catppuccin_flavor "mocha"
+            set -g @catppuccin_status_background "none"
+            set -g @catppuccin_window_status_style "none"
+            set -g @catppuccin_pane_status_enabled "off"
+            set -g @catppuccin_pane_border_status "off"
+          '';
       }
       {
         plugin = pkgs.tmuxPlugins.fingers;
-        extraConfig = ''
-          set -g @fingers-key f
-        '';
+        extraConfig =
+          #tmux
+          ''
+            set -g @fingers-key f
+
+            # Using numbers for priority
+            # Subresource Integrity string
+            set -g @fingers-pattern-0 '((?:sha256|sha512)-(?:(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?))'
+            # base64
+            set -g @fingers-pattern-1 '((?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?)'
+          '';
       }
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.tmux-mighty-scroll
     ];
