@@ -5,6 +5,7 @@
     ./fd.nix
     ./fzf.nix
     ./glow.nix
+    ./nix-search-tv.nix
     ./omp.nix
     ./ripgrep.nix
     ./tmux.nix

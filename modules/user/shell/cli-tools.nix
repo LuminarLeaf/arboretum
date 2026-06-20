@@ -27,17 +27,7 @@
     nodejs
     python3
     uv
-
-    # yanked from @iynaix
-    (writeShellApplication {
-      name = "ns";
-      runtimeInputs = with pkgs; [fzf nix-search-tv];
-      # prevent IFD, thanks @Michael-C-Buckley
-      text = ''exec "${pkgs.nix-search-tv.src}/nixpkgs.sh" "$@"'';
-    })
   ];
-
-  xdg.configFile."nix-search-tv/config.json".text = builtins.toJSON {indexes = ["nixpkgs" "nixos" "home-manager" "noogle"];};
 
   catppuccin.btop.enable = true;
   programs = {
