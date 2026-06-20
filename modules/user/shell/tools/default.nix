@@ -8,6 +8,7 @@
     ./nix-search-tv.nix
     ./omp.nix
     ./ripgrep.nix
+    ./serie.nix
     ./tmux.nix
     ./yazi.nix
     ./zoxide.nix

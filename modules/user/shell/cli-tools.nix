@@ -11,7 +11,6 @@
     jq
     killall
     ripgrep
-    serie
     yq-go
 
     yt-dlp
