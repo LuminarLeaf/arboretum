@@ -58,7 +58,7 @@
 
           blame-code-style = "syntax";
           blame-format = "{author:<18} {commit:<8} {timestamp:<15}";
-          blame-palette = "#1e1e2e #181825 #313244";
+          blame-palette = "#1e1e2e #181825 #11111b #313244";
           blame-separator-style = "#74c7ec";
 
           merge-conflict-begin-symbol = "~";
