@@ -45,6 +45,7 @@
         gopls
         gotools
         lua-language-server
+        markdown-toc
         markdownlint-cli2
         marksman
         nixd
@@ -56,14 +57,16 @@
         shfmt
         sqls
         sqlite
+        superhtml
         statix
         stylua
         taplo
         tree-sitter
-        typescript-language-server
         vale
         vscode-js-debug
-        vscode-langservers-extracted
+        # vscode-langservers-extracted
+        vscode-css-languageserver
+        vscode-json-languageserver
         vtsls
         yaml-language-server
       ];

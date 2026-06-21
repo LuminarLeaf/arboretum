@@ -1,5 +1,3 @@
-vim.g.ai_cmp = false
-
 if vim.g.neovide then
   -- Display
   -- vim.o.guifont = "Maple Mono NF:h12:#h-none"
