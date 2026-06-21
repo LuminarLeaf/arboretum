@@ -119,11 +119,7 @@
           ''
             set -g @fingers-key f
 
-            # Using numbers for priority
-            # Subresource Integrity string
-            set -g @fingers-pattern-0 '((?:sha256|sha512)-(?:(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?))'
-            # base64
-            set -g @fingers-pattern-1 '((?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?)'
+            set -g @fingers-pattern-sri '((?:sha256|sha512)-(?:(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?))'
           '';
       }
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.tmux-mighty-scroll
