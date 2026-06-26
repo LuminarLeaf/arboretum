@@ -61,12 +61,8 @@
         bind W new-window -c "#{pane_current_path}"
         bind C-w new-window -a -c "#{pane_current_path}"
 
-        bind '"' split-window -v -c "#{pane_current_path}"
         bind _ split-window -v -c "#{pane_current_path}"
-        bind % split-window -h -c "#{pane_current_path}"
         bind | split-window -h -c "#{pane_current_path}"
-
-        bind C-l send-keys 'C-l'
 
         bind -T copy-mode-vi v send-keys -X begin-selection
         bind -T copy-mode-vi "C-v" send-keys -X rectangle-toggle
