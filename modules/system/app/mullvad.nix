@@ -5,5 +5,5 @@
     package = pkgs.mullvad;
   };
   # gui
-  environment.systemPackages = [pkgs.mullvad-vpn];
+  # environment.systemPackages = [pkgs.mullvad-vpn];
 }

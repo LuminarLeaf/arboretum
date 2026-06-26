@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = [
     pkgs.firefox
-    # pkgs.librewolf
+    pkgs.librewolf
   ];
 
   #TODO: Declarative firefox/librewolf config
