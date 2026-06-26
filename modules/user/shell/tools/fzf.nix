@@ -3,7 +3,6 @@ _: {
     fzf = {
       enable = true;
       enableZshIntegration = true;
-      tmux.enableShellIntegration = true;
       defaultCommand = "fd --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
       defaultOptions = [
         "--layout=reverse"
