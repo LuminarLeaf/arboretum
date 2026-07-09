@@ -12,8 +12,8 @@ _: {
         "--pointer=''"
         "--info=right"
       ];
-      fileWidgetCommand = "fd --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
-      changeDirWidgetCommand = "fd --type d --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
+      fileWidget.command = "fd --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
+      changeDirWidget.command = "fd --type d --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache";
       colors = {
         "bg+" = "#313244";
         # "bg" = "#1e1e2e"; # comment for transparent bg
