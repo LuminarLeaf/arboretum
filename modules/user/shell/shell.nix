@@ -63,6 +63,7 @@ in {
       };
       history = {
         append = true;
+        extended = true;
         findNoDups = true;
         ignoreAllDups = true;
         ignoreDups = true;
