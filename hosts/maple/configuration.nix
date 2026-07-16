@@ -71,20 +71,14 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
       };
-      grub = {
+      limine = {
         enable = true;
-        efiSupport = true;
-        device = "nodev";
-        extraEntries = ''
-          menuentry "UEFI Firmware Settings" {
-            fwsetup
-          }
-        '';
+        maxGenerations = 16;
       };
     };
     kernelPackages = pkgs.linuxPackages_xanmod;
   };
-  catppuccin.grub.enable = true;
+  catppuccin.limine.enable = true;
 
   networking = {
     hostName = "maple";

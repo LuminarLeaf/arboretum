@@ -25,7 +25,9 @@
     gamescope
 
     # heroic
-    (bottles.override {removeWarningPopup = true;})
+
+    # NOTE: https://github.com/NixOS/nixpkgs/pull/540742
+    # (bottles.override {removeWarningPopup = true;})
   ];
 
   environment.sessionVariables = {

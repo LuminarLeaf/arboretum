@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -68,7 +69,18 @@
     formatter.${system} = pkgs.alejandra;
 
     nixosConfigurations = {
-      maple = nixpkgs.lib.nixosSystem {
+      maple = inputs.nixpkgs-patcher.lib.nixosSystem {
+        nixpkgsPatcher = {
+          inherit (inputs) nixpkgs;
+          patches = pkgs:
+            with pkgs; [
+              (fetchurl {
+                name = "vesktop-electron-42";
+                url = "https://github.com/NixOS/nixpkgs/pull/542528.diff";
+                hash = "sha256-kP41cqIr3ggqCqoAkWztfOd4gA648ZHRC1DV8mlyGEk=";
+              })
+            ];
+        };
         specialArgs = {
           inherit userSettings;
           inherit inputs;
