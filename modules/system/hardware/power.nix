@@ -10,10 +10,6 @@
 
   services = {
     power-profiles-daemon.enable = false;
-    system76-scheduler = {
-      enable = true;
-      settings.cfsProfiles.enable = true;
-    };
     thermald.enable = true;
   };
 
