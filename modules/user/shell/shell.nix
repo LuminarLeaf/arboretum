@@ -52,7 +52,6 @@ in {
           "zsh-users/zsh-completions path:src kind:fpath"
 
           "ohmyzsh/ohmyzsh path:plugins/git"
-          "ohmyzsh/ohmyzsh path:plugins/rsync"
 
           "aloxaf/fzf-tab"
           "catppuccin/zsh-syntax-highlighting path:themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
