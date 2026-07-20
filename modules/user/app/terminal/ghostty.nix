@@ -17,7 +17,7 @@ _: {
       quit-after-last-window-closed-delay = "5m";
 
       font-size = 13;
-      font-family = "monospace";
+      font-family = "Iosevka Term";
 
       # gtk-tabs-location = "bottom";
       gtk-titlebar = false;
@@ -27,6 +27,7 @@ _: {
       window-padding-y = 0;
 
       window-inherit-working-directory = false;
+      window-inherit-font-size = false;
     };
   };
   catppuccin.ghostty.enable = true;
