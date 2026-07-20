@@ -72,14 +72,7 @@
       maple = inputs.nixpkgs-patcher.lib.nixosSystem {
         nixpkgsPatcher = {
           inherit (inputs) nixpkgs;
-          patches = pkgs:
-            with pkgs; [
-              (fetchurl {
-                name = "vesktop-electron-42";
-                url = "https://github.com/NixOS/nixpkgs/pull/542528.diff";
-                hash = "sha256-kP41cqIr3ggqCqoAkWztfOd4gA648ZHRC1DV8mlyGEk=";
-              })
-            ];
+          # patches = pkgs: with pkgs; [];
         };
         specialArgs = {
           inherit userSettings;
