@@ -26,8 +26,7 @@
 
     # heroic
 
-    # NOTE: https://github.com/NixOS/nixpkgs/pull/540742
-    # (bottles.override {removeWarningPopup = true;})
+    (bottles.override {removeWarningPopup = true;})
   ];
 
   environment.sessionVariables = {
