@@ -38,16 +38,15 @@
     obsidian
     signal-desktop
     gajim
-    vesktop
-    # (symlinkJoin {
-    #   name = "vesktop";
-    #   paths = [vesktop];
-    #   nativeBuildInputs = [makeWrapper];
-    #   postBuild = ''
-    #     wrapProgram $out/bin/vesktop \
-    #       --add-flags "--user-agent-os windows"
-    #   '';
-    # })
+    (symlinkJoin {
+      name = "vesktop";
+      paths = [vesktop];
+      nativeBuildInputs = [makeWrapper];
+      postBuild = ''
+        wrapProgram $out/bin/vesktop \
+          --add-flags "--user-agent-os windows"
+      '';
+    })
     vscode
     # apostrophe
     # runemaster
