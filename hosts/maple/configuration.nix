@@ -189,7 +189,6 @@
           enable = false;
           disableNvidia = true;
         };
-        hardware.supergfxd = false;
         docker.powerSave = true;
         qemu = false;
         virt-manager = false;
@@ -213,7 +212,6 @@
     #
     #   custom.hardware.nvidia.enable = false;
     #   custom.hardware.nvidia.pci_passthrough = true;
-    #   custom.hardware.supergfxd = false;
     #   custom.docker.powerSave = true;
     #
     #   systemd.tmpfiles.rules = ["f /dev/shm/looking-glass 0660 ${userSettings.username} qemu-libvirtd -"];
