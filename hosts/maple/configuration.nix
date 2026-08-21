@@ -76,7 +76,7 @@
         maxGenerations = 16;
       };
     };
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    # kernelPackages = pkgs.linuxPackages_xanmod;
   };
   catppuccin.limine.enable = true;
 

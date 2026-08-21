@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -69,11 +68,7 @@
     formatter.${system} = pkgs.alejandra;
 
     nixosConfigurations = {
-      maple = inputs.nixpkgs-patcher.lib.nixosSystem {
-        nixpkgsPatcher = {
-          inherit (inputs) nixpkgs;
-          # patches = pkgs: with pkgs; [];
-        };
+      maple = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit userSettings;
           inherit inputs;
