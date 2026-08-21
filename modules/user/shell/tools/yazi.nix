@@ -57,31 +57,22 @@
       };
     };
 
-    theme = {
-      flavor = {
-        dark = "catppuccin-mocha";
-        light = "catppuccin-latte";
-      };
-      indicator.padding = {
-        open = "█";
-        close = "█";
-      };
-    };
-
-    flavors = {
-      catppuccin-mocha = "${inputs.yazi-flavours}/catppuccin-mocha.yazi";
-      catppuccin-latte = "${inputs.yazi-flavours}/catppuccin-latte.yazi";
-    };
-
     plugins = {
       inherit
         (pkgs.yaziPlugins)
-        yatline
         yatline-catppuccin
         wl-clipboard
         toggle-pane
         mime-ext
         ;
+      yatline = pkgs.yaziPlugins.yatline.overrideAttrs (_: prev: {
+        patches = [
+          (pkgs.fetchurl {
+            url = "https://github.com/imsi32/yatline.yazi/pull/80.diff";
+            hash = "sha256-dcXG9FbLov2H5h6DhB6zkKOcLCXg4+JXu/KhCe2EEFA=";
+          })
+        ];
+      });
       allmytoes = {
         package = pkgs.yaziPlugins.allmytoes;
         setup = true;
@@ -163,5 +154,9 @@
         	},
         })
       '';
+  };
+  catppuccin.yazi = {
+    enable = true;
+    accent = "lavender";
   };
 }

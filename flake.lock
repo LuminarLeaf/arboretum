@@ -115,24 +115,7 @@
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixCats": "nixCats",
-        "nixpkgs": "nixpkgs",
-        "yazi-flavours": "yazi-flavours"
-      }
-    },
-    "yazi-flavours": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1786094737,
-        "narHash": "sha256-Dy73TfcrcbCXY9lwDszNgAKLiCAHf1KIwC4Q5U6k21E=",
-        "owner": "yazi-rs",
-        "repo": "flavors",
-        "rev": "be0b21d0873092a63946cc2678dd700aac945902",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yazi-rs",
-        "repo": "flavors",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

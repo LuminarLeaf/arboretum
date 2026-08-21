@@ -21,11 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    yazi-flavours = {
-      url = "github:yazi-rs/flavors";
-      flake = false;
-    };
-
     adw-catppuccin = {
       url = "github:LuminarLeaf/adw-catppuccin";
       flake = false;
