@@ -69,7 +69,7 @@
         patches = [
           (pkgs.fetchurl {
             url = "https://github.com/imsi32/yatline.yazi/pull/80.diff";
-            hash = "sha256-dcXG9FbLov2H5h6DhB6zkKOcLCXg4+JXu/KhCe2EEFA=";
+            hash = "sha256-hL4KrD8fzjD3z1ZvCNXjHUzs4F/dA7Yj21d/yHA5a7g=";
           })
         ];
       });
