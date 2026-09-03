@@ -13,3 +13,5 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_mode = 'pixiedust'
   vim.g.neovide_cursor_vfx_particle_density = 10
 end
+
+vim.opt.exrc = true

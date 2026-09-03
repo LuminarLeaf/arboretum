@@ -4,7 +4,6 @@ return {
     opts = {
       servers = {
         nixd = {
-          formatting = { command = { 'alejandra' } },
           options = {
             nixos = {
               expr = '(builtins.getFlake "/home/leaf/arboretum").nixosConfigurations.maple.options',
@@ -21,15 +20,6 @@ return {
     'mfussenegger/nvim-lint',
     opts = {
       linters_by_ft = { nix = { 'statix' } },
-    },
-  },
-  {
-    'stevearc/conform.nvim',
-    optional = true,
-    opts = {
-      formatters_by_ft = {
-        nix = { 'alejandra' },
-      },
     },
   },
 }

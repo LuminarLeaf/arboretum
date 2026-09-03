@@ -49,6 +49,7 @@
         markdownlint-cli2
         marksman
         nixd
+        nixfmt-rs
         prettier
         pyright
         ruff
