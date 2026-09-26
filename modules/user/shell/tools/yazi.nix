@@ -9,8 +9,6 @@
     # TODO: remove when changing state version to >26.05
     shellWrapperName = "yy";
 
-    extraPackages = [pkgs.allmytoes];
-
     settings = {
       mgr = {
         sort_by = "natural";
@@ -31,27 +29,11 @@
             url = "*.env";
             run = "noop";
           }
-          {
-            mime = "image/{hei?,jxl}";
-            run = "magick";
-          }
-          {
-            mime = "image/*";
-            run = "allmytoes";
-          }
         ];
         prepend_preloaders = [
           {
             url = "/media/ext_wd/**";
             run = "noop";
-          }
-          {
-            mime = "image/{hei?,jxl}";
-            run = "magick";
-          }
-          {
-            mime = "image/*";
-            run = "allmytoes";
           }
         ];
       };
@@ -73,11 +55,6 @@
           })
         ];
       });
-      allmytoes = {
-        package = pkgs.yaziPlugins.allmytoes;
-        setup = true;
-        settings.sizes = ["x"];
-      };
     };
 
     keymap = {
