@@ -50,6 +50,9 @@
       catppuccin = {
         enable = true;
         autoEnable = false;
+        sources = inputs.catppuccin.packages.${system}.overrideScope (_: _: {
+          whiskers = pkgs.catppuccin-whiskers;
+        });
       };
     };
 
