@@ -54,6 +54,7 @@
     directory = ["inode/directory"];
     browser = [
       "text/html"
+      "application/xhtml+xml"
       "x-scheme-handler/about"
       "x-scheme-handler/http"
       "x-scheme-handler/https"
