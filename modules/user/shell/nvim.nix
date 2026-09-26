@@ -17,6 +17,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    VISUAL = "neovide";
+    VISUAL = "nvim";
   };
 }
