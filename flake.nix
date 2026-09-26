@@ -58,7 +58,6 @@
 
     hm-modules = [
       ./home/home.nix
-      inputs.nix-index-database.homeModules.nix-index
       inputs.catppuccin.homeModules.catppuccin
       catppuccin-config
     ];
@@ -74,6 +73,7 @@
         modules = [
           ./hosts/maple/configuration.nix
           inputs.catppuccin.nixosModules.catppuccin
+          inputs.nix-index-database.nixosModules.default
           catppuccin-config
 
           inputs.home-manager.nixosModules.home-manager

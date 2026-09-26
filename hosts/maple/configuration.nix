@@ -166,6 +166,8 @@
       enable = true;
       openFirewall = true;
     };
+
+    nix-index-database.comma.enable = true;
   };
 
   services.gvfs.enable = true;
