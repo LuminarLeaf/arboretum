@@ -39,17 +39,15 @@
 
   nix = let
     flakes = inputs |> lib.filterAttrs (_: input: input |> lib.isType "flake");
-    nixPath = flakes |> lib.mapAttrsToList (n: _: "${n}=flake:${n}");
   in {
     channel.enable = false;
 
     registry = flakes |> lib.mapAttrs (_: flake: {inherit flake;});
-    inherit nixPath;
 
     settings = {
       experimental-features = ["nix-command" "flakes" "pipe-operators"];
       flake-registry = "";
-      nix-path = nixPath;
+      nix-path = flakes |> lib.mapAttrsToList (n: _: "${n}=flake:${n}");
       extra-substituters = [
         "https://cache.nixos-cuda.org"
         "https://nix-community.cachix.org"
