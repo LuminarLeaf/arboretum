@@ -51,6 +51,8 @@
 
   xdg.portal.extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
 
+  programs.kde-pim.enable = false;
+
   environment.plasma6.excludePackages = with pkgs.kdePackages; [khelpcenter qrca];
 
   security.polkit.extraConfig = ''
