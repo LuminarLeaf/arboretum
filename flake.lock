@@ -36,6 +36,26 @@
         "type": "github"
       }
     },
+    "helium": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791547762,
+        "narHash": "sha256-g/gDcjq6YxAdb12M+lAMJh4tByhkRd96rbDM1W5s1LQ=",
+        "owner": "amaanq",
+        "repo": "helium-flake",
+        "rev": "3cb65fa7c6458510307f22643995c7b087425572",
+        "type": "github"
+      },
+      "original": {
+        "owner": "amaanq",
+        "repo": "helium-flake",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -112,6 +132,7 @@
       "inputs": {
         "adw-catppuccin": "adw-catppuccin",
         "catppuccin": "catppuccin",
+        "helium": "helium",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixCats": "nixCats",

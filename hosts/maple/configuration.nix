@@ -108,32 +108,33 @@
     shell = pkgs.zsh;
   };
 
-  environment.systemPackages = with pkgs; [
-    _7zz-rar
-    age
-    alejandra
-    brave-origin
-    cage
-    # cryptsetup
-    curl
-    dnsutils
-    ffmpeg-full
-    file
-    ghostty
-    git
-    kitty
-    mpv
-    nixd
-    pciutils
-    pv
-    rar
-    rsync
-    unar
-    unzip
-    usbutils
-    wget
-    xz
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      _7zz-rar
+      age
+      alejandra
+      cage
+      # cryptsetup
+      curl
+      dnsutils
+      ffmpeg-full
+      file
+      ghostty
+      git
+      kitty
+      mpv
+      nixd
+      pciutils
+      pv
+      rar
+      rsync
+      unar
+      unzip
+      usbutils
+      wget
+      xz
+    ]
+    ++ [inputs.helium.packages.x86_64-linux.default];
 
   environment.shells = with pkgs; [bash zsh];
   system = {
