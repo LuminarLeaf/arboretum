@@ -1,4 +1,4 @@
-_: {
+{pkgs, ...}: {
   programs.zed-editor = {
     enable = true;
     userSettings = {
@@ -53,11 +53,31 @@ _: {
       };
       lsp = {};
       auto_install_extensions = {
-        html = true;
+        biome = true;
         nix = true;
         typst = true;
       };
       read_only_files = ["**/*.lock" "**/vendor/**" "**/node_modules/**"];
     };
+    extraPackages = with pkgs; [
+      bash-language-server
+      basedpyright
+      biome
+      clang-tools
+      delve
+      gopls
+      nixd
+      nixfmt-rs
+      package-version-server
+      ruff
+      rust-analyzer
+      tailwindcss-language-server
+      ty
+      tinymist
+      vscode-css-languageserver
+      vscode-html-languageserver
+      vtsls
+      yaml-language-server
+    ];
   };
 }

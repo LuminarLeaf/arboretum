@@ -15,3 +15,4 @@ if vim.g.neovide then
 end
 
 vim.opt.exrc = true
+vim.g.lazyvim_python_lsp = 'basedpyright'

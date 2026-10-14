@@ -32,9 +32,9 @@
 
         alejandra
         bacon
+        basedpyright
         bash-language-server
         biome
-        black
         clang-tools
         delve
         docker-compose-language-service
@@ -51,7 +51,6 @@
         nixd
         nixfmt-rs
         prettier
-        pyright
         ruff
         rust-analyzer
         shellcheck
