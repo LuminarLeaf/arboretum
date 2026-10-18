@@ -34,7 +34,7 @@
     fractal
     gimp3-with-plugins
     inkscape
-    onlyoffice-desktopeditors
+    libreoffice
     obs-do
     obsidian
     signal-desktop
