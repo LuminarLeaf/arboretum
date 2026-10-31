@@ -120,6 +120,7 @@
         inherit inputs system;
       };
       tmux-mighty-scroll = pkgs.callPackage ./pkgs/tmux-mighty-scroll {};
+      boorusama = pkgs.callPackage ./pkgs/boorusama {};
     };
   };
 }

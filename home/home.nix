@@ -1,6 +1,7 @@
 {
   pkgs,
   userSettings,
+  inputs,
   ...
 }: {
   home.username = userSettings.username;
@@ -50,6 +51,7 @@
     })
     # apostrophe
     # runemaster
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.boorusama
   ];
 
   programs.obs-studio = {
