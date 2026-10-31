@@ -17,12 +17,6 @@
     })
   ];
 
-  xdg.dataFile = {
-    "bottles/runners/Proton-GE-Latest" = {
-      source = pkgs.proton-ge-bin.steamcompattool;
-    };
-  };
-
   xdg.configFile."MangoHud/MangoHud.conf".text = ''
     output_folder=~/.config/MangoHud/logs/
     toggle_hud=Shift_R+F12
