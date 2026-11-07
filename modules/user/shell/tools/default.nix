@@ -6,7 +6,7 @@
     ./fzf.nix
     ./glow.nix
     ./nix-search-tv.nix
-    ./omp.nix
+    ./starship.nix
     ./ripgrep.nix
     ./serie.nix
     ./tmux.nix
