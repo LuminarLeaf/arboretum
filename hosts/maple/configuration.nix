@@ -76,7 +76,6 @@
     };
     # kernelPackages = pkgs.linuxPackages_xanmod;
   };
-  catppuccin.limine.enable = true;
 
   networking = {
     hostName = "maple";
