@@ -2,15 +2,7 @@
   home.packages = with pkgs; [
     (prismlauncher.override {
       jdks = [
-        (zulu8.overrideAttrs {
-          pname = "zulu8-minecraft";
-          version = "8.0.312";
-          src = pkgs.fetchurl {
-            url = "https://cdn.azul.com/zulu/bin/zulu8.58.0.13-ca-jdk8.0.312-linux_x64.tar.gz";
-            hash = "sha256-c0F0iPpLf3+MDFlA2r6oeQiymiPh7myUiy8MqLmvIx0=";
-          };
-        })
-        openjdk17
+        openjdk8
         openjdk21
         openjdk25
       ];
