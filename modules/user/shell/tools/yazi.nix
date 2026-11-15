@@ -42,19 +42,12 @@
     plugins = {
       inherit
         (pkgs.yaziPlugins)
+        yatline
         yatline-catppuccin
         wl-clipboard
         toggle-pane
         mime-ext
         ;
-      yatline = pkgs.yaziPlugins.yatline.overrideAttrs (_: prev: {
-        patches = [
-          (pkgs.fetchurl {
-            url = "https://github.com/imsi32/yatline.yazi/pull/80.diff";
-            hash = "sha256-P19wis9GOfUPURBgep87u2XvR+Cy2/74DJjc6kvZqYQ=";
-          })
-        ];
-      });
     };
 
     keymap = {
